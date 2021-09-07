@@ -60,6 +60,9 @@
             <li class="">
                 <a class="nav-link" href="{{route('admin.transaction.active')}}"><i class="fas fa-fire"></i><span>Transaksi aktif</span></a>
             </li>
+            <li class="">
+                <a class="nav-link" href="{{route('admin.user.index')}}"><i class="fas fa-fire"></i><span>Customer</span></a>
+            </li>
         </ul>
     </aside>
 </div>
