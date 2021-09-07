@@ -33,6 +33,9 @@ use Laravel\Jetstream\Jetstream;
 
 */
 
+Route::get('/register', function() {
+    return redirect('/login');
+});
 
 Route::get('/dashboard', function () {
     return redirect(route('admin.dashboard'));
