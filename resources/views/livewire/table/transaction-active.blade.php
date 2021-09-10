@@ -65,6 +65,9 @@
                         <a role="button" href="{{ route('admin.transaction.return',$transaction->id) }}" class="mr-3">
                             <i class="fa fa-16px fa-exchange text-danger"></i>
                         </a>
+                        <a role="button" href="{{ route('admin.transaction.export',$transaction->id) }}" class="mr-3" target="_blank">
+                            <i class="fa fa-16px fa-download text-blue-500"></i>
+                        </a>
                     </td>
                 </tr>
             @endforeach

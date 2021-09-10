@@ -20,10 +20,10 @@
                         <a role="button" href="{{ route('admin.product-type.edit',$productType->id) }}" class="mr-3">
                             <i class="fa fa-16px fa-pen text-blue-500"></i>
                         </a>
-                        <a role="button" wire:click="exportCSVUMKM({{$productType->id}})" class="mr-3">
+                        <a role="button" wire:click="exportCSVUMKM({{$productType->id}})" class="mr-3" >
                             <i class="fa fa-16px fa-download text-blue-500">CSV</i>
                         </a>
-                        <a role="button" href="{{ route('admin.product-type.export',$productType->id) }}" class="mr-3">
+                        <a role="button" href="{{ route('admin.product-type.export',$productType->id) }}" class="mr-3" target="_blank">
                             <i class="fa fa-16px fa-download text-danger">PDF</i>
                         </a>
                     </td>

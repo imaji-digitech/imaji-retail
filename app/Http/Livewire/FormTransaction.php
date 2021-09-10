@@ -99,6 +99,7 @@ class FormTransaction extends Component
                     TransactionCredit::create([
                         'transaction_id' => $d->id,
                         'product_id' => $p,
+                        'discount' => $this->detailTransactionDiscount[$p],
                         'quantity' => $this->detailTransaction[$p],
                         'total' => $this->listProduct->find($p)->price * intval($this->detailTransaction[$p]) * (100 - intval($this->detailTransactionDiscount[$p])) / 100,
                     ]);
@@ -106,6 +107,7 @@ class FormTransaction extends Component
                     TransactionPaymentDetail::create([
                         'transaction_payment_id' => $payment->id,
                         'product_id' => $p,
+                        'discount' => $this->detailTransactionDiscount[$p],
                         'quantity' => $this->detailTransaction[$p],
                         'total' => $this->listProduct->find($p)->price * intval($this->detailTransaction[$p]) * (100 - intval($this->detailTransactionDiscount[$p])) / 100,
                     ]);

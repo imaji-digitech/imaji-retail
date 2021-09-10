@@ -2,8 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/resources/views/pdf/invoice.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/kop_invoice.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/kop_nota.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/kop_ret.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pdf/payment.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/DetailTransaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/DetailTransaction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormTransaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormTransaction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Transaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Transaction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/TransactionPaymentDetail.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/TransactionPaymentDetail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/detail-transaction.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/detail-transaction.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/cash-note.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/cash-note.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/product-type.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/product-type.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/transaction-active.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/transaction-active.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/transaction-history.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/transaction-history.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pdf/invoice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/invoice.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,6 +191,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -240,7 +256,9 @@
       <workItem from="1630744527299" duration="6146000" />
       <workItem from="1630767134619" duration="1046000" />
       <workItem from="1630801303065" duration="2269000" />
-      <workItem from="1630987808004" duration="6314000" />
+      <workItem from="1630987808004" duration="14098000" />
+      <workItem from="1631076028089" duration="4682000" />
+      <workItem from="1631191457799" duration="7483000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1630987348185</created>
@@ -263,7 +281,21 @@
       <option name="project" value="LOCAL" />
       <updated>1631003165099</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="first commit">
+      <created>1631009344656</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1631009344656</updated>
+    </task>
+    <task id="LOCAL-00005" summary="first commit">
+      <created>1631009416210</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1631009416210</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -282,6 +314,7 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="first commit" />
     <option name="LAST_COMMIT_MESSAGE" value="first commit" />
   </component>

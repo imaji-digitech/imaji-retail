@@ -12,6 +12,7 @@ use App\Models\CashBook;
 use App\Models\CashNote;
 use App\Models\Product;
 use App\Models\ProductType;
+use App\Models\Transaction;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use Laravel\Jetstream\Http\Controllers\CurrentTeamController;
@@ -33,7 +34,8 @@ use Laravel\Jetstream\Jetstream;
 
 */
 
-Route::get('/register', function() {
+
+Route::get('/register', function () {
     return redirect('/login');
 });
 
@@ -79,7 +81,7 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
     Route::get('/cash-note/{umkm}/create', [CashNoteController::class, 'create'])->name('cash-note.create');
     Route::get('/cash-note/{umkm}/edit/{id}', [CashNoteController::class, 'edit'])->name('cash-note.edit');
     Route::get('/cash-note/{umkm}/show/{id}', [CashNoteController::class, 'show'])->name('cash-note.show');
-    Route::get('/cash-note/{umkm}/export{id}', function ($umkm,$id) {
+    Route::get('/cash-note/{umkm}/export{id}', function ($umkm, $id) {
         $umkm = ProductType::find($umkm);
         $c1 = CashNote::find($id);
         $c = CashNote::whereProductTypeId($umkm->id)->where('id', '<', $id)->orderByDesc('id')->first();
@@ -87,7 +89,7 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
             ->where('id', '<=', $c1->cash_book_id)
             ->where('id', '>=', $c->cash_book_id)->get();
         $pdf = App::make('dompdf.wrapper');
-        $pdf->loadView('pdf.cash-note', compact('cashBooks','c1','c','umkm'));
+        $pdf->loadView('pdf.cash-note', compact('cashBooks', 'c1', 'c', 'umkm'));
         return $pdf->stream();
     })->name('cash-note.export');
 
@@ -95,10 +97,31 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
     Route::post('/product', [ProductController::class, 'graph'])->name('product.graph');
     Route::get('/transaction/create', [TransactionController::class, 'create'])->name('transaction.create');
     Route::get('/transaction/history', [TransactionController::class, 'history'])->name('transaction.history');
+
     Route::get('/transaction/active', [TransactionController::class, 'active'])->name('transaction.active');
     Route::get('/transaction/payment/{id}', [TransactionController::class, 'payment'])->name('transaction.payment');
+    Route::get('/transaction/payment/export/{id}', function ($id) {
+        $transaction = \App\Models\TransactionPayment::find($id);
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadView('pdf.payment', compact('transaction'))->setPaper([0, 0, 470.00, 603.80], 'landscape');
+        return $pdf->stream();
+    })->name('transaction.payment.export');
+
     Route::get('/transaction/return/{id}', [TransactionController::class, 'return'])->name('transaction.return');
+    Route::get('/transaction/return/export/{id}', function ($id) {
+        $transaction = \App\Models\TransactionReturn::find($id);
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadView('pdf.return', compact('transaction'))->setPaper([0, 0, 470.00, 603.80], 'landscape');
+        return $pdf->stream();
+    })->name('transaction.return.export');
+
     Route::get('/transaction/show/{id}', [TransactionController::class, 'show'])->name('transaction.show');
+    Route::get('/transaction/export/{id}', function ($id) {
+        $transaction = Transaction::find($id);
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadView('pdf.invoice', compact('transaction'))->setPaper([0, 0, 470.00, 603.80], 'landscape');
+        return $pdf->stream();
+    })->name('transaction.export');
 
     Route::get('/user', [UserController::class, "index"])->name('user');
     Route::view('/user/new', "pages.user.create")->name('user.new');

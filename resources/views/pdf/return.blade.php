@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{public_path('vendor/bootstrap.min.css')}}">
-    <title>Slip Gaji - Nama</title>
+    <title>Pengembalian</title>
     <style>
         header {
             position: fixed;
@@ -32,7 +32,7 @@
 </head>
 <body style="padding: 150px 40px 30px 40px;margin: 0;">
 <header style="width: 100%" id="header">
-    <img style="width: 100%" src="{{public_path('images/kop_invoice.jpg')}}" alt="">
+    <img style="width: 100%" src="{{public_path('images/kop_ret.jpg')}}" alt="">
 </header>
 <footer id="footer">
     <img style="width: 100%" src="{{public_path('images/kop_bawah.jpg')}}" alt="">
@@ -44,15 +44,15 @@
             <tr>
                 <td style="width: 70px"><b>Customer</b></td>
                 <td style="width: 10px">:</td>
-                <td style="width: 260px">{{ $transaction->user->name }}</td>
+                <td style="width: 260px">{{ $transaction->transaction->user->name }}</td>
                 <td style="width: 70px"><b>No. Invoice</b></td>
                 <td style="width: 10px">:</td>
-                <td>{{ $transaction->no_invoice }}</td>
+                <td>{{ $transaction->transaction->no_invoice }}</td>
             </tr>
             <tr>
                 <td style="width: 70px"><b>No Telp</b></td>
                 <td style="width: 10px">:</td>
-                <td style="width: 260px">{{ $transaction->telp }}</td>
+                <td style="width: 260px">{{ $transaction->transaction->user->telp }}</td>
                 <td style="width: 70px"><b>Tanggal</b></td>
                 <td style="width: 10px">:</td>
                 <td>{{ $transaction->created_at->format('d-m-Y') }}</td>
@@ -60,17 +60,13 @@
             <tr>
                 <td style="width: 70px"><b>Alamat</b></td>
                 <td style="width: 10px">:</td>
-                <td style="width: 260px">{{ $transaction->user-> address}}</td>
+                <td style="width: 260px">{{ $transaction->transaction->user->address}}</td>
                 <td style="width: 70px"><b>Pembayaran</b></td>
                 <td style="width: 10px">:</td>
-                <td>{{ $transaction->paymentStatus->title }}</td>
+                <td>{{ $transaction->transaction->paymentStatus->title }}</td>
             </tr>
         </table>
-        @php($detail=$transaction->transactionDetails)
-        @php($cd=0)
-        @foreach($detail as $d)
-            @php($cd+=$d->total/(100-$d->discount)*$d->discount)
-        @endforeach
+        @php($detail=$transaction->transactionReturnDetails)
         <table bordercolor="#000000" style="margin-top:10px;width: 100%; font-size: 11px">
             <tr style="text-align: center">
                 <th style="border: .5px solid;padding-top:0;padding-bottom: 5px">
@@ -81,9 +77,6 @@
                 </th>
                 <th style="border: .5px solid;padding-top:0;padding-bottom: 5px;width: 100px">
                     Harga Satuan
-                </th>
-                <th style="border: .5px solid;padding-top:0;padding-bottom: 5px;width: 50px">
-                    Diskon
                 </th>
                 <th style="border: .5px solid;padding-top:0;padding-bottom: 5px"> Total
                 </th>
@@ -97,10 +90,7 @@
                         {{(isset($detail[$i])? $detail[$i]->quantity: ' ')}}
                     </td>
                     <td style="padding:0 5px;border-right: .5px solid;border-left: .5px solid;{{$i==9?'border-bottom: .5px solid':''}}">
-                        {{(isset($detail[$i])? number_format($detail[$i]->product->price,0,'.','.'): ' ')}}
-                    </td>
-                    <td style="padding:0 5px;border-right: .5px solid;border-left: .5px solid;{{$i==9?'border-bottom: .5px solid':''}}">
-                        {{(isset($detail[$i])? $detail[$i]->discount."%": ' ')}}
+                        {{(isset($detail[$i])? number_format($detail[$i]->total/$detail[$i]->quantity,0,'.','.'): ' ')}}
                     </td>
                     <td style="padding:0 5px;border-right: .5px solid;border-left: .5px solid;{{$i==9?'border-bottom: .5px solid':''}}">
                         {{(isset($detail[$i])? number_format($detail[$i]->total,0,'.','.'): '')}}
@@ -110,24 +100,15 @@
             @endfor
             <tr>
                 <td></td>
-                <td></td>
                 <td colspan="2" style="border: .5px solid; text-align: right">Sub total :</td>
                 <td style="border: .5px solid">{{ number_format($detail->sum('total'),0,'.','.') }}</td>
             </tr>
             <tr>
                 <td></td>
-                <td></td>
-                <td colspan="2" style="border: .5px solid; text-align: right">Diskon :</td>
-                <td style="border: .5px solid">{{ number_format($cd,0,'.','.') }}</td>
-            </tr>
-            <tr>
-                <td></td>
-                <td></td>
                 <td colspan="2" style="border: .5px solid; text-align: right">Pajak :</td>
                 <td style="border: .5px solid">0</td>
             </tr>
             <tr>
-                <td></td>
                 <td></td>
                 <td colspan="2" style="border: .5px solid; text-align: right"><b>Total :</b></td>
                 <td style="border: .5px solid">{{ number_format($detail->sum('total'),0,'.','.') }}</td>

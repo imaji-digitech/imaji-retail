@@ -12,6 +12,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property integer $status_id
  * @property integer $payment_status_id
  * @property string $no_invoice
+ * @property string $tax
  * @property string $created_at
  * @property string $updated_at
  * @property PaymentStatus $paymentStatus
@@ -34,7 +35,7 @@ class Transaction extends Model
     /**
      * @var array
      */
-    protected $fillable = ['user_id', 'status_id', 'payment_status_id', 'no_invoice', 'created_at', 'updated_at'];
+    protected $fillable = ['user_id', 'status_id', 'payment_status_id', 'no_invoice','tax', 'created_at', 'updated_at'];
 
     public static function search($query, $status)
     {

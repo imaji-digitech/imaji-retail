@@ -88,11 +88,22 @@
                 @forelse($transaction->transactionPayments as $index=>$tp)
                     <div class="card">
                         <div class="card-header" style="display: block; max-height: none;line-height: 0">
-                            <h4 style="display: block">Pembayaran Barang ke - {{$index+1}}</h4><br>
+                            <h4 style="display: block">
+                                Pembayaran Barang ke - {{$index+1}}
+                                <a href="{{ route('admin.transaction.payment.export',$tp->id) }}" class="float-right">
+                                    <i class="fa fa-16px fa-download text-primary "></i>
+                                </a>
+                                @if($tp->created_at->format('Y m d')==\Carbon\Carbon::now()->format('Y m d'))
+                                    <a class="float-right mr-2" wire:click="cancelPayment({{ $tp->id }})">
+                                        <i class="fa fa-16px fa-undo text-danger float-right"
+                                        ></i>
+                                    </a>
+                                @endif
+                            </h4>
+                            <br>
                             <p>Tanggal pembayaran : {{$tp->created_at->format('d-m-Y')}}</p>
                         </div>
                         @foreach($tp->transactionPaymentDetails as $tpd)
-
                             <div class="card-body">
                                 <li class="list-group-item d-flex justify-content-between align-items-center"
                                     style="border: none">
@@ -100,7 +111,6 @@
                                     <span class=" badge-pill">{{ $tpd->quantity }}pcs </span>
                                 </li>
                             </div>
-
                         @endforeach
                     </div>
                 @empty
@@ -134,8 +144,15 @@
                 @forelse($transaction->transactionReturns as $index=>$tr)
                     <div class="card">
                         <div class="card-header" style="display: block; max-height: none;line-height: 0">
-                            <h4 style="display: block">Pengembalian Barang ke - {{$index+1}} @if($tr->created_at->format('Y m d')==\Carbon\Carbon::now()->format('Y m d'))<i class="fa fa-16px fa-undo text-danger float-right"></i>@endif<i class="mr-3 fa fa-16px fa-download text-blue-500 float-right"></i></h4>
-                            <p>Tanggal pengembalian : {{$tr->created_at->format('d-m-Y')}}</p>
+                            <h4 style="display: block">Pengembalian Barang ke - {{$index+1}}
+                                <a href="{{ route('admin.transaction.return.export',$tp->id) }}" class="float-right">
+                                    <i class="fa fa-16px fa-download text-primary "></i>
+                                </a>
+                                <a class="float-right mr-2" wire:click="cancelReturn({{ $tp->id }})">
+                                    <i class="fa fa-16px fa-undo text-danger float-right"
+                                    ></i>
+                                </a>
+                                <p>Tanggal pengembalian : {{$tr->created_at->format('d-m-Y')}}</p>
 
                         </div>
                         @foreach($tr->transactionReturnDetails as $trd)
@@ -173,8 +190,6 @@
                 </div>
             </div>
         </div>
-
-
 
         <div class="card">
             <div class="card-header">

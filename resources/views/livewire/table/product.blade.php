@@ -78,10 +78,10 @@
                         <a role="button" href="{{ route('admin.product.edit',$product->id) }}" class="mr-3">
                             <i class="fa fa-16px fa-pen text-blue-500"></i>
                         </a>
-                        <a role="button" href="{{ route('admin.product.show',$product->id) }}" class="mr-3">
+                        <a role="button" href="{{ route('admin.product.show',$product->id) }}" class="mr-3" target="_blank">
                             <i class="fa fa-16px fa-bar-chart text-blue-500"></i>
                         </a>
-                        <a role="button" href="{{ route('admin.product.export',$product->id) }}" class="mr-3">
+                        <a role="button" href="{{ route('admin.product.export',$product->id) }}" class="mr-3" target="_blank">
                             <i class="fa fa-16px fa-download text-danger">PDF</i>
                         </a>
                     </td>
