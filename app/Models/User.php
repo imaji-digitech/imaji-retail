@@ -29,7 +29,9 @@ class User extends Authenticatable
         'email',
         'password',
         'role',
-        'quotes'
+        'quotes',
+        'address',
+        'no_phone',
     ];
 
     /**
@@ -70,5 +72,13 @@ class User extends Authenticatable
         return empty($query) ? static::query()
             : static::where('name', 'like', '%'.$query.'%')
                 ->orWhere('email', 'like', '%'.$query.'%');
+    }
+    public static function customer($query)
+    {
+        return empty($query) ? static::query()
+            : static::whereRole(4)->where(function ($q) use ($query) {
+                $q->where('name', 'like', '%'.$query.'%')
+                    ->orWhere('email', 'like', '%'.$query.'%');
+            });
     }
 }

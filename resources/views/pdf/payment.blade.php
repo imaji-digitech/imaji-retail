@@ -89,10 +89,10 @@
                     <td style="height:12px;padding:0 5px;border-right: .5px solid;border-left: .5px solid;{{$i==9?'border-bottom: .5px solid':''}}">
                         {{(isset($detail[$i])? $detail[$i]->quantity: ' ')}}
                     </td>
-                    <td style="padding:0 5px;border-right: .5px solid;border-left: .5px solid;{{$i==9?'border-bottom: .5px solid':''}}">
+                    <td style="text-align:right;padding:0 5px;border-right: .5px solid;border-left: .5px solid;{{$i==9?'border-bottom: .5px solid':''}}">
                         {{(isset($detail[$i])? number_format($detail[$i]->total/$detail[$i]->quantity,0,'.','.'): ' ')}}
                     </td>
-                    <td style="padding:0 5px;border-right: .5px solid;border-left: .5px solid;{{$i==9?'border-bottom: .5px solid':''}}">
+                    <td style="text-align:right;padding:0 5px;border-right: .5px solid;border-left: .5px solid;{{$i==9?'border-bottom: .5px solid':''}}">
                         {{(isset($detail[$i])? number_format($detail[$i]->total,0,'.','.'): '')}}
                     </td>
                 </tr>

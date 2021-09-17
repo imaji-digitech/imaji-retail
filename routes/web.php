@@ -3,6 +3,7 @@
 use App\Http\Controllers\Admin\CashBookController;
 use App\Http\Controllers\Admin\CashNoteController;
 use App\Http\Controllers\Admin\ContentController;
+use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductTypeController;
 use App\Http\Controllers\Admin\TransactionController;
@@ -62,8 +63,8 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
         $pdf->loadView('pdf.umkm', compact('umkm', 'turnover'));
         return $pdf->stream();
     })->name('product-type.export');
-
     Route::resource('product', ProductController::class)->only(['index', 'create', 'show', 'edit']);
+    Route::resource('customer', CustomerController::class)->only(['index', 'create', 'show', 'edit']);
     Route::get('product/export/{id}', function ($id) {
         $product = Product::find($id);
         $pdf = App::make('dompdf.wrapper');
