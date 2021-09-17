@@ -35,6 +35,15 @@ class FormCustomer extends Component
             'email'=>$this->generateRandomString(8).rand(1,100).'@imajisociopreneur.id',
             'role'=>4
         ];
+        if ($this->dataId!=null){
+            $data=User::find($this->dataId);
+            $this->data=[
+                'name'=>$data->name,
+                'address'=>$data->address,
+                'no_phone'=>$data->no_phone,
+                'email'=>$data->email,
+            ];
+        }
     }
 
     public function create()
@@ -45,7 +54,7 @@ class FormCustomer extends Component
         User::create($this->data);
         $this->emit('swal:alert', [
             'icon' => 'success',
-            'title' => 'Berhasil menambahkan data kas',
+            'title' => 'Berhasil menambahkan data customer',
         ]);
         $this->emit('redirect', route('admin.customer.index'));
     }
@@ -59,7 +68,7 @@ class FormCustomer extends Component
 
         $this->emit('swal:alert', [
             'icon' => 'success',
-            'title' => 'Berhasil menambahkan distribusi',
+            'title' => 'Berhasil mengubah data customer',
         ]);
         $this->emit('redirect', route('admin.customer.index'));
     }

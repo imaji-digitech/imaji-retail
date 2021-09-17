@@ -86,7 +86,7 @@
                     <td style="padding:0 5px;border-right: .5px solid;border-left: .5px solid;{{$i==9?'border-bottom: .5px solid':''}}">
                         {{(isset($detail[$i])? $detail[$i]->product->title: ' ')}}
                     </td>
-                    <td style="height:12px;padding:0 5px;border-right: .5px solid;border-left: .5px solid;{{$i==9?'border-bottom: .5px solid':''}}">
+                    <td style="text-align:center;height:12px;padding:0 5px;border-right: .5px solid;border-left: .5px solid;{{$i==9?'border-bottom: .5px solid':''}}">
                         {{(isset($detail[$i])? $detail[$i]->quantity: ' ')}}
                     </td>
                     <td style="text-align:right;padding:0 5px;border-right: .5px solid;border-left: .5px solid;{{$i==9?'border-bottom: .5px solid':''}}">
@@ -100,17 +100,17 @@
             @endfor
             <tr>
                 <td></td>
-                <td colspan="2" style="border: .5px solid; text-align: right">Sub total :</td>
+                <td colspan="2" style="text-align:right;border: .5px solid; text-align: right">Sub total :</td>
                 <td style="border: .5px solid">{{ number_format($detail->sum('total'),0,'.','.') }}</td>
             </tr>
             <tr>
                 <td></td>
-                <td colspan="2" style="border: .5px solid; text-align: right">Pajak :</td>
+                <td colspan="2" style="text-align:right;border: .5px solid; text-align: right">Pajak :</td>
                 <td style="border: .5px solid">0</td>
             </tr>
             <tr>
                 <td></td>
-                <td colspan="2" style="border: .5px solid; text-align: right"><b>Total :</b></td>
+                <td colspan="2" style="text-align:right;border: .5px solid; text-align: right"><b>Total :</b></td>
                 <td style="border: .5px solid">{{ number_format($detail->sum('total'),0,'.','.') }}</td>
             </tr>
         </table>

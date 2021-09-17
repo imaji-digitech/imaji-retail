@@ -2,20 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CustomerController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/FormCustomer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/form-customer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/table/customer.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/customer/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/customer/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/customer/index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Table/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Table/Main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pdf/invoice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/invoice.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormCustomer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormCustomer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pdf/payment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/payment.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pdf/return.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/return.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -256,7 +246,7 @@
       <workItem from="1630987808004" duration="14098000" />
       <workItem from="1631076028089" duration="4682000" />
       <workItem from="1631191457799" duration="9247000" />
-      <workItem from="1631878875782" duration="2207000" />
+      <workItem from="1631878875782" duration="2877000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1630987348185</created>
@@ -300,7 +290,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631233778179</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="first commit">
+      <created>1631881323949</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1631881323949</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
