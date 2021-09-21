@@ -23,7 +23,7 @@
             </div>
             <div class="form-group col-span-6 sm:col-span-5">
                 <x-jet-label for="email" value="{{ __('Role') }}" />
-                <select name="role" id="role" wire:model.defer="user.role" class="form-control">
+                <select name="role" id="role" wire:model="user.role" class="form-control">
                     <option value="1">Super Admin</option>
                     <option value="2">Admin</option>
                     <option value="3">Writter</option>
