@@ -29,14 +29,7 @@
                     <option value="3">Writter</option>
                     <option value="4">Guest</option>
                 </select>
-                <x-jet-input-error for="user.email" class="mt-2" />
-            </div>
-
-            <div class="form-group col-span-6 sm:col-span-5">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-
-                <x-jet-input id="email" type="text" class="mt-1 block w-full form-control shadow-none" wire:model.defer="user.email" />
-                <x-jet-input-error for="user.email" class="mt-2" />
+                <x-jet-input-error for="user.role" class="mt-2" />
             </div>
 
             @if ($action == "createUser")
