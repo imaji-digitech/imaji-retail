@@ -101,17 +101,17 @@
             <tr>
                 <td></td>
                 <td colspan="2" style="text-align:right;padding:0 5px;border: .5px solid; text-align: right">Sub total :</td>
-                <td style="border: .5px solid">{{ number_format($detail->sum('total'),0,'.','.') }}</td>
+                <td style="padding:0 5px;text-align:right;border: .5px solid">{{ number_format($detail->sum('total'),0,'.','.') }}</td>
             </tr>
             <tr>
                 <td></td>
                 <td colspan="2" style="padding:0 5px;text-align:right;border: .5px solid; text-align: right">Pajak :</td>
-                <td style="border: .5px solid">0</td>
+                <td style="padding:0 5px;text-align:right;border: .5px solid">0</td>
             </tr>
             <tr>
                 <td></td>
                 <td colspan="2" style="padding:0 5px;text-align:right;border: .5px solid; text-align: right"><b>Total :</b></td>
-                <td style="border: .5px solid">{{ number_format($detail->sum('total'),0,'.','.') }}</td>
+                <td style="padding:0 5px;text-align:right;border: .5px solid">{{ number_format($detail->sum('total'),0,'.','.') }}</td>
             </tr>
         </table>
         <br>
