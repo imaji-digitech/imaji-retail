@@ -46,9 +46,17 @@
                         <a role="button" href="{{ route('admin.transaction.show',$transaction->id) }}" class="mr-3">
                             <i class="fa fa-16px fa-eye text-blue-500"></i>
                         </a>
-                        <a role="button" href="{{ route('admin.transaction.export',$transaction->id) }}" class="mr-3" target="_blank">
-                            <i class="fa fa-16px fa-download text-blue-500"></i>
-                        </a>
+                        @if($transaction->payment_status_id==3)
+                            <a role="button" href="{{ route('admin.transaction.export',$transaction->id) }}"
+                               class="mr-3" target="_blank">
+                                <i class="fa fa-16px fa-download text-blue-500"></i>
+                            </a>
+                        @else
+                            <a href="{{ route('admin.transaction.payment.export',$transaction->transactionPayments[0]) }}"
+                               class="mr-3" target="_blank">
+                                <i class="fa fa-16px fa-download text-blue-500"></i>
+                            </a>
+                        @endif
                     </td>
                 </tr>
             @endforeach
