@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{public_path('vendor/bootstrap.min.css')}}">
-    <title>Slip Gaji - Nama</title>
+    <title>{{ 'REPORT USAHA - '.strtoupper($umkm->name) }}</title>
     <style>
         header {
             position: fixed;
@@ -26,7 +26,7 @@
 </head>
 <body style="padding: 0;margin: 0;">
 <header style="width: 100%" id="header">
-{{--    <img style="width: 100%" src="{{public_path('assets/kop-surat.png')}}" alt="">--}}
+    {{--    <img style="width: 100%" src="{{public_path('assets/kop-surat.png')}}" alt="">--}}
 </header>
 <footer id="footer">
 

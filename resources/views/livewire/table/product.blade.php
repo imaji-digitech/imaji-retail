@@ -63,18 +63,18 @@
 
                 @foreach ($products as $product)
                     <tr x-data="window.__controller.dataTableController({{ $product->id }})">
-                        <td>
+                        <td style="height: 10px !important;">
                             <input type="checkbox" value="{{$product->id}}" name="productId[]">
                         </td>
-                        <td>{{ $product->title }}</td>
-                        <td>{{ $product->productType->title }}</td>
-                        <td>{{ $product->code }}</td>
-                        <td>Rp {{ number_format($product->price,0,",",".") }}</td>
-                        <td>Rp {{ number_format($product->hpp,0,",",".") }}</td>
-                        <td>Rp {{ number_format($product->price-$product->hpp,0,",",".") }}</td>
-                        <td>{{ $product->stock }}</td>
-                        <td>{{ $product->updated_at?$product->updated_at->format('d M Y'):'' }}</td>
-                        <td class="whitespace-no-wrap row-action--icon">
+                        <td style="height: 10px !important;">{{ $product->title }}</td>
+                        <td style="height: 10px !important;">{{ $product->productType->title }}</td>
+                        <td style="height: 10px !important;">{{ $product->code }}</td>
+                        <td style="height: 10px !important;">Rp {{ number_format($product->price,0,",",".") }}</td>
+                        <td style="height: 10px !important;">Rp {{ number_format($product->hpp,0,",",".") }}</td>
+                        <td style="height: 10px !important;">Rp {{ number_format($product->price-$product->hpp,0,",",".") }}</td>
+                        <td style="height: 10px !important;">{{ $product->stock }}</td>
+                        <td style="height: 10px !important;">{{ $product->updated_at?$product->updated_at->format('d M Y'):'' }}</td>
+                        <td style="height: 10px !important;" class="whitespace-no-wrap row-action--icon">
                             <a role="button" href="{{ route('admin.product.manufacture',$product->id) }}" class="mr-3">
                                 <i class="fa fa-16px fa-money text-blue-500"></i>
                             </a>

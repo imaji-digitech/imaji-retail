@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{public_path('vendor/bootstrap.min.css')}}">
-    <title>Pengembalian</title>
+    <title>{{ 'NOTA RETURN - '.$transaction->transaction->no_invoice.' - '.$transaction->transaction->user->name }}</title>
     <style>
         header {
             position: fixed;

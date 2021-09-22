@@ -63,7 +63,7 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
         }
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadView('pdf.umkm', compact('umkm', 'turnover'));
-        return $pdf->stream();
+        return $pdf->stream('REPORT USAHA - '.strtoupper($umkm->name));
     })->name('product-type.export');
     Route::resource('product', ProductController::class)->only(['index', 'create', 'show', 'edit']);
     Route::resource('customer', CustomerController::class)->only(['index', 'create', 'show', 'edit']);
@@ -71,7 +71,7 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
         $product = Product::find($id);
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadView('pdf.product', compact('product'));
-        return $pdf->stream();
+        return $pdf->stream('REPORT PRODUK - '.strtoupper($product->name));
     })->name('product.export');
 
 //    Route::resource('cash-book', CashBookController::class)->only(['index', 'create', 'edit']);
@@ -107,7 +107,7 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
         $transaction = \App\Models\TransactionPayment::find($id);
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadView('pdf.payment', compact('transaction'))->setPaper([0, 0, 470.00, 603.80], 'landscape');
-        return $pdf->stream();
+        return $pdf->stream('NOTA PEMBAYARAN - '.$transaction->transaction->no_invoice.' - '.$transaction->transaction->user->name);
     })->name('transaction.payment.export');
 
     Route::get('/transaction/return/{id}', [TransactionController::class, 'return'])->name('transaction.return');
@@ -115,7 +115,7 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
         $transaction = \App\Models\TransactionReturn::find($id);
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadView('pdf.return', compact('transaction'))->setPaper([0, 0, 470.00, 603.80], 'landscape');
-        return $pdf->stream();
+        return $pdf->stream('NOTA RETURN - '.$transaction->transaction->no_invoice.' - '.$transaction->transaction->user->name);
     })->name('transaction.return.export');
 
     Route::get('/transaction/show/{id}', [TransactionController::class, 'show'])->name('transaction.show');
@@ -123,7 +123,7 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
         $transaction = Transaction::find($id);
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadView('pdf.invoice', compact('transaction'))->setPaper([0, 0, 470.00, 603.80], 'landscape');
-        return $pdf->stream();
+        return $pdf->stream('INVOICE - '.$transaction->no_invoice.' - '.$transaction->user->name);
     })->name('transaction.export');
 
     Route::get('/user', [UserController::class, "index"])->name('user');

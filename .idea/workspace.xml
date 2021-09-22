@@ -3,7 +3,13 @@
   <component name="ChangeListManager">
     <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="first commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/transaction-history.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/transaction-history.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pdf/invoice.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/invoice.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pdf/payment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/payment.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pdf/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pdf/return.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/return.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pdf/umkm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/umkm.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,7 +252,7 @@
       <workItem from="1631191457799" duration="9247000" />
       <workItem from="1631878875782" duration="3715000" />
       <workItem from="1632197458938" duration="2513000" />
-      <workItem from="1632202102908" duration="1650000" />
+      <workItem from="1632202102908" duration="3328000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1630987348185</created>
@@ -332,7 +338,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632199479074</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="first commit">
+      <created>1632285292051</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1632285292051</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
