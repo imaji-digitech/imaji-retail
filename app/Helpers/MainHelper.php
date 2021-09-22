@@ -55,7 +55,6 @@ if (!function_exists('eloquent_to_chart_time_series')) {
                 $a['number'] = $p->total;
                 array_push($new, $a);
             }
-
         }
         return $new;
     }
@@ -63,33 +62,52 @@ if (!function_exists('eloquent_to_chart_time_series')) {
 
 
 if (!function_exists('eloquent_to_multi_chart_time_series')) {
-    function eloquent_to_multi_chart_time_series($item,$label)
+    function eloquent_to_multi_chart_time_series($item, $label)
     {
         $month = date('n');
-        $monthOfYear = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+        $monthOfYear = [
+            'Januari',
+            'Februari',
+            'Maret',
+            'April',
+            'Mei',
+            'Juni',
+            'Juli',
+            'Agustus',
+            'September',
+            'Oktober',
+            'November',
+            'Desember'
+        ];
 
         $first = array_slice($monthOfYear, $month);
         $last = array_slice($monthOfYear, 0, $month);
         $monthOfYear = array_merge($first, $last);
 
         $zero = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
-        $new = [$label,$monthOfYear];
+        $new = [$label, $monthOfYear];
         for ($i = 0; $i < count($item); $i++) {
             array_push($new, $zero);
         }
         foreach ($item as $index => $i) {
             foreach ($i as $j) {
-                $new[$index + 2][($j['month'] - $month  + 11) % 12] = $j['number'];
-            }
-        }
-        for ($i = 0; count($monthOfYear)<$i ; $i++){
-            for ($j = 2; count($new)<$j ; $j++){
-
+                $new[$index + 2][($j['month'] - $month + 11) % 12] = $j['number'];
             }
         }
         return $new;
     }
 }
+
+function removeElementWithValue($array, $key, $value)
+{
+    foreach ($array as $subKey => $subArray) {
+        if ($subArray[$key] == $value) {
+            unset($array[$subKey]);
+        }
+    }
+    return $array;
+}
+
 if (!function_exists('empty_fallback')) {
 
     /**

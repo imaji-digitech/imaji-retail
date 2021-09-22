@@ -15,14 +15,14 @@
             }
 
             var statistics_chart = document.getElementById("{{$title}}").getContext('2d');
-            var month = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+            // var month = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
             @foreach($datas as $index=>$da)
             @if ($index==0)
             @continue
             @elseif ($index==1)
             var labels = [
                 @foreach($da as $d)
-                    month[{{$d}} - 1],
+                    '{{$d}}',
                 @endforeach
             ];
             @else

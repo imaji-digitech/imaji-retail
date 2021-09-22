@@ -112,25 +112,25 @@
                 <td></td>
                 <td></td>
                 <td colspan="2" style="border: .5px solid; text-align: right">Sub total :</td>
-                <td style="text-align:right;border: .5px solid">{{ number_format($detail->sum('total'),0,'.','.') }}</td>
+                <td style="padding:0 5px;text-align:right;border: .5px solid">{{ number_format($detail->sum('total'),0,'.','.') }}</td>
             </tr>
             <tr>
                 <td></td>
                 <td></td>
                 <td colspan="2" style="border: .5px solid; text-align: right">Diskon :</td>
-                <td style="text-align:right;border: .5px solid">{{ number_format($cd,0,'.','.') }}</td>
+                <td style="padding:0 5px;text-align:right;border: .5px solid">{{ number_format($cd,0,'.','.') }}</td>
             </tr>
             <tr>
                 <td></td>
                 <td></td>
                 <td colspan="2" style="border: .5px solid; text-align: right">Pajak :</td>
-                <td style="text-align:right;border: .5px solid">0</td>
+                <td style="padding:0 5px;text-align:right;border: .5px solid">0</td>
             </tr>
             <tr>
                 <td></td>
                 <td></td>
                 <td colspan="2" style="border: .5px solid; text-align: right"><b>Total :</b></td>
-                <td style="text-align:right;border: .5px solid"><b>{{ number_format($detail->sum('total'),0,'.','.') }}</b></td>
+                <td style="padding:0 5px;text-align:right;border: .5px solid"><b>{{ number_format($detail->sum('total'),0,'.','.') }}</b></td>
             </tr>
         </table>
         <br>
