@@ -41,7 +41,8 @@ class FormCashBook extends Component
                 'note' => $m->note,
                 'income' => $m->income,
                 'outcome' => $m->outcome,
-                'product_type_id' => $m->product_type_id
+                'product_type_id' => $m->product_type_id,
+                'created_at' => $m->created_at
             ];
             $this->book = $this->data;
         }
