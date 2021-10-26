@@ -1,5 +1,6 @@
 <div id="form-create" class=" card p-4">
     <form wire:submit.prevent="payment">
+        <x-textarea title="Catatan Pengembalian" model="note"/>
         @foreach($dataCredit as $dc)
             <div class="mt-2 p-2" style="border-radius:10px; border: 1px transparent solid; background-color: #d0d0d0; overflow: hidden">
                     <h1 style="font-size: 18px">{{$dc->product->title}}</h1>

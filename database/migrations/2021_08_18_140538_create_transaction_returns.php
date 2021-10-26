@@ -16,6 +16,7 @@ class CreateTransactionReturns extends Migration
         Schema::create('transaction_returns', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('transaction_id');
+            $table->text('note')->nullable();
             $table->timestamps();
 
             $table->foreign('transaction_id')

@@ -75,7 +75,7 @@ class User extends Authenticatable
     }
     public static function customer($query)
     {
-        return empty($query) ? static::query()
+        return empty($query) ? static::query()->whereRole(4)
             : static::whereRole(4)->where(function ($q) use ($query) {
                 $q->where('name', 'like', '%'.$query.'%')
                     ->orWhere('email', 'like', '%'.$query.'%');

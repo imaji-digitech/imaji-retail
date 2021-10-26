@@ -5,7 +5,9 @@ namespace App\Http\Livewire;
 use App\Models\CashBook;
 use App\Models\CashNote;
 use App\Models\CodeCashBook;
+use App\Models\ProductType;
 use App\Models\User;
+use App\Models\UserLog;
 use Illuminate\Support\Facades\Hash;
 use Livewire\Component;
 
@@ -56,6 +58,10 @@ class FormCustomer extends Component
             'icon' => 'success',
             'title' => 'Berhasil menambahkan data customer',
         ]);
+        UserLog::create([
+            'user_id'=>auth()->id(),
+            'note'=>"membuat data customer ".$this->data['name'],
+        ]);
         $this->emit('redirect', route('admin.customer.index'));
     }
 
@@ -65,7 +71,10 @@ class FormCustomer extends Component
         $this->resetErrorBag();
 
         User::find($this->dataId)->update($this->data);
-
+        UserLog::create([
+            'user_id'=>auth()->id(),
+            'note'=>"mengubah data customer ".$this->data['name'],
+        ]);
         $this->emit('swal:alert', [
             'icon' => 'success',
             'title' => 'Berhasil mengubah data customer',

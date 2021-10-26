@@ -6,6 +6,7 @@ use App\Models\CashBook;
 use App\Models\CashNote;
 use App\Models\ProductType;
 use App\Models\User;
+use App\Models\UserLog;
 use Livewire\Component;
 
 class FormProductType extends Component
@@ -48,6 +49,10 @@ class FormProductType extends Component
             'timeout' => 3000,
             'icon' => 'success'
         ]);
+        UserLog::create([
+            'user_id'=>auth()->id(),
+            'note'=>"membuat data usaha baru ".$this->data['title'],
+        ]);
         $this->emit('redirect', route('admin.product-type.index'));
     }
 
@@ -56,6 +61,10 @@ class FormProductType extends Component
         $this->validate();
         $this->resetErrorBag();
         ProductType::find($this->dataId)->update($this->data);
+        UserLog::create([
+            'user_id'=>auth()->id(),
+            'note'=>"mengubah data usaha ".$this->data['title'],
+        ]);
         $this->emit('swal:alert', [
             'type' => 'success',
             'title' => 'Data berhasil diubah',

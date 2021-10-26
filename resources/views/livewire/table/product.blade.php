@@ -51,7 +51,7 @@
                     </a>
                 </th>
 
-                <th style="width: 200px">
+                <th style="width: 400px">
                     Action
                 </th>
             </tr>
@@ -85,10 +85,18 @@
                                target="_blank">
                                 <i class="fa fa-16px fa-bar-chart text-blue-500"></i>
                             </a>
+
                             <a role="button" href="{{ route('admin.product.export',$product->id) }}" class="mr-3"
                                target="_blank">
                                 <i class="fa fa-16px fa-download text-danger">PDF</i>
                             </a>
+                            <a role="button" href="{{ route('admin.product.stock',$product->id) }}" class="mr-3"
+                               target="_blank">
+                                <i class="fa fa-16px fa-plus text-blue-500">STOCK</i>
+                            </a>
+                            <a role="button" href="{{ route('admin.product.history',$product->id) }}" class="mr-3"
+                               target="_blank">
+                                <i class="fa fa-16px fa-copy text-blue-500">History</i>
                         </td>
                     </tr>
                 @endforeach

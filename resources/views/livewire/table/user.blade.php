@@ -2,7 +2,7 @@
     <x-data-table :data="$data" :model="$users">
         <x-slot name="head">
             <tr>
-                <th><a wire:click.prevent="sortBy('id')" role="button" href="#">
+                <th style="width: 20px"><a wire:click.prevent="sortBy('id')" role="button" href="#">
                     ID
                     @include('components.sort-icon', ['field' => 'id'])
                 </a></th>

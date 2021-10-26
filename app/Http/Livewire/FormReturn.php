@@ -2,12 +2,14 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Product;
 use App\Models\Transaction;
 use App\Models\TransactionCredit;
 use App\Models\TransactionPayment;
 use App\Models\TransactionPaymentDetail;
 use App\Models\TransactionReturn;
 use App\Models\TransactionReturnDetail;
+use App\Models\UserLog;
 use Livewire\Component;
 
 class FormReturn extends Component
@@ -16,7 +18,9 @@ class FormReturn extends Component
     public $dataId;
     public $dataCredit;
     public $total;
+    public $note;
     public function mount(){
+        $this->note='';
         $this->dataCredit=TransactionCredit::whereTransactionId($this->dataId)->get();
         foreach ($this->dataCredit as $dc){
             $this->creditTransaction[$dc->id]=$dc->quantity;
@@ -45,7 +49,7 @@ class FormReturn extends Component
             ]);
         }
         if ($status and $nullCheck){
-            $transaction=TransactionReturn::create(['transaction_id'=>$this->dataId]);
+            $transaction=TransactionReturn::create(['transaction_id'=>$this->dataId,'note'=>$this->note]);
             foreach ($this->dataCredit as $dc){
                 if ($this->creditTransaction[$dc->id] !=0 ){
                     if ($dc->quantity-$this->creditTransaction[$dc->id] ==0 ){
@@ -62,6 +66,12 @@ class FormReturn extends Component
                         'product_id'=>$dc->product_id,
                         'quantity'=>$this->creditTransaction[$dc->id],
                         'total'=>($dc->total/$dc->quantity)*intval($this->creditTransaction[$dc->id])
+                    ]);
+                    UserLog::create([
+                        'user_id'=>auth()->id(),
+                        'product_id'=>$dc->product_id,
+                        'note'=>"pengembalian barang sebanyak ".$this->creditTransaction[$dc->id]. " dari invoice ".Transaction::find($this->dataId)->no_invoice,
+                        'note_user'=> $this->note
                     ]);
                 }
             }

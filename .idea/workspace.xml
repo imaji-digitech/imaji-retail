@@ -1,7 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="first commit" />
+    <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="first commit">
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/ProductStock.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Table/CashNote.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/ProductHistory.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/UserLog.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_10_21_025516_create_product_history.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_10_21_030036_create_user_logs.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/product-stock.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/table/history-product.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/product/history.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/product/stock.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CashNoteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CashNoteController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormCashBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormCashBook.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormCustomer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormCustomer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormPayment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormPayment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormProduct.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormProductManufacture.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormProductManufacture.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormProductType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormProductType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormReturn.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormReturn.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormTransaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormTransaction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Table/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Table/Main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/CashNote.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/CashNote.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/ProductType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ProductType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/TransactionReturn.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/TransactionReturn.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2021_08_18_140538_create_transaction_returns.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_08_18_140538_create_transaction_returns.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/form-return.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/form-return.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/cash-note.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/cash-note.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/user.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/cash-note/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/cash-note/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -177,21 +212,21 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/livewire/table" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/pages/product" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="Laravel.SettingsForm" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/pages/product" />
       <recent name="$PROJECT_DIR$/resources/views/livewire/table" />
+      <recent name="$PROJECT_DIR$/app/Http/Livewire/Table" />
       <recent name="$PROJECT_DIR$/resources/views/pages" />
       <recent name="$PROJECT_DIR$/resources/views/pdf" />
-      <recent name="$PROJECT_DIR$/public/images" />
-      <recent name="$PROJECT_DIR$/resources/views/pages/product" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
@@ -244,6 +279,16 @@
       <workItem from="1631878875782" duration="3715000" />
       <workItem from="1632197458938" duration="2513000" />
       <workItem from="1632202102908" duration="7914000" />
+      <workItem from="1632882228309" duration="935000" />
+      <workItem from="1633143898243" duration="936000" />
+      <workItem from="1633230783770" duration="1601000" />
+      <workItem from="1634775666916" duration="569000" />
+      <workItem from="1634782048697" duration="17776000" />
+      <workItem from="1634952920819" duration="5110000" />
+      <workItem from="1635040949726" duration="81000" />
+      <workItem from="1635041046521" duration="62000" />
+      <workItem from="1635041122787" duration="152000" />
+      <workItem from="1635217979277" duration="360000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1630987348185</created>
@@ -357,7 +402,14 @@
       <option name="project" value="LOCAL" />
       <updated>1632306420064</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="first commit">
+      <created>1632882306818</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1632882306818</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

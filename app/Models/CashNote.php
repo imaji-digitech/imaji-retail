@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $updated_at
  * @property CashBook $cashBook
  * @property ProductType $productType
+ * @property ProductHistory[] $productHistories
  */
 class CashNote extends Model
 {
@@ -42,6 +43,14 @@ class CashNote extends Model
     public function productType()
     {
         return $this->belongsTo('App\Models\ProductType');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function productHistories()
+    {
+        return $this->hasMany('App\Models\ProductHistory');
     }
 
     public static function search($query,$dataId)

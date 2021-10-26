@@ -9,6 +9,6 @@
     </x-slot>
 
     <div>
-        <livewire:table.product name="cash-note" :model="$cashNote" :dataId="$umkm->id"/>
+        <livewire:table.cash-note name="cash-note" :model="$cashNote" :dataId="$umkm->id"/>
     </div>
 </x-app-layout>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use App\Models\CashBook;
 use App\Models\CashNote;
+use App\Models\ProductHistory;
 use App\Models\ProductType;
 
 class CashNoteController extends Controller
@@ -31,7 +32,17 @@ class CashNoteController extends Controller
             'balance' => $cashNote->balance + $cashbook->sum('income') - $cashbook->sum('outcome'),
             'product_type_id' => $umkm
         ];
-        CashNote::create($data);
+        $cn=CashNote::create($data);
+        foreach (ProductType::find($umkm)->products as $product){
+            ProductHistory::create([
+                'product_id'=>$product->id,
+                'cash_note_id'=>$cn->id,
+                'price'=>$product->price,
+                'stock'=>$product->stock
+            ]);
+        }
+
+//        protected $fillable = ['product_id', 'cash_note_id', 'price', 'stock', 'created_at', 'updated_at'];
         return redirect()->back();
     }
 

@@ -116,6 +116,22 @@ class Main extends Component
                     ])
                 ];
                 break;
+            case 'product-history':
+                $products = $this->model::productSearch($this->search,$this->dataId)
+                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
+                    ->paginate($this->perPage);
+
+                return [
+                    "view" => 'livewire.table.history-product',
+                    "products" => $products,
+                    "data" => array_to_object([
+                        'href' => [
+//                            'create_new' => route('admin.product.create'),
+//                            'create_new_text' => 'Tambah produk baru',
+                        ]
+                    ])
+                ];
+                break;
             case 'product-type':
                 $productTypes = $this->model::search($this->search)
                     ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use App\Models\Product;
+use App\Models\UserLog;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
@@ -37,5 +38,13 @@ class ProductController extends Controller
 
         $data=$request->productId;
         return view('pages.product.graph',compact('data'));
+    }
+
+    public function stock($id){
+        return view('pages.product.stock',compact('id'));
+    }
+    public function history($id){
+        $p=Product::findOrFail($id);
+        return view('pages.product.history',['product'=>UserLog::class,'dataId'=>$id,'p'=>$p]);
     }
 }

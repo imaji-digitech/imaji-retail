@@ -11,14 +11,17 @@ use Illuminate\Database\Eloquent\Model;
  * @property string $code
  * @property int $price
  * @property int $hpp
+ * @property int $stock
  * @property string $created_at
  * @property string $updated_at
  * @property ProductType $productType
+ * @property ProductHistory[] $productHistories
  * @property ProductManufacture[] $productManufactures
  * @property TransactionCredit[] $transactionCredits
  * @property TransactionDetail[] $transactionDetails
  * @property TransactionPaymentDetail[] $transactionPaymentDetails
  * @property TransactionReturnDetail[] $transactionReturnDetails
+ * @property UserLog[] $userLogs
  */
 class Product extends Model
 {
@@ -32,7 +35,7 @@ class Product extends Model
     /**
      * @var array
      */
-    protected $fillable = ['stock','product_type_id', 'title', 'code', 'price', 'hpp', 'created_at', 'updated_at'];
+    protected $fillable = ['product_type_id', 'title', 'code', 'price', 'hpp', 'stock', 'created_at', 'updated_at'];
 
     /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
@@ -40,6 +43,14 @@ class Product extends Model
     public function productType()
     {
         return $this->belongsTo('App\Models\ProductType');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function productHistories()
+    {
+        return $this->hasMany('App\Models\ProductHistory');
     }
 
     /**
@@ -80,6 +91,14 @@ class Product extends Model
     public function transactionReturnDetails()
     {
         return $this->hasMany('App\Models\TransactionReturnDetail');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function userLogs()
+    {
+        return $this->hasMany('App\Models\UserLog');
     }
     public static function search($query)
     {

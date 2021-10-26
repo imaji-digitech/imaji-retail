@@ -10,6 +10,7 @@ use App\Models\TransactionDetail;
 use App\Models\TransactionPayment;
 use App\Models\TransactionPaymentDetail;
 use App\Models\User;
+use App\Models\UserLog;
 use Carbon\Carbon;
 use Livewire\Component;
 
@@ -94,6 +95,15 @@ class FormTransaction extends Component
                     'quantity' => $this->detailTransaction[$p],
                     'discount' => $this->detailTransactionDiscount[$p],
                     'total' => $this->listProduct->find($p)->price * intval($this->detailTransaction[$p]) * (100 - intval($this->detailTransactionDiscount[$p])) / 100,
+                ]);
+                $product=Product::find($p);
+                $product->update([
+                    'stock'=>$product->stock-$this->detailTransaction[$p]
+                ]);
+                UserLog::create([
+                    'user_id'=>auth()->id(),
+                    'product_id'=>$p,
+                    'note'=>"transaksi dengan no ".$this->data['no_invoice']." sejumlah ".$this->detailTransaction[$p]
                 ]);
                 if ($this->data['payment_status_id'] == 3) {
                     TransactionCredit::create([

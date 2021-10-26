@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Product;
 use App\Models\ProductType;
+use App\Models\UserLog;
 use Livewire\Component;
 
 class FormProduct extends Component
@@ -52,6 +53,11 @@ class FormProduct extends Component
             'timeout' => 3000,
             'icon' => 'success'
         ]);
+        UserLog::create([
+            'user_id'=>auth()->id(),
+            'note'=>"pembuatan produk baru pada ".ProductType::find($this->data['product_type_id'])->title,
+            'user_note'=>"nama produk ".$this->data['title']
+        ]);
         $this->emit('redirect', route('admin.product.index'));
     }
 
@@ -64,6 +70,11 @@ class FormProduct extends Component
             'title' => 'Data berhasil diubah',
             'timeout' => 3000,
             'icon' => 'success'
+        ]);
+        UserLog::create([
+            'user_id'=>auth()->id(),
+            'note'=>"perubahan produk pada ".ProductType::find($this->data['product_type_id'])->title,
+            'user_note'=>"nama produk ".$this->data['title']
         ]);
         $this->emit('redirect', route('admin.product.index'));
     }

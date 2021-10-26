@@ -5,6 +5,8 @@ namespace App\Http\Livewire;
 use App\Models\CashBook;
 use App\Models\CashNote;
 use App\Models\CodeCashBook;
+use App\Models\ProductType;
+use App\Models\UserLog;
 use Livewire\Component;
 
 class FormCashBook extends Component
@@ -57,6 +59,12 @@ class FormCashBook extends Component
             'icon' => 'success',
             'title' => 'Berhasil menambahkan data kas',
         ]);
+//        UserLog::create(['user_id'=>auth()->id(),'note']);
+        UserLog::create([
+            'user_id'=>auth()->id(),
+            'note'=>"melakukan pencatatan buku kas pada ".ProductType::find($this->umkm)->title,
+            'user_note'=>$this->data['note']
+        ]);
         $this->emit('redirect', route('admin.cash-book.index', $this->umkm));
     }
 
@@ -73,6 +81,12 @@ class FormCashBook extends Component
                 ]);
             }
         }
+        UserLog::create([
+            'user_id'=>auth()->id(),
+            'note'=>"melakukan perubahan pencatatan buku kas pada ".ProductType::find($this->umkm)->title,
+            'user_note'=>$this->data['note']
+        ]);
+
         $this->emit('swal:alert', [
             'icon' => 'success',
             'title' => 'Berhasil menambahkan distribusi',

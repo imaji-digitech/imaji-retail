@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Models\Product;
 use App\Models\ProductManufacture;
+use App\Models\UserLog;
 use Livewire\Component;
 
 class FormProductManufacture extends Component
@@ -42,6 +43,10 @@ class FormProductManufacture extends Component
             'amount_product'=>0,
             'product_id'=>$this->dataId
         ];
+        UserLog::create([
+            'user_id'=>auth()->id(),
+            'note'=>"melakukan perhitungan hpp produk ". Product::find($this->dataId),
+        ]);
         $this->emit('swal:alert', [
             'type' => 'success',
             'title' => 'Data berhasil ditambahkan',

@@ -2,10 +2,12 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\ProductType;
 use App\Models\Transaction;
 use App\Models\TransactionCredit;
 use App\Models\TransactionPayment;
 use App\Models\TransactionPaymentDetail;
+use App\Models\UserLog;
 use Livewire\Component;
 
 class FormPayment extends Component
@@ -72,6 +74,11 @@ class FormPayment extends Component
             $this->emit('swal:alert', [
                 'icon' => 'success',
                 'title' => 'Berhasil menambahkan pembayaran',
+            ]);
+
+            UserLog::create([
+                'user_id'=>auth()->id(),
+                'note'=>"melakukan catatan pembayaran pada invoice ". Transaction::find($this->dataId)->no_invoice,
             ]);
 
             $this->emit('redirect', route($url));

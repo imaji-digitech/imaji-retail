@@ -68,11 +68,14 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
     Route::resource('product', ProductController::class)->only(['index', 'create', 'show', 'edit']);
     Route::resource('customer', CustomerController::class)->only(['index', 'create', 'show', 'edit']);
     Route::get('product/export/{id}', function ($id) {
-        $product = Product::find($id);
+        $product = Product::findOrFail($id);
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadView('pdf.product', compact('product'));
         return $pdf->stream('REPORT PRODUK - '.strtoupper($product->name).'.pdf');
     })->name('product.export');
+
+    Route::get('product/stock/{id}',[ProductController::class,'stock'])->name('product.stock');
+    Route::get('product/history/{id}',[ProductController::class,'history'])->name('product.history');
 
 //    Route::resource('cash-book', CashBookController::class)->only(['index', 'create', 'edit']);
     Route::get('/cash-book/{umkm}', [CashBookController::class, 'index'])->name('cash-book.index');
@@ -149,5 +152,4 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
             }
         });
     });
-
 });
