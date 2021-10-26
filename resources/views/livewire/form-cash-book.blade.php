@@ -4,6 +4,7 @@
         <x-input title="pemasukan" model="data.income" type="number"/>
         <x-input title="pengeluaran" model="data.outcome" type="number"/>
         <x-textarea title="Keterangan" model="data.note"/>
+        <x-date type="datepicker" title="Tanggal Pembukuan" model="data.created_at"/>
         <div class="form-group col-span-6 sm:col-span-5"></div>
         <button type="submit" id="submit" class="btn btn-primary">Submit</button>
     </form>
