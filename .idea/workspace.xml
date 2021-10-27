@@ -1,41 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/ProductStock.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Table/CashNote.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/ProductHistory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/UserLog.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_10_21_025516_create_product_history.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_10_21_030036_create_user_logs.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/product-stock.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/table/history-product.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/product/history.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/product/stock.blade.php" afterDir="false" />
+    <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="update history, stock, user log">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/CashNoteController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/CashNoteController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormCashBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormCashBook.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormCustomer.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormCustomer.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormPayment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormPayment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormProduct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormProductManufacture.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormProductManufacture.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormProductType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormProductType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormReturn.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormReturn.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormTransaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormTransaction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Table/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Table/Main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/CashNote.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/CashNote.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ProductType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ProductType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/TransactionReturn.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/TransactionReturn.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_08_18_140538_create_transaction_returns.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_08_18_140538_create_transaction_returns.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/form-return.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/form-return.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/cash-note.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/cash-note.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/product.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/user.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/user.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/cash-note/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/cash-note/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -289,6 +257,7 @@
       <workItem from="1635041046521" duration="62000" />
       <workItem from="1635041122787" duration="152000" />
       <workItem from="1635217979277" duration="360000" />
+      <workItem from="1635310382637" duration="426000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1630987348185</created>

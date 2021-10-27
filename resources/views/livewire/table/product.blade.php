@@ -97,6 +97,7 @@
                             <a role="button" href="{{ route('admin.product.history',$product->id) }}" class="mr-3"
                                target="_blank">
                                 <i class="fa fa-16px fa-copy text-blue-500">History</i>
+                            </a>
                         </td>
                     </tr>
                 @endforeach
