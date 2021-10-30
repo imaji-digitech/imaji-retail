@@ -40,8 +40,12 @@ Route::get('/register', function () {
     return redirect('/login');
 });
 Route::get('/', function () {
-    return redirect('/login');
-});
+    return view('index');
+})->name('user.home');
+
+Route::get('/pesantren-kopi', function () {
+    return view('kopi');
+})->name('user.kopi');
 Route::get('/dashboard', function () {
     return redirect(route('admin.dashboard'));
 });
