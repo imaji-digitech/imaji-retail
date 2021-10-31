@@ -275,7 +275,8 @@ body {
     }
 
     .shape p {
-        display: none;
+        /*display: none;*/
+        margin: 0;
     }
 }
 

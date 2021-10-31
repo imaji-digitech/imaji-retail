@@ -28,6 +28,9 @@
                 transition: all 700ms ease;
                 color: white;
             }
+            p{
+                margin: 10px;
+            }
 
             .shape img {
                 border: 3px solid rgb(134, 79, 8)
@@ -89,7 +92,7 @@
                 <div id="" class="d-flex h-100 bg-k-3">
                     <div class=" row justify-content-center align-self-center col-md-12">
                         <h2 style="text-align: center;">Tentang Kami</h2>
-                        <div class="col-md-6 m-2 p-2">
+                        <div class="col-md-6">
                             <p style="text-align: justify;text-indent: 50px;">
                                 Selain menjadi nama produk kopi, ‘Pesantren Kopi’ merupakan sebutan yang disematkan
                                 masyarakat
