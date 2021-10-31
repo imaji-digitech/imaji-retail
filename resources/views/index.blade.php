@@ -49,7 +49,7 @@
                                     <img src="{{asset('user/images/pesantren_kopi.png')}}" alt="" srcset="" >
                                 </a>
                                 <br>
-                                <p>Pesantren Kopiaa</p>
+                                <p>Pesantren Kopi</p>
                             </div>
                             <div class="col-md-3 col-m-4 shape">
                                 <a href="">
