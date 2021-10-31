@@ -107,22 +107,22 @@
                         </h2>
                         <h3>Temui Produk Kami <br> di </h3>
                         <div class="row" style="width:300px">
-                            <div class="col-sm-3">
+                            <div class="col-m-3">
                                 <a href="https://shopee.co.id/imaji_sociopreneur?v=77e&smtt=0.0.3" class="e-commerce">
                                     <img src="{{asset('user/images/shopee.png')}}" alt="" style="height: 50px; width:50px">
                                 </a>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-m-3">
                                 <a href="https://s.lazada.co.id/s.UdzpB" class="e-commerce">
                                     <img src="{{asset('user/images/lazada.png')}}" alt="" style="height: 50px; width:50px">
                                 </a>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-m-3">
                                 <a href="https://www.bukalapak.com/u/imaji_sociopreneur_581384" class="e-commerce">
                                     <img src="{{asset('user/images/bukalapak.png')}}" alt="" style="height: 50px; width:50px">
                                 </a>
                             </div>
-                            <div class="col-sm-3">
+                            <div class="col-m-3">
                                 <a href="https://www.tokopedia.com/imaji-sociopreneur?_branch_match_id=981471491296911131&utm_source=sellerchannel&utm_campaign=Shop-0-11497559-0&utm_medium=share"
                                    class="e-commerce">
                                     <img src="{{asset('user/images/tokopedia.png')}}" alt="" style="height: 50px; width:50px">

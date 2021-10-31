@@ -52,17 +52,17 @@
                     <div class=" row justify-content-center align-self-center col-md-12">
                         <h2>Produk Kita</h2>
                         <div class="row container col-md-10 col-sm-8 mt-5">
-                            <div class="col-md-4 col-sm-6 shape">
+                            <div class="col-md-4 col-m-4 shape">
                                 <img src="{{asset('user/images/kopi_8.jpg')}}" alt="" srcset="">
                                 <br>
                                 <p>Premium Robusta</p>
                             </div>
-                            <div class="col-md-4 col-sm-6 shape">
+                            <div class="col-md-4 col-m-4 shape">
                                 <img src="{{asset('user/images/kopi_9.jpg')}}" alt="" srcset="">
                                 <br>
                                 <p>Medium Robusta</p>
                             </div>
-                            <div class="col-md-4 col-sm-6 shape">
+                            <div class="col-md-4 col-m-4 shape">
                                 <img src="{{asset('user/images/kopi_7.jpg')}}" alt="" srcset="">
                                 <br>
                                 <p>Lanang Robusta</p>

@@ -249,6 +249,9 @@ body {
     .col-m-4{
         width: 33% !important;
     }
+    .col-m-3{
+        width: 25% !important;
+    }
     .dekstop-only {
         display: none;
     }
