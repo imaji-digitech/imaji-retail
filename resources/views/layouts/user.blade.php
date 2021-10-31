@@ -63,7 +63,7 @@
         <div class=" navbar-brand row" style="width:100%">
             <div class="col-sm-4"></div>
             <a class="col-sm-4 mt-3" style="text-align: center;" href="{{route('user.home')}}">
-                <img src="{{asset('user/images/sociopreneur.png')}}" style="width:400px;" alt="" srcset="">
+                <img src="{{asset('user/images/sociopreneur.png')}}" style="width:100%;" alt="" srcset="">
             </a>
             <div class="col-sm-4" style="float:right">
                 <span style="font-size:30px;cursor:pointer;float:right" onclick="openNav()">&#9776;</span>

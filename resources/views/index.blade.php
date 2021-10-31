@@ -1,11 +1,6 @@
 <x-user>
     <x-slot name="css">
         <style>
-            .shape img {
-                width: 250px;
-                height: 200px;
-            }
-
             .bd-placeholder-img {
                 font-size: 1.125rem;
                 text-anchor: middle;
@@ -45,58 +40,58 @@
                 </header>
             </section>
             <section>
-                <div id="" class="d-flex h-100 bg-2" style="text-align: center;">
-                    <div class=" row justify-content-center align-self-center col-md-12">
+                <div id="" class="d-flex h-100 bg-2 align-content-center" style="text-align: center;">
+                    <div class="row justify-content-center align-self-center col-md-12" style="justify-content: center;">
                         <h2>Produk Kami</h2>
-                        <div class="row container col-md-10 col-sm-8">
-                            <div class="col-md-3 col-sm-6 shape">
+                        <div class="row  col-md-12 col-sm-12" style="justify-content: center;">
+                            <div class="col-md-3 col-xs-6 shape">
                                 <a href="{{route('user.kopi')}}">
-                                    <img src="{{asset('user/images/pesantren_kopi.png')}}" alt="" srcset="">
+                                    <img src="{{asset('user/images/pesantren_kopi.png')}}" alt="" srcset="" >
                                 </a>
                                 <br>
-                                <p>Pesantren Kopi</p>
+                                <p>Pesantren Kopiaa</p>
                             </div>
-                            <div class="col-md-3 col-sm-6 shape">
+                            <div class="col-md-3 col-xs-6 shape">
                                 <a href="">
                                     <img src="{{asset('user/images/suburganic.png')}}" alt="" srcset="">
                                 </a>
                                 <br>
                                 <p>Pupuk Suburganic</p>
                             </div>
-                            <div class="col-md-3 col-sm-6 shape">
+                            <div class="col-md-3 col-xs-6 shape">
                                 <a href="">
                                     <img src="{{asset('user/images/jatiwangi.png')}}" alt="" srcset="">
                                 </a>
                                 <br>
                                 <p>Furnitur Jatiwangi</p>
                             </div>
-                            <div class="col-md-3 col-sm-6 shape">
+                            <div class="col-md-3 col-xs-6 shape">
                                 <a href="">
                                     <img src="{{asset('user/images/selo maeso.')}}png" alt="" srcset="">
                                 </a>
                                 <br>
                                 <p>Batik Selo Maeso</p>
                             </div>
-                            <div class="col-md-4 col-sm-6 shape">
+                            <div class="col-md-3 col-xs-6 shape">
                                 <a href="">
                                     <img src="{{asset('user/images/swajaya.png')}}" alt="" srcset="">
                                 </a>
                                 <br>
                                 <p>Genteng Swajaya Karya</p>
                             </div>
-                            <div class="col-md-4 col-sm-6 shape">
+                            <div class="col-md-3 col-xs-6 shape">
                                 <a href="">
                                     <img src="{{asset('user/images/bumdes.png')}}" alt="" srcset="">
                                 </a>
                                 <br>
                                 <p>Retail Trijaya</p>
                             </div>
-                            <div class="col-md-4 col-sm-6 shape">
+                            <div class="col-md-3 col-xs-6 shape">
                                 <a href="">
                                     <img src="{{asset('user/images/bagon.png')}}" alt="" srcset="">
                                 </a>
                                 <br>
-                                <p>Bag On Craft Rajuta</p>
+                                <p>Bag On Craft Rajut</p>
                             </div>
 
                         </div>
@@ -107,7 +102,7 @@
             <section style="background-color:yellow">
                 <div id="" class="d-flex h-100 bg-3" style="text-align: center;">
                     <div class=" row justify-content-center align-self-center col-md-12">
-                        <h2 style="font-size:48px; font-weight: bold;">MILIKI PRODUK KAMI <br> DAN DAPARKAN PELAYANAN TERBAIK
+                        <h2 style=" font-weight: bold;">MILIKI PRODUK KAMI <br> DAN DAPARKAN PELAYANAN TERBAIK
                             KAMI
                         </h2>
                         <h3>Temui Produk Kami <br> di </h3>
