@@ -43,7 +43,7 @@
                 <header id="image-1" class="d-flex h-100">
                     <div class=" row justify-content-center align-self-center col-md-12" style="z-index: 3;">
                         <h1 style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Pesantren
-                            Kopia</h1>
+                            Kopi</h1>
                         <p style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;" class="col-md-8">
                             Ada cerita di setiap tegukan Pesantren Kopi. Kalimat ini bukan sekadar aforisme semata,
                             setiap
