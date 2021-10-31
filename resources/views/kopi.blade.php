@@ -14,9 +14,11 @@
                     font-size: 3.5rem;
                 }
             }
-            .shape img {
-                width: 160px;
-                height: auto;
+            @media (max-width: 768px) {
+                .shape img {
+                    width: 160px;
+                    height: auto;
+                }
             }
 
             body {
@@ -87,7 +89,7 @@
                 <div id="" class="d-flex h-100 bg-k-3">
                     <div class=" row justify-content-center align-self-center col-md-12">
                         <h2 style="text-align: center;">Tentang Kami</h2>
-                        <div class="col-md-6">
+                        <div class="col-md-6 m-2 p-2">
                             <p style="text-align: justify;text-indent: 50px;">
                                 Selain menjadi nama produk kopi, ‘Pesantren Kopi’ merupakan sebutan yang disematkan
                                 masyarakat
