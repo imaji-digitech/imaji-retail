@@ -44,49 +44,49 @@
                     <div class="row justify-content-center align-self-center col-md-12" style="justify-content: center;">
                         <h2>Produk Kami</h2>
                         <div class="row  col-md-12 col-sm-12" style="justify-content: center;">
-                            <div class="col-md-3 col-xs-6 shape">
+                            <div class="col-md-3 col-m-4 shape">
                                 <a href="{{route('user.kopi')}}">
                                     <img src="{{asset('user/images/pesantren_kopi.png')}}" alt="" srcset="" >
                                 </a>
                                 <br>
                                 <p>Pesantren Kopiaa</p>
                             </div>
-                            <div class="col-md-3 col-xs-6 shape">
+                            <div class="col-md-3 col-m-4 shape">
                                 <a href="">
                                     <img src="{{asset('user/images/suburganic.png')}}" alt="" srcset="">
                                 </a>
                                 <br>
                                 <p>Pupuk Suburganic</p>
                             </div>
-                            <div class="col-md-3 col-xs-6 shape">
+                            <div class="col-md-3 col-m-4 shape">
                                 <a href="">
                                     <img src="{{asset('user/images/jatiwangi.png')}}" alt="" srcset="">
                                 </a>
                                 <br>
                                 <p>Furnitur Jatiwangi</p>
                             </div>
-                            <div class="col-md-3 col-xs-6 shape">
+                            <div class="col-md-3 col-m-4 shape">
                                 <a href="">
                                     <img src="{{asset('user/images/selo maeso.')}}png" alt="" srcset="">
                                 </a>
                                 <br>
                                 <p>Batik Selo Maeso</p>
                             </div>
-                            <div class="col-md-3 col-xs-6 shape">
+                            <div class="col-md-3 col-m-4 shape">
                                 <a href="">
                                     <img src="{{asset('user/images/swajaya.png')}}" alt="" srcset="">
                                 </a>
                                 <br>
                                 <p>Genteng Swajaya Karya</p>
                             </div>
-                            <div class="col-md-3 col-xs-6 shape">
+                            <div class="col-md-3 col-m-4 shape">
                                 <a href="">
                                     <img src="{{asset('user/images/bumdes.png')}}" alt="" srcset="">
                                 </a>
                                 <br>
                                 <p>Retail Trijaya</p>
                             </div>
-                            <div class="col-md-3 col-xs-6 shape">
+                            <div class="col-md-3 col-m-4 shape">
                                 <a href="">
                                     <img src="{{asset('user/images/bagon.png')}}" alt="" srcset="">
                                 </a>
