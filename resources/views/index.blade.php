@@ -32,7 +32,8 @@
                     <div class=" row justify-content-center align-self-center col-md-12" style="z-index: 3;">
                         <h1 style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Sociopreneur
                             Community</h1>
-                        <h2 style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Setiap produk yang kami
+                        <h2 style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">Setiap produk
+                            yang kami
                             ciptakan berasal dari semangat kreatifitas melalui pemberdayaan masyarakat desa
                             dan peningkatan perekonomian desa</h2>
                     </div>
@@ -41,12 +42,13 @@
             </section>
             <section>
                 <div id="" class="d-flex h-100 bg-2 align-content-center" style="text-align: center;">
-                    <div class="row justify-content-center align-self-center col-md-12" style="justify-content: center;">
+                    <div class="row justify-content-center align-self-center col-md-12"
+                         style="justify-content: center;">
                         <h2>Produk Kami</h2>
                         <div class="row  col-md-12 col-sm-12" style="justify-content: center;">
                             <div class="col-md-3 col-m-4 shape">
                                 <a href="{{route('user.kopi')}}">
-                                    <img src="{{asset('user/images/pesantren_kopi.png')}}" alt="" srcset="" >
+                                    <img src="{{asset('user/images/pesantren_kopi.png')}}" alt="" srcset="">
                                 </a>
                                 <br>
                                 <p>Pesantren Kopi</p>
@@ -106,35 +108,35 @@
                             KAMI
                         </h2>
                         <h3>Temui Produk Kami <br> di </h3>
-                        <div class="row" style="width:300px">
-                            <div class="col-m-3">
-                                <a href="https://shopee.co.id/imaji_sociopreneur?v=77e&smtt=0.0.3" class="e-commerce">
-                                    <img src="{{asset('user/images/shopee.png')}}" alt="" style="height: 50px; width:50px">
-                                </a>
-                            </div>
-                            <div class="col-m-3">
-                                <a href="https://s.lazada.co.id/s.UdzpB" class="e-commerce">
-                                    <img src="{{asset('user/images/lazada.png')}}" alt="" style="height: 50px; width:50px">
-                                </a>
-                            </div>
-                            <div class="col-m-3">
-                                <a href="https://www.bukalapak.com/u/imaji_sociopreneur_581384" class="e-commerce">
-                                    <img src="{{asset('user/images/bukalapak.png')}}" alt="" style="height: 50px; width:50px">
-                                </a>
-                            </div>
-                            <div class="col-m-3">
-                                <a href="https://www.tokopedia.com/imaji-sociopreneur?_branch_match_id=981471491296911131&utm_source=sellerchannel&utm_campaign=Shop-0-11497559-0&utm_medium=share"
-                                   class="e-commerce">
-                                    <img src="{{asset('user/images/tokopedia.png')}}" alt="" style="height: 50px; width:50px">
-                                </a>
-                            </div>
+                        <div >
+<span>
+                            <a href="https://shopee.co.id/imaji_sociopreneur?v=77e&smtt=0.0.3" class="e-commerce">
+                                <img src="{{asset('user/images/shopee.png')}}" alt="" style="height: 50px; width:50px">
+                            </a>
+</span>
+                            <span>
+                            <a href="https://s.lazada.co.id/s.UdzpB" class="e-commerce">
+                                <img src="{{asset('user/images/lazada.png')}}" alt="" style="height: 50px; width:50px">
+                            </a>
+</span>
+                            <span>
+                            <a href="https://www.bukalapak.com/u/imaji_sociopreneur_581384" class="e-commerce">
+                                <img src="{{asset('user/images/bukalapak.png')}}" alt=""
+                                     style="height: 50px; width:50px">
+                            </a></span>
+                            <span>
+                            <a href="https://www.tokopedia.com/imaji-sociopreneur?_branch_match_id=981471491296911131&utm_source=sellerchannel&utm_campaign=Shop-0-11497559-0&utm_medium=share"
+                               class="e-commerce">
+                                <img src="{{asset('user/images/tokopedia.png')}}" alt=""
+                                     style="height: 50px; width:50px">
+                            </a>
+                            </span>
                         </div>
                         <div class="col-sm-12 mt-5">
                             <a href="https://api.whatsapp.com/send?phone=6282335456772" class="e-commerce">
                                 <img src="{{asset('user/images/contact_with_us.png')}}" alt="" style="height: 50px;">
                             </a>
                         </div>
-
                     </div>
 
                 </div>
@@ -143,7 +145,7 @@
         <script>
             var counter = 1; //instantiate a counter
             var maxImage = 4; //the total number of images that are available
-            setInterval(function() {
+            setInterval(function () {
                 document.querySelector('header').style.backgroundImage = "url('user/images/" + (counter + 1) + ".jpg')";
                 if (counter + 1 == maxImage) {
                     counter = 0; //reset to start
@@ -151,7 +153,6 @@
                     ++counter; //iterate to next image
                 }
             }, 3000);
-
 
 
         </script>

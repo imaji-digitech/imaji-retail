@@ -334,3 +334,7 @@ body {
 
     transition: all .5s ease;
 }
+.e-commerce{
+    margin: 5px;
+    display: inline;
+}
