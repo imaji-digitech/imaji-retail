@@ -42,7 +42,12 @@
                         <h4>Rate Pengembalian</h4>
                     </div>
                     <div class="card-body">
-                        {{intval($product->transactionReturnDetails->sum('quantity')/$product->transactionDetails->sum('quantity')*100)}}%
+                        @if($product->transactionDetails->sum('quantity')!=0)
+                            {{intval($product->transactionReturnDetails->sum('quantity')/$product->transactionDetails->sum('quantity')*100)}}
+                            %
+                        @else
+                            0%
+                        @endif
                     </div>
                 </div>
             </div>
@@ -58,7 +63,12 @@
                         <h4>Rate terjual</h4>
                     </div>
                     <div class="card-body">
-                        {{intval($product->transactionPaymentDetails->sum('quantity')/$product->transactionDetails->sum('quantity')*100)}}%
+                        @if($product->transactionDetails->sum('quantity')!=0)
+                            {{intval($product->transactionPaymentDetails->sum('quantity')/$product->transactionDetails->sum('quantity')*100)}}
+                            %
+                        @else
+                            0%
+                        @endif
                     </div>
                 </div>
             </div>
