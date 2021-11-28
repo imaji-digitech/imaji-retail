@@ -69,7 +69,11 @@
         @php($detail=$transaction->transactionDetails)
         @php($cd=0)
         @foreach($detail as $d)
-            @php($cd+=$d->total/(100-$d->discount)*$d->discount)
+            @if($d->discount==100)
+                @php($cd+=0)
+            @else
+                @php($cd+=$d->total/(100-$d->discount)*$d->discount)
+            @endif
         @endforeach
         <table bordercolor="#000000" style="margin-top:10px;width: 100%; font-size: 12px">
             <tr style="text-align: center">
@@ -130,7 +134,8 @@
                 <td></td>
                 <td></td>
                 <td colspan="2" style="border: .5px solid; text-align: right"><b>Total :</b></td>
-                <td style="padding:0 5px;text-align:right;border: .5px solid"><b>{{ number_format($detail->sum('total'),0,'.','.') }}</b></td>
+                <td style="padding:0 5px;text-align:right;border: .5px solid">
+                    <b>{{ number_format($detail->sum('total'),0,'.','.') }}</b></td>
             </tr>
         </table>
         <br>

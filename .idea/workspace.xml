@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="updated front web">
+    <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="fix zero detailTransaction">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -268,6 +268,8 @@
       <workItem from="1636200063122" duration="2202000" />
       <workItem from="1637034798807" duration="3000000" />
       <workItem from="1637112630395" duration="138000" />
+      <workItem from="1637570615282" duration="1834000" />
+      <workItem from="1637633630879" duration="186000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1630987348185</created>
@@ -486,7 +488,14 @@
       <option name="project" value="LOCAL" />
       <updated>1636209081560</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="fix zero detailTransaction">
+      <created>1637570921842</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1637570921842</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -510,6 +519,7 @@
     <MESSAGE value="fixed product.blade.php" />
     <MESSAGE value="added front web" />
     <MESSAGE value="updated front web" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated front web" />
+    <MESSAGE value="fix zero detailTransaction" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix zero detailTransaction" />
   </component>
 </project>
