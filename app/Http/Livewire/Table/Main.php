@@ -70,8 +70,8 @@ class Main extends Component
                 break;
             case 'cash-book':
                 $cashBooks = $this->model::search($this->dataId)
-                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc');
-//                    ->paginate($this->perPage);
+                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
+                    ->paginate(9999);
 
                 return [
                     "view" => 'livewire.table.cash-book',
