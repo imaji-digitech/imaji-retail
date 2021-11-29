@@ -3,8 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property integer $id
@@ -12,7 +10,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property integer $status_id
  * @property integer $payment_status_id
  * @property string $no_invoice
- * @property string $tax
+ * @property int $tax
  * @property string $created_at
  * @property string $updated_at
  * @property PaymentStatus $paymentStatus
@@ -20,6 +18,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property User $user
  * @property TransactionCredit[] $transactionCredits
  * @property TransactionDetail[] $transactionDetails
+ * @property TransactionPaymentCash[] $transactionPaymentCashes
  * @property TransactionPayment[] $transactionPayments
  * @property TransactionReturn[] $transactionReturns
  */
@@ -35,8 +34,71 @@ class Transaction extends Model
     /**
      * @var array
      */
-    protected $fillable = ['user_id', 'status_id', 'payment_status_id', 'no_invoice','tax', 'created_at', 'updated_at'];
+    protected $fillable = ['user_id', 'status_id', 'payment_status_id', 'no_invoice', 'tax', 'created_at', 'updated_at'];
 
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function paymentStatus()
+    {
+        return $this->belongsTo('App\Models\PaymentStatus');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function status()
+    {
+        return $this->belongsTo('App\Models\Status');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function transactionCredits()
+    {
+        return $this->hasMany('App\Models\TransactionCredit');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function transactionDetails()
+    {
+        return $this->hasMany('App\Models\TransactionDetail');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function transactionPaymentCashes()
+    {
+        return $this->hasMany('App\Models\TransactionPaymentCash');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function transactionPayments()
+    {
+        return $this->hasMany('App\Models\TransactionPayment');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function transactionReturns()
+    {
+        return $this->hasMany('App\Models\TransactionReturn');
+    }
     public static function search($query, $status)
     {
         return empty($query) ? static::query()->whereIn('status_id', $status)
@@ -54,61 +116,5 @@ class Transaction extends Model
                         });
                     });
             });
-    }
-
-    /**
-     * @return BelongsTo
-     */
-    public function paymentStatus()
-    {
-        return $this->belongsTo('App\Models\PaymentStatus');
-    }
-
-    /**
-     * @return BelongsTo
-     */
-    public function status()
-    {
-        return $this->belongsTo('App\Models\Status');
-    }
-
-    /**
-     * @return BelongsTo
-     */
-    public function user()
-    {
-        return $this->belongsTo('App\Models\User');
-    }
-
-    /**
-     * @return HasMany
-     */
-    public function transactionCredits()
-    {
-        return $this->hasMany('App\Models\TransactionCredit');
-    }
-
-    /**
-     * @return HasMany
-     */
-    public function transactionDetails()
-    {
-        return $this->hasMany('App\Models\TransactionDetail');
-    }
-
-    /**
-     * @return HasMany
-     */
-    public function transactionPayments()
-    {
-        return $this->hasMany('App\Models\TransactionPayment');
-    }
-
-    /**
-     * @return HasMany
-     */
-    public function transactionReturns()
-    {
-        return $this->hasMany('App\Models\TransactionReturn');
     }
 }

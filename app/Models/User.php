@@ -69,9 +69,11 @@ class User extends Authenticatable
      */
     public static function search($query)
     {
-        return empty($query) ? static::query()
-            : static::where('name', 'like', '%'.$query.'%')
-                ->orWhere('email', 'like', '%'.$query.'%');
+        return empty($query) ? static::query()->whereRole(1)
+            : static::whereRole(1)->where(function ($q) use ($query) {
+                $q->where('name', 'like', '%'.$query.'%')
+                    ->orWhere('email', 'like', '%'.$query.'%');
+            });
     }
     public static function customer($query)
     {
