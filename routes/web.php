@@ -1,9 +1,11 @@
 <?php
 
+use App\Http\Controllers\Admin\AssetController;
 use App\Http\Controllers\Admin\CashBookController;
 use App\Http\Controllers\Admin\CashNoteController;
 use App\Http\Controllers\Admin\ContentController;
 use App\Http\Controllers\Admin\CustomerController;
+use App\Http\Controllers\Admin\FinanceController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductTypeController;
 use App\Http\Controllers\Admin\TransactionController;
@@ -144,6 +146,15 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
         $pdf->loadView('pdf.invoice', compact('transaction'))->setPaper([0, 0, 470.00, 603.80], 'landscape');
         return $pdf->stream('INVOICE - ' . $transaction->no_invoice . ' - ' . $transaction->user->name . '.pdf');
     })->name('transaction.export');
+
+    Route::resource('finance', FinanceController::class)->only(['index','create','show','edit']);
+    Route::get('finance/{id}/comparison',[FinanceController::class,'comparison'])->name('finance.comparison');
+    Route::get('finance/{id}/note',[FinanceController::class,'note'])->name('finance.note.index');
+    Route::get('finance/{id}/note/create',[FinanceController::class,'noteCreate'])->name('finance.note.create');
+    Route::get('finance/note/{note}',[FinanceController::class,'noteShow'])->name('finance.note.show');
+    Route::get('finance/{id}/spj',[FinanceController::class,'noteSubmit'])->name('finance.note.submit');
+
+    Route::resource('asset', AssetController::class)->only(['index','create','show','edit']);
 
     Route::get('/user', [UserController::class, "index"])->name('user');
     Route::view('/user/new', "pages.user.create")->name('user.new');

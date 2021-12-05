@@ -1,0 +1,10 @@
+<div>
+    'product_type_id'=>$data->product_type_id,
+    'status_rab_id'=>$data->status_rab_id,
+    'status_spj_id'=>$data->status_spj_id,
+    'title'=>$data->title,
+    'rab_note'=>$data->rab_note,
+    'rab_revision_note'=>$data->rab_revision_note,
+    'spj_note'=>$data->spj_note,
+    'spj_revision_note'=>$data->spj_revision_note,
+</div>

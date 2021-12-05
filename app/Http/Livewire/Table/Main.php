@@ -68,6 +68,54 @@ class Main extends Component
                     ])
                 ];
                 break;
+            case 'finance':
+                $finances = $this->model::search($this->search)
+                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
+                    ->paginate($this->perPage);
+
+                return [
+                    "view" => 'livewire.table.finance',
+                    "finances" => $finances,
+                    "data" => array_to_object([
+                        'href' => [
+                            'create_new' => route('admin.finance.create'),
+                            'create_new_text' => 'Buat keuangan baru',
+                        ]
+                    ])
+                ];
+                break;
+            case 'finance-note':
+                $finances = $this->model::whereFinanceId($this->dataId)
+                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
+                    ->paginate(9999);
+                return [
+                    "view" => 'livewire.table.finance-note',
+                    "finances" => $finances,
+                    "data" => array_to_object([
+                        'href' => [
+                            'create_new' => route('admin.finance.note.create',$this->dataId),
+                            'create_new_text' => 'Tambah nota baru',
+                            'export' => route('admin.finance.note.submit',$this->dataId),
+                            'export_text' => 'Ajukan SPJ'
+                        ]
+                    ])
+                ];
+                break;
+            case 'asset':
+                $assets = $this->model::search($this->dataId)
+                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
+                    ->paginate($this->perPage);
+                return [
+                    "view" => 'livewire.table.asset',
+                    "assets" => $assets,
+                    "data" => array_to_object([
+                        'href' => [
+                            'create_new' => route('admin.asset.create'),
+                            'create_new_text' => 'Tambah asset baru',
+                        ]
+                    ])
+                ];
+                break;
             case 'cash-book':
                 $cashBooks = $this->model::search($this->dataId)
                     ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')

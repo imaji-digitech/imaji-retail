@@ -50,6 +50,14 @@
             {{--            <li class="">--}}
             {{--                <a class="nav-link" href=""><i class="fas fa-fire"></i><span>HPP Proyeksi</span></a>--}}
             {{--            </li>--}}
+            <li class="menu-header">Asset</li>
+            <li class="">
+                <a class="nav-link" href="{{route('admin.asset.index')}}"><i class="fas fa-fire"></i><span>Asset</span></a>
+            </li>
+            <li class="menu-header">Keuangan</li>
+            <li class="">
+                <a class="nav-link" href="{{route('admin.finance.index')}}"><i class="fas fa-fire"></i><span>Finance</span></a>
+            </li>
             <li class="menu-header">Transaksi</li>
             <li class="">
                 <a class="nav-link" href="{{route('admin.transaction.create')}}"><i class="fas fa-fire"></i><span>Buat transaksi</span></a>

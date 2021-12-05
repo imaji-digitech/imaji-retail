@@ -1,0 +1,115 @@
+<?php
+
+namespace App\Models;
+
+use Illuminate\Database\Eloquent\Model;
+
+/**
+ * @property integer $id
+ * @property integer $product_type_id
+ * @property integer $status_rab_id
+ * @property integer $status_spj_id
+ * @property string $title
+ * @property integer $user_id
+ * @property string $rab_note
+ * @property string $rab_revision_note
+ * @property string $spj_note
+ * @property string $spj_revision_note
+ * @property string $created_at
+ * @property string $updated_at
+ * @property integer $finance_id
+ * @property ProductType $productType
+ * @property FinanceStatus $rabStatus
+ * @property FinanceStatus $spjStatus
+ * @property FinanceItem[] $financeItems
+ * @property FinanceNoteItem[] $financeNoteItems
+ * @property FinanceNote[] $financeNotes
+ */
+class Finance extends Model
+{
+    /**
+     * The "type" of the auto-incrementing ID.
+     *
+     * @var string
+     */
+    protected $keyType = 'integer';
+
+    /**
+     * @var array
+     */
+    protected $fillable = [
+        'product_type_id',
+        'status_rab_id',
+        'status_spj_id',
+        'title',
+        'user_id',
+        'rab_note',
+        'rab_revision_note',
+        'spj_note',
+        'spj_revision_note',
+        'created_at',
+        'updated_at',
+
+    ];
+
+    public static function search($query)
+    {
+        return empty($query) ? static::query()
+            : static::where('title', 'like', '%' . $query . '%')
+                ->orWhereHas('user', function ($q) use ($query) {
+                    $q->where('name', 'like', '%' . $query . '%');
+                });
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function productType()
+    {
+        return $this->belongsTo('App\Models\ProductType');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function rabStatus()
+    {
+        return $this->belongsTo('App\Models\FinanceStatus', 'status_rab_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function spjStatus()
+    {
+        return $this->belongsTo('App\Models\FinanceStatus', 'status_spj_id');
+    }
+    public function user()
+    {
+        return $this->belongsTo('App\Models\User', 'user_id');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function financeItems()
+    {
+        return $this->hasMany('App\Models\FinanceItem');
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+//    public function financeNotes()
+//    {
+//        return $this->hasMany('App\Models\FinanceNote', 'finance_note_id');
+//    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function financeNotes()
+    {
+        return $this->hasMany('App\Models\FinanceNote');
+    }
+}
