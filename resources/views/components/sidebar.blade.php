@@ -1,5 +1,6 @@
 <div class="main-sidebar">
     <aside id="sidebar-wrapper">
+        @if(auth()->id()!=22)
         <div class="sidebar-brand">
             <a href="{{ route('admin.dashboard') }}">Dashboard</a>
         </div>
@@ -47,9 +48,6 @@
                     <i class="fas fa-fire"></i><span>Produk</span>
                 </a>
             </li>
-            {{--            <li class="">--}}
-            {{--                <a class="nav-link" href=""><i class="fas fa-fire"></i><span>HPP Proyeksi</span></a>--}}
-            {{--            </li>--}}
             <li class="menu-header">Asset</li>
             <li class="">
                 <a class="nav-link" href="{{route('admin.asset.index')}}"><i class="fas fa-fire"></i><span>Asset</span></a>
@@ -75,5 +73,22 @@
                 <a class="nav-link" href="{{route('admin.user')}}"><i class="fas fa-fire"></i><span>User</span></a>
             </li>
         </ul>
+        @else
+            <div class="sidebar-brand">
+                <a href="{{ route('admin.asset.index') }}">Dashboard</a>
+            </div>
+            <div class="sidebar-brand sidebar-brand-sm">
+                <a href="{{ route('admin.asset.index') }}">
+                    <img class="d-inline-block" width="32px" height="30.61px" src="" alt="">
+                </a>
+            </div>
+
+            <ul class="sidebar-menu">
+                <li class="menu-header">Asset</li>
+                <li class="">
+                    <a class="nav-link" href="{{route('admin.asset.index')}}"><i class="fas fa-fire"></i><span>Asset</span></a>
+                </li>
+            </ul>
+        @endif
     </aside>
 </div>

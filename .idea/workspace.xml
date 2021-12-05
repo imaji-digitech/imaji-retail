@@ -1,64 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="fix zero detailTransaction">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AssetController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/FinanceController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/FinanceComparison.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/FinanceNoteList.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/FormAsset.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/FormFinance.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/FormFinanceItem.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/FormFinanceNote.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/FormFinanceNoteItem.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Asset.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/AssetCode.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/AssetOwnership.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/AssetState.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Finance.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/FinanceItem.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/FinanceNote.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/FinanceNoteItem.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/FinanceStatus.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/FinanceUnit.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_12_03_004017_create_finance_units.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_12_03_004103_create_finance_statuses.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_12_03_004318_create_finances.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_12_03_004323_create_finance_items.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_12_03_004329_create_finance_notes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_12_03_004337_create_finance_note_item.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_12_04_080853_create_asset_ownerships.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_12_04_084050_create_asset_states.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_12_04_084109_create_asset_codes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_12_04_084113_create_assets.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/finance-comparison.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/finance-note-list.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/form-asset.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/form-finance-item.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/form-finance-note-item.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/form-finance-note.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/form-finance-rab.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/form-finance-spj.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/table/asset.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/table/finance-note.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/table/finance.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/asset/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/asset/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/asset/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/asset/show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/finance/comparison.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/finance/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/finance/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/finance/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/finance/note-create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/finance/note-index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/finance/note-show.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/finance/show.blade.php" afterDir="false" />
+    <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="update asset and finance">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Table/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Table/Main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/data-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/data-table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormAsset.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormAsset.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/sidebar.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -333,7 +279,7 @@
       <workItem from="1638198942148" duration="2164000" />
       <workItem from="1638461859830" duration="17418000" />
       <workItem from="1638522521433" duration="10768000" />
-      <workItem from="1638585948677" duration="17245000" />
+      <workItem from="1638585948677" duration="19400000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1630987348185</created>
@@ -580,7 +526,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638199079161</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="update asset and finance">
+      <created>1638668212607</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1638668212607</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -605,6 +558,7 @@
     <MESSAGE value="added front web" />
     <MESSAGE value="updated front web" />
     <MESSAGE value="fix zero detailTransaction" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix zero detailTransaction" />
+    <MESSAGE value="update asset and finance" />
+    <option name="LAST_COMMIT_MESSAGE" value="update asset and finance" />
   </component>
 </project>

@@ -36,6 +36,9 @@ class FormAsset extends Component
             'amount' => 0,
             'nominal' => 0
         ];
+        if (auth()->id()==22){
+            $this->data['product_type_id']=8;
+        }
         if ($this->dataId != null) {
             $data = Asset::find($this->dataId);
             $this->data = [

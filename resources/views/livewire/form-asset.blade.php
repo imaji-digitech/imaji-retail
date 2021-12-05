@@ -1,7 +1,9 @@
 <div id="form-create" class=" card p-4">
     <form wire:submit.prevent="{{$action}}">
-        <x-select :options="$optionProductType" :selected="$data['product_type_id']" title="Usaha"
-                  model="data.product_type_id"/>
+        @if(auth()->id()!=22)
+            <x-select :options="$optionProductType" :selected="$data['product_type_id']" title="Usaha"
+                      model="data.product_type_id"/>
+        @endif
         <x-select :options="$optionState" :selected="$data['asset_state_id']" title="Kondisi"
                   model="data.asset_state_id"/>
         <x-select :options="$optionCode" :selected="$data['asset_code_id']" title="Kode" model="data.asset_code_id"/>
