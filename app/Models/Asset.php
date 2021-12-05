@@ -68,7 +68,12 @@ class Asset extends Model
     }
     public static function search($query)
     {
-        return empty($query) ? static::query()
-            : static::where('title', 'like', '%' . $query . '%');
+        if (auth()->id()!=22){
+            return empty($query) ? static::query()
+                : static::where('title', 'like', '%' . $query . '%');
+        }else{
+            return empty($query) ? static::query()->whereProductTypeId(8)
+                : static::whereProductTypeId(8)->where('title', 'like', '%' . $query . '%');
+        }
     }
 }
