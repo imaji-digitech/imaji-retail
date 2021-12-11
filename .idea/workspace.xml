@@ -1,63 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="update asset and finance">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UmkmAssetController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UmkmProductController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/UmkmTransactionController.php" afterDir="false" />
+    <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="update so many :)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/AssetController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/AssetController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/FinanceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/FinanceController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ProductController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/TransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TransactionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormAsset.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormAsset.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormFinance.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormFinance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormPayment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormPayment.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormProduct.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormProduct.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormReturn.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormReturn.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormTransaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormTransaction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Table/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Table/Main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Asset.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Asset.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Finance.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Finance.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Transaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Transaction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/form-asset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/form-asset.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/form-finance-rab.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/form-finance-rab.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/form-product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/form-product.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/asset.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/asset.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/finance.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/finance.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/cash-book.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/cash-book.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/product.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/transaction-active.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/transaction-active.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/transaction-history.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/transaction-history.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/asset/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/asset/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/asset/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/asset/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/asset/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/asset/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/asset/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/asset/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/finance/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/finance/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/finance/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/finance/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/finance/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/finance/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/finance/note-create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/finance/note-create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/finance/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/finance/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/product/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/product/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/product/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/product/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/product/graph.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/product/graph.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/product/history.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/product/history.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/product/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/product/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/product/manufacture.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/product/manufacture.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/product/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/product/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/product/stock.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/product/stock.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/transaction/active.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/transaction/active.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/transaction/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/transaction/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/transaction/edit.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/transaction/edit.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/transaction/history.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/transaction/history.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/transaction/manufacture.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/transaction/manufacture.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/transaction/payment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/transaction/payment.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/transaction/return.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/transaction/return.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/transaction/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/transaction/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -338,7 +285,7 @@
       <workItem from="1638879026947" duration="721000" />
       <workItem from="1639103217591" duration="9363000" />
       <workItem from="1639143230971" duration="2369000" />
-      <workItem from="1639184386130" duration="3648000" />
+      <workItem from="1639184386130" duration="8765000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1630987348185</created>
@@ -613,7 +560,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638712212860</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="update so many :)">
+      <created>1639189385052</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1639189385052</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -639,6 +593,7 @@
     <MESSAGE value="updated front web" />
     <MESSAGE value="fix zero detailTransaction" />
     <MESSAGE value="update asset and finance" />
-    <option name="LAST_COMMIT_MESSAGE" value="update asset and finance" />
+    <MESSAGE value="update so many :)" />
+    <option name="LAST_COMMIT_MESSAGE" value="update so many :)" />
   </component>
 </project>
