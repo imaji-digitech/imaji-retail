@@ -2,9 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="update so many :)">
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/transaction/payment-cash.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/cash-book.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/cash-book.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/TransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TransactionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormCashBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormCashBook.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormPayment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormPayment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormPaymentCash.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormPaymentCash.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Transaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Transaction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/form-payment-cash.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/form-payment-cash.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/form-payment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/form-payment.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/cash-note.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/cash-note.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/transaction-active.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/transaction-active.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +190,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Controllers/Admin" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/pages/transaction" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -191,11 +200,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/pages/transaction" />
       <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
       <recent name="$PROJECT_DIR$/resources/views/livewire/table" />
       <recent name="$PROJECT_DIR$/resources/views/pages" />
       <recent name="$PROJECT_DIR$/resources/views/pages/finance" />
-      <recent name="$PROJECT_DIR$/resources/views/livewire" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/user/images" />
@@ -285,7 +294,7 @@
       <workItem from="1638879026947" duration="721000" />
       <workItem from="1639103217591" duration="9363000" />
       <workItem from="1639143230971" duration="2369000" />
-      <workItem from="1639184386130" duration="8765000" />
+      <workItem from="1639184386130" duration="16005000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1630987348185</created>
@@ -567,7 +576,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639189385052</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="update so many :)">
+      <created>1639194371313</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1639194371313</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -2,7 +2,7 @@
     <x-data-table :data="$data" :model="$cashNotes">
         <x-slot name="head">
             <tr>
-                <th style="width: 200px !important;">
+                <th style="width: 100px !important;">
                     <a wire:click.prevent="sortBy('title')" role="button" href="#">
                         Tanggal Rekap @include('components.sort-icon', ['field' => 'created_at'])
                     </a>
@@ -17,7 +17,7 @@
                         Perubahan terakhir @include('components.sort-icon', ['field' => 'updated_at'])
                     </a>
                 </th>
-                <th style="width: 70px">
+                <th style="width: 170px !important;">
                     Action
                 </th>
             </tr>

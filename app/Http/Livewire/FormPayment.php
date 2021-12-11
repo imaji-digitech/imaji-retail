@@ -2,10 +2,12 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\CashBook;
 use App\Models\ProductType;
 use App\Models\Transaction;
 use App\Models\TransactionCredit;
 use App\Models\TransactionPayment;
+use App\Models\TransactionPaymentCash;
 use App\Models\TransactionPaymentDetail;
 use App\Models\UserLog;
 use Livewire\Component;
@@ -17,6 +19,7 @@ class FormPayment extends Component
     public $dataCredit;
     public $total;
     public $umkm;
+    public $paymentCash;
     public function mount(){
         $this->dataCredit=TransactionCredit::whereTransactionId($this->dataId)->get();
         foreach ($this->dataCredit as $dc){
@@ -47,6 +50,7 @@ class FormPayment extends Component
         }
         if ($status and $nullCheck){
             $transaction=TransactionPayment::create(['transaction_id'=>$this->dataId]);
+            $total=0;
             foreach ($this->dataCredit as $dc){
                 if ($this->creditTransaction[$dc->id] !=0 ){
                     if ($dc->quantity-$this->creditTransaction[$dc->id] ==0 ){
@@ -63,8 +67,35 @@ class FormPayment extends Component
                         'quantity'=>$this->creditTransaction[$dc->id],
                         'total'=>($dc->total/$dc->quantity)*intval($this->creditTransaction[$dc->id])
                     ]);
+                    $total+=($dc->total/$dc->quantity)*intval($this->creditTransaction[$dc->id]);
                 }
             }
+            if ($this->paymentCash){
+                $data=[
+                    'transaction_id'=>$this->dataId,
+                    'total'=>$total,
+                    'note'=>'Pembayaran cash dari transaksi '.Transaction::find($this->dataId)->no_invoice,
+                ];
+                TransactionPaymentCash::create($data);
+                $data=[
+                    'product_type_id'=>$this->umkm,
+                    'code_cash_book_id'=>2,
+                    'note'=>'Pembayaran cash dari transaksi '.Transaction::find($this->dataId)->no_invoice,
+                    'income'=>$total,
+                    'outcome'=>0,
+                ];
+                CashBook::create($data);
+                UserLog::create([
+                    'user_id'=>auth()->id(),
+                    'note'=>"melakukan pencatatan buku kas pada ".ProductType::find($this->umkm)->title,
+                    'user_note'=>''
+                ]);
+                UserLog::create([
+                    'user_id'=>auth()->id(),
+                    'note'=>"melakukan pembayaran cash pada invoice ". Transaction::find($this->dataId)->no_invoice,
+                ]);
+            }
+
             if (count($this->dataCredit=TransactionCredit::whereTransactionId($this->dataId)->get())==0){
                 Transaction::find($this->dataId)->update(['status_id'=>3]);
                 $url=route("admin.transaction.history",$this->umkm);

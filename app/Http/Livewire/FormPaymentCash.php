@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\CashBook;
+use App\Models\ProductType;
 use App\Models\Transaction;
 use App\Models\TransactionPaymentCash;
 use App\Models\UserLog;
@@ -9,6 +11,8 @@ use Livewire\Component;
 
 class FormPaymentCash extends Component
 {
+    public $umkm;
+    public $tractionId;
     public $dataId;
     public $data;
     public $transactionId;
@@ -17,7 +21,7 @@ class FormPaymentCash extends Component
 
     public function mount()
     {
-        $this->transaction=Transaction::findOrFail($this->dataId);
+        $this->transaction=Transaction::findOrFail($this->transactionId);
         $this->total=$this->transaction->transactionPaymentCashes->sum('total');
         $this->data = [
             'transaction_id' => $this->transactionId,
@@ -38,16 +42,30 @@ class FormPaymentCash extends Component
     {
         $this->validate();
         TransactionPaymentCash::create($this->data);
-        $this->emit('swal:alert', [
-            'icon' => 'success',
-            'title' => 'Berhasil menambahkan pembayaran',
+
+        $data=[
+            'product_type_id'=>$this->umkm,
+            'code_cash_book_id'=>2,
+            'note'=>'Pembayaran cash dari transaksi '.$this->transaction->no_invoice,
+            'income'=>$this->data['total'],
+            'outcome'=>0,
+        ];
+        CashBook::create($data);
+        UserLog::create([
+            'user_id'=>auth()->id(),
+            'note'=>"melakukan pencatatan buku kas pada ".ProductType::find($this->umkm)->title,
+            'user_note'=>$this->data['note']
         ]);
 
         UserLog::create([
             'user_id'=>auth()->id(),
             'note'=>"melakukan pembayaran cash pada invoice ". $this->transaction->no_invoice,
         ]);
-        $this->emit('redirect', route('admin.transaction.active'));
+        $this->emit('swal:alert', [
+            'icon' => 'success',
+            'title' => 'Berhasil menambahkan pembayaran',
+        ]);
+        $this->emit('redirect', route('admin.transaction.active',$this->umkm));
     }
 
     public function update()

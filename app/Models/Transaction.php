@@ -38,36 +38,7 @@ class Transaction extends Model
      */
     protected $fillable = ['user_id', 'status_id', 'payment_status_id', 'no_invoice', 'tax', 'created_at', 'updated_at'];
 
-    public static function search($query, $status, $dataId)
-    {
-        return empty($query) ? static::query()
-            ->whereIn('status_id', $status)
-            ->whereHas('transactionDetails', function ($q) use ($dataId) {
-                $q->whereHas('product', function ($q2) use ($dataId) {
-                    $q2->whereProductTypeId($dataId);
-                });
-            }) :
-            static::whereIn('status_id', $status)
-                ->whereHas('transactionDetails', function ($q) use ($dataId, $query) {
-                    $q->whereHas('product', function ($q2) use ($dataId, $query) {
-                        $q2->where('product_type_id', $dataId);
-                    });
-                })
-                ->where(function ($w) use ($query) {
-                    $w->orWhere('no_invoice', 'like', '%' . $query . '%')
-                        ->orWhereHas('user', function ($q) use ($query) {
-                            $q->where('name', 'like', '%' . $query . '%');
-                        })->orWhereHas('paymentStatus', function ($q) use ($query) {
-                            $q->where('title', 'like', '%' . $query . '%');
-                        })->orWhereHas('status', function ($q) use ($query) {
-                            $q->where('title', 'like', '%' . $query . '%');
-                        })->orWhereHas('transactionDetails', function ($q) use ($query) {
-                            $q->whereHas('product', function ($q2) use ($query) {
-                                $q2->where('title', 'like', '%' . $query . '%');
-                            });
-                        });
-                });
-    }
+
 
 
     /**
@@ -132,5 +103,35 @@ class Transaction extends Model
     public function transactionReturns()
     {
         return $this->hasMany('App\Models\TransactionReturn');
+    }
+
+    public static function search($query, $status, $dataId)
+    {
+        return empty($query) ? static::query()
+            ->whereIn('status_id', $status)
+            ->whereHas('transactionDetails', function ($q) use ($dataId) {
+                $q->whereHas('product', function ($q2) use ($dataId) {
+                    $q2->whereProductTypeId($dataId);
+                });
+            }) : static::whereIn('status_id', $status)
+            ->whereHas('transactionDetails', function ($q) use ($dataId, $query) {
+                $q->whereHas('product', function ($q2) use ($dataId, $query) {
+                    $q2->where('product_type_id', $dataId);
+                });
+            })
+            ->where(function ($w) use ($query) {
+                $w->orWhere('no_invoice', 'like', '%' . $query . '%')
+                    ->orWhereHas('user', function ($q) use ($query) {
+                        $q->where('name', 'like', '%' . $query . '%');
+                    })->orWhereHas('paymentStatus', function ($q) use ($query) {
+                        $q->where('title', 'like', '%' . $query . '%');
+                    })->orWhereHas('status', function ($q) use ($query) {
+                        $q->where('title', 'like', '%' . $query . '%');
+                    })->orWhereHas('transactionDetails', function ($q) use ($query) {
+                        $q->whereHas('product', function ($q2) use ($query) {
+                            $q2->where('title', 'like', '%' . $query . '%');
+                        });
+                    });
+            });
     }
 }

@@ -21,6 +21,10 @@ class TransactionController extends Controller
     {
         return view('pages.transaction.payment', compact('id','umkm'));
     }
+    public function paymentCash($umkm,$id)
+    {
+        return view('pages.transaction.payment-cash', compact('id','umkm'));
+    }
 
     public function create($umkm)
     {

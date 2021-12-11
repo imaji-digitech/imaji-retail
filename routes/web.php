@@ -152,6 +152,7 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
     Route::post('product', [ProductController::class, 'graph'])->name('product.graph');
 
     Route::get('transaction/{umkm}/create', [TransactionController::class, 'create'])->name('transaction.create');
+    Route::get('transaction/{umkm}/create', [TransactionController::class, 'create'])->name('transaction.create');
     Route::get('transaction/{umkm}/history', [TransactionController::class, 'history'])->name('transaction.history');
     Route::get('transaction/{umkm}/active', [TransactionController::class, 'active'])->name('transaction.active');
     Route::get('transaction/export/{id}', function ($id) {
@@ -160,7 +161,8 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
         $pdf->loadView('pdf.invoice', compact('transaction'))->setPaper([0, 0, 470.00, 603.80], 'landscape');
         return $pdf->stream('INVOICE - ' . $transaction->no_invoice . ' - ' . $transaction->user->name . '.pdf');
     })->name('transaction.export');
-    Route::get('transaction/{umkm}/{id}', [TransactionController::class, 'payment'])->name('transaction.payment');
+    Route::get('transaction/{umkm}/payment/{id}', [TransactionController::class, 'payment'])->name('transaction.payment');
+    Route::get('transaction/{umkm}/payment-cash/{id}', [TransactionController::class, 'paymentCash'])->name('transaction.payment-cash');
     Route::get('transaction/payment/export/{id}', function ($id) {
         $transaction = TransactionPayment::find($id);
         $pdf = App::make('dompdf.wrapper');

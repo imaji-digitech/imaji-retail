@@ -60,7 +60,6 @@ class FormCashBook extends Component
             'icon' => 'success',
             'title' => 'Berhasil menambahkan data kas',
         ]);
-//        UserLog::create(['user_id'=>auth()->id(),'note']);
         UserLog::create([
             'user_id'=>auth()->id(),
             'note'=>"melakukan pencatatan buku kas pada ".ProductType::find($this->umkm)->title,

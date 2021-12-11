@@ -39,12 +39,11 @@
         <x-slot name="body">
             @foreach ($transactions as $transaction)
                 <tr x-data="window.__controller.dataTableController({{ $transaction->id }})">
-                    {{--                    <td>{{ $transaction->id }}</td>--}}
                     <td>{{ $transaction->user->name }}</td>
                     <td>{{ $transaction->no_invoice }}</td>
                     <td>{{ $transaction->status->title }}</td>
                     <td>Rp {{ number_format($transaction->transactionDetails->sum('total'),0,'.',',') }}</td>
-                    <td>Rp {{ number_format($transaction->transactionCredits->sum('total'),0,'.',',') }}</td>
+                    <td>Rp {{ number_format($transaction->transactionDetails->sum('total')-$transaction->transactionPaymentCashes->sum('total'),0,'.',',') }}</td>
                     <td>
                         @foreach($transaction->transactionDetails as $td)
                             <p>{{$td->product->title. " : " .$td->quantity}}</p>
@@ -59,7 +58,10 @@
                         <a role="button" href="{{ route('admin.transaction.payment',[$dataId,$transaction->id]) }}" class="mr-3">
                             <i class="fa fa-16px fa-shopping-cart text-blue-500"></i>
                         </a>
-                        <a role="button" href="{{ route('admin.transaction.show',[$dataId,$transaction->id]) }}" class="mr-3">
+
+                        <a role="button" href="{{ route('admin.transaction.payment-cash',[$dataId,$transaction->id]) }}" class="mr-3">
+                            <i class="fa fa-16px fa-cash-register text-blue-500"></i>
+                        </a>                        <a role="button" href="{{ route('admin.transaction.show',[$dataId,$transaction->id]) }}" class="mr-3">
                             <i class="fa fa-16px fa-eye text-blue-500"></i>
                         </a>
                         <a role="button" href="{{ route('admin.transaction.return',[$dataId,$transaction->id]) }}" class="mr-3">
