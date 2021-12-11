@@ -9,6 +9,6 @@
     </x-slot>
 
     <div>
-        <livewire:table.product name="product" :model="$product" />
+        <livewire:table.product name="product" :model="$product" :dataId="$umkm" />
     </div>
 </x-app-layout>

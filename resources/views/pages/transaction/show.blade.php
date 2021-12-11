@@ -9,7 +9,7 @@
     </x-slot>
 
     <div>
-        <livewire:detail-transaction :dataId="$id"/>
+        <livewire:detail-transaction :dataId="$id" :umkm="$umkm"/>
     </div>
 
 </x-app-layout>

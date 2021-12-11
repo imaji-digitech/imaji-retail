@@ -47,49 +47,49 @@ class DatabaseSeeder extends Seeder
         AssetCode::create(['type'=>'Asset tidak berwujud', 'code'=>'0311', 'title'=>'Hak sewa']);
         AssetCode::create(['type'=>'Asset tidak berwujud', 'code'=>'0312', 'title'=>'Franchise']);
 
-//        FinanceStatus::create(['title'=>'Waiting']);
-//        FinanceStatus::create(['title'=>'Accepted']);
-//        FinanceStatus::create(['title'=>'Decline']);
-//        FinanceStatus::create(['title'=>'Revision']);
-//        FinanceStatus::create(['title'=>'Nothing']);
-//
-//        FinanceUnit::create(['title'=>'pcs']);
-//        FinanceUnit::create(['title'=>'pack']);
-//        FinanceUnit::create(['title'=>'kg']);
-//        FinanceUnit::create(['title'=>'ml']);
-//        FinanceUnit::create(['title'=>'paket']);
-//        FinanceUnit::create(['title'=>'lembar']);
-//        FinanceUnit::create(['title'=>'OH']);
-//        FinanceUnit::create(['title'=>'box']);
-//        FinanceUnit::create(['title'=>'meter']);
+        FinanceStatus::create(['title'=>'Waiting']);
+        FinanceStatus::create(['title'=>'Accepted']);
+        FinanceStatus::create(['title'=>'Decline']);
+        FinanceStatus::create(['title'=>'Revision']);
+        FinanceStatus::create(['title'=>'Nothing']);
+
+        FinanceUnit::create(['title'=>'pcs']);
+        FinanceUnit::create(['title'=>'pack']);
+        FinanceUnit::create(['title'=>'kg']);
+        FinanceUnit::create(['title'=>'ml']);
+        FinanceUnit::create(['title'=>'paket']);
+        FinanceUnit::create(['title'=>'lembar']);
+        FinanceUnit::create(['title'=>'OH']);
+        FinanceUnit::create(['title'=>'box']);
+        FinanceUnit::create(['title'=>'meter']);
 
 
-//        // \App\Models\User::factory(10)->create();
-//        Status::create(['title' => 'Belum terbayar']);
-//        Status::create(['title' => 'Sebagian terbayar']);
-//        Status::create(['title' => 'Sudah terbayar']);
-//
-//        PaymentStatus::create(['title' => 'Transfer']);
-//        PaymentStatus::create(['title' => 'Tunai']);
-//        PaymentStatus::create(['title' => 'Piutang Usaha']);
-//
-//        CodeCashBook::create(['title' => 'Kas Awal']);
-//        CodeCashBook::create(['title' => 'Pendanaan']);
-//        CodeCashBook::create(['title' => 'Pendapatan']);
-//        CodeCashBook::create(['title' => 'Biaya Produksi']);
-//        CodeCashBook::create(['title' => 'Pembelian']);
-//        CodeCashBook::create(['title' => 'Hutang']);
-//        CodeCashBook::create(['title' => 'Piutang']);
-//        CodeCashBook::create(['title' => 'Biaya Pemasaran']);
-//        CodeCashBook::create(['title' => 'Biaya Packing']);
-//        CodeCashBook::create(['title' => 'Biaya Transportasi']);
-//        CodeCashBook::create(['title' => 'Biaya Listrik']);
-//        CodeCashBook::create(['title' => 'Biaya Air']);
-//        CodeCashBook::create(['title' => 'Biaya Upah']);
-//        CodeCashBook::create(['title' => 'Prive']);
-//        CodeCashBook::create(['title' => 'Musibah']);
-//        CodeCashBook::create(['title' => 'Lainnya']);
-//        CodeCashBook::create(['id' => 999, 'title' => 'Pembukaan toko']);
+        // \App\Models\User::factory(10)->create();
+        Status::create(['title' => 'Belum terbayar']);
+        Status::create(['title' => 'Sebagian terbayar']);
+        Status::create(['title' => 'Sudah terbayar']);
+
+        PaymentStatus::create(['title' => 'Transfer']);
+        PaymentStatus::create(['title' => 'Tunai']);
+        PaymentStatus::create(['title' => 'Piutang Usaha']);
+
+        CodeCashBook::create(['title' => 'Kas Awal']);
+        CodeCashBook::create(['title' => 'Pendanaan']);
+        CodeCashBook::create(['title' => 'Pendapatan']);
+        CodeCashBook::create(['title' => 'Biaya Produksi']);
+        CodeCashBook::create(['title' => 'Pembelian']);
+        CodeCashBook::create(['title' => 'Hutang']);
+        CodeCashBook::create(['title' => 'Piutang']);
+        CodeCashBook::create(['title' => 'Biaya Pemasaran']);
+        CodeCashBook::create(['title' => 'Biaya Packing']);
+        CodeCashBook::create(['title' => 'Biaya Transportasi']);
+        CodeCashBook::create(['title' => 'Biaya Listrik']);
+        CodeCashBook::create(['title' => 'Biaya Air']);
+        CodeCashBook::create(['title' => 'Biaya Upah']);
+        CodeCashBook::create(['title' => 'Prive']);
+        CodeCashBook::create(['title' => 'Musibah']);
+        CodeCashBook::create(['title' => 'Lainnya']);
+        CodeCashBook::create(['id' => 999, 'title' => 'Pembukaan toko']);
 
 //        User::create('')
     }

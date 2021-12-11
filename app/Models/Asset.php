@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 /**
  * @property integer $id
@@ -36,7 +37,7 @@ class Asset extends Model
     protected $fillable = ['asset_state_id', 'product_type_id', 'asset_code_id', 'asset_ownership_id', 'code', 'title', 'amount', 'nominal', 'created_at', 'updated_at'];
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function assetCode()
     {
@@ -44,7 +45,7 @@ class Asset extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function assetOwnership()
     {
@@ -52,7 +53,7 @@ class Asset extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function assetState()
     {
@@ -60,20 +61,17 @@ class Asset extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function productType()
     {
         return $this->belongsTo('App\Models\ProductType');
     }
-    public static function search($query)
+
+    public static function search($query, $dataId)
     {
-        if (auth()->id()!=22){
-            return empty($query) ? static::query()
-                : static::where('title', 'like', '%' . $query . '%');
-        }else{
-            return empty($query) ? static::query()->whereProductTypeId(8)
-                : static::whereProductTypeId(8)->where('title', 'like', '%' . $query . '%');
-        }
+        return empty($query) ? static::query()->whereProductTypeId($dataId)
+            : static::whereProductTypeId($dataId)->where('title', 'like', '%' . $query . '%');
+
     }
 }

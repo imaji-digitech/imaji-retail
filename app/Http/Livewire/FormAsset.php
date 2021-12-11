@@ -16,19 +16,20 @@ class FormAsset extends Component
     public $data;
     public $dataId;
     public $action;
-    public $optionProductType;
+    public $umkm;
+//    public $optionProductType;
     public $optionState;
     public $optionCode;
     public $optionOwnership;
 
     public function mount()
     {
-        $this->optionProductType=eloquent_to_options(ProductType::get(),'id','title');
+//        $this->optionProductType=eloquent_to_options(ProductType::get(),'id','title');
         $this->optionState=eloquent_to_options(AssetState::get(),'id','title');
         $this->optionCode=eloquent_to_options(AssetCode::get(),'id','title');
         $this->optionOwnership=eloquent_to_options(AssetOwnership::get(),'id','title');
         $this->data = [
-            'product_type_id' => 1,
+            'product_type_id' => $this->umkm,
             'asset_state_id' => 1,
             'asset_code_id' => 1,
             'asset_ownership_id' => 1,
@@ -36,9 +37,9 @@ class FormAsset extends Component
             'amount' => 0,
             'nominal' => 0
         ];
-        if (auth()->id()==22){
-            $this->data['product_type_id']=8;
-        }
+//        if (auth()->id()==22){
+//            $this->data['product_type_id']=8;
+//        }
         if ($this->dataId != null) {
             $data = Asset::find($this->dataId);
             $this->data = [
@@ -70,7 +71,7 @@ class FormAsset extends Component
             'icon' => 'success',
             'title' => 'Berhasil menambahkan data asset',
         ]);
-        $this->emit('redirect', route('admin.asset.index'));
+        $this->emit('redirect', route('admin.asset.index',$this->umkm));
     }
     public function update()
     {
@@ -80,7 +81,7 @@ class FormAsset extends Component
             'icon' => 'success',
             'title' => 'Berhasil merubah data asset',
         ]);
-        $this->emit('redirect', route('admin.asset.index'));
+        $this->emit('redirect', route('admin.asset.index',$this->umkm));
     }
 
     public function render()

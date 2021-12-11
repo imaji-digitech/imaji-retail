@@ -4,12 +4,12 @@
 
         <div class="section-header-breadcrumb">
             <div class="breadcrumb-item active"><a href="{{ route('admin.dashboard') }}">{{__('dashboard')}}</a></div>
-            <div class="breadcrumb-item"><a href="{{ route('admin.finance.index') }}">{{__('keuangan')}}</a></div>
+            <div class="breadcrumb-item"><a href="{{ route('admin.finance.index',$umkm) }}">{{__('keuangan')}}</a></div>
             <div class="breadcrumb-item"><a href="#">{{__('Menambahkan keuangan baru')}}</a></div>
         </div>
     </x-slot>
 
     <div>
-        <livewire:form-finance action="create" type="rab"/>
+        <livewire:form-finance action="create" type="rab" :umkm="$umkm"/>
     </div>
 </x-app-layout>

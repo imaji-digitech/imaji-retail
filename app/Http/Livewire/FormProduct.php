@@ -9,18 +9,19 @@ use Livewire\Component;
 
 class FormProduct extends Component
 {
-    public $optionType;
+//    public $optionType;
     public $data;
     public $dataId;
     public $action;
+    public $umkm;
 
     public function mount()
     {
-        $this->optionType=eloquent_to_options(ProductType::get(),'id','title');
+//        $this->optionType=eloquent_to_options(ProductType::get(),'id','title');
         $this->data=[
             'title'=>'',
             'code'=>'',
-            'product_type_id'=>1,
+            'product_type_id'=>$this->umkm,
             'price'=>0,
         ];
         if ($this->dataId!=null){
@@ -58,7 +59,7 @@ class FormProduct extends Component
             'note'=>"pembuatan produk baru pada ".ProductType::find($this->data['product_type_id'])->title,
             'user_note'=>"nama produk ".$this->data['title']
         ]);
-        $this->emit('redirect', route('admin.product.index'));
+        $this->emit('redirect', route('admin.product.index',$this->umkm));
     }
 
     public function update(){
@@ -76,7 +77,7 @@ class FormProduct extends Component
             'note'=>"perubahan produk pada ".ProductType::find($this->data['product_type_id'])->title,
             'user_note'=>"nama produk ".$this->data['title']
         ]);
-        $this->emit('redirect', route('admin.product.index'));
+        $this->emit('redirect', route('admin.product.index',$this->umkm));
     }
 
     public function render()

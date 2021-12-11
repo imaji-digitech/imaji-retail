@@ -8,13 +8,18 @@ use Illuminate\Http\Request;
 
 class AssetController extends Controller
 {
-    public function index(){
-        return view('pages.asset.index',['asset'=>Asset::class]);
+    public function index($umkm)
+    {
+        return view('pages.asset.index', ['asset' => Asset::class, 'umkm' => $umkm]);
     }
-    public function create(){
-        return view('pages.asset.create');
+
+    public function create($umkm)
+    {
+        return view('pages.asset.create', compact('umkm'));
     }
-    public function edit($id){
-        return view('pages.asset.edit',compact('id'));
+
+    public function edit($umkm, $id)
+    {
+        return view('pages.asset.edit', compact('id', 'umkm'));
     }
 }

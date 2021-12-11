@@ -16,6 +16,7 @@ class FormPayment extends Component
     public $dataId;
     public $dataCredit;
     public $total;
+    public $umkm;
     public function mount(){
         $this->dataCredit=TransactionCredit::whereTransactionId($this->dataId)->get();
         foreach ($this->dataCredit as $dc){
@@ -66,10 +67,10 @@ class FormPayment extends Component
             }
             if (count($this->dataCredit=TransactionCredit::whereTransactionId($this->dataId)->get())==0){
                 Transaction::find($this->dataId)->update(['status_id'=>3]);
-                $url="admin.transaction.history";
+                $url=route("admin.transaction.history",$this->umkm);
             }else{
                 Transaction::find($this->dataId)->update(['status_id'=>2]);
-                $url="admin.transaction.active";
+                $url=route("admin.transaction.active",$this->umkm);
             }
             $this->emit('swal:alert', [
                 'icon' => 'success',
@@ -81,7 +82,7 @@ class FormPayment extends Component
                 'note'=>"melakukan catatan pembayaran pada invoice ". Transaction::find($this->dataId)->no_invoice,
             ]);
 
-            $this->emit('redirect', route($url));
+            $this->emit('redirect', $url);
         }
     }
     public function render()

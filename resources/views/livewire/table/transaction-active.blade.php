@@ -56,13 +56,13 @@
                         @endforeach
                     </td>
                     <td>
-                        <a role="button" href="{{ route('admin.transaction.payment',$transaction->id) }}" class="mr-3">
+                        <a role="button" href="{{ route('admin.transaction.payment',[$dataId,$transaction->id]) }}" class="mr-3">
                             <i class="fa fa-16px fa-shopping-cart text-blue-500"></i>
                         </a>
-                        <a role="button" href="{{ route('admin.transaction.show',$transaction->id) }}" class="mr-3">
+                        <a role="button" href="{{ route('admin.transaction.show',[$dataId,$transaction->id]) }}" class="mr-3">
                             <i class="fa fa-16px fa-eye text-blue-500"></i>
                         </a>
-                        <a role="button" href="{{ route('admin.transaction.return',$transaction->id) }}" class="mr-3">
+                        <a role="button" href="{{ route('admin.transaction.return',[$dataId,$transaction->id]) }}" class="mr-3">
                             <i class="fa fa-16px fa-exchange text-danger"></i>
                         </a>
                         <a role="button" href="{{ route('admin.transaction.export',$transaction->id) }}" class="mr-3" target="_blank">

@@ -7,38 +7,38 @@ use App\Models\Transaction;
 
 class TransactionController extends Controller
 {
-    public function active()
+    public function active($umkm)
     {
-        return view('pages.transaction.active', ['transaction' => Transaction::class]);
+        return view('pages.transaction.active', ['transaction' => Transaction::class,'umkm'=>$umkm]);
     }
 
-    public function history()
+    public function history($umkm)
     {
-        return view('pages.transaction.history', ['transaction' => Transaction::class]);
+        return view('pages.transaction.history', ['transaction' => Transaction::class,'umkm'=>$umkm]);
     }
 
-    public function payment($id)
+    public function payment($umkm,$id)
     {
-        return view('pages.transaction.payment', compact('id'));
+        return view('pages.transaction.payment', compact('id','umkm'));
     }
 
-    public function create()
+    public function create($umkm)
     {
-        return view('pages.transaction.create');
+        return view('pages.transaction.create',compact('umkm'));
     }
 
-    public function edit($id)
+    public function edit($umkm,$id)
     {
-        return view('pages.transaction.show', compact('id'));
+        return view('pages.transaction.show', compact('id','umkm'));
     }
 
-    public function show($id)
+    public function show($umkm,$id)
     {
-        return view('pages.transaction.show', compact('id'));
+        return view('pages.transaction.show', compact('id','umkm'));
     }
 
-    public function return($id)
+    public function return($umkm,$id)
     {
-        return view('pages.transaction.return', compact('id'));
+        return view('pages.transaction.return', compact('id','umkm'));
     }
 }

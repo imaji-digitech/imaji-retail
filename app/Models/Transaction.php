@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property integer $id
@@ -36,8 +38,40 @@ class Transaction extends Model
      */
     protected $fillable = ['user_id', 'status_id', 'payment_status_id', 'no_invoice', 'tax', 'created_at', 'updated_at'];
 
+    public static function search($query, $status, $dataId)
+    {
+        return empty($query) ? static::query()
+            ->whereIn('status_id', $status)
+            ->whereHas('transactionDetails', function ($q) use ($dataId) {
+                $q->whereHas('product', function ($q2) use ($dataId) {
+                    $q2->whereProductTypeId($dataId);
+                });
+            }) :
+            static::whereIn('status_id', $status)
+                ->whereHas('transactionDetails', function ($q) use ($dataId, $query) {
+                    $q->whereHas('product', function ($q2) use ($dataId, $query) {
+                        $q2->where('product_type_id', $dataId);
+                    });
+                })
+                ->where(function ($w) use ($query) {
+                    $w->orWhere('no_invoice', 'like', '%' . $query . '%')
+                        ->orWhereHas('user', function ($q) use ($query) {
+                            $q->where('name', 'like', '%' . $query . '%');
+                        })->orWhereHas('paymentStatus', function ($q) use ($query) {
+                            $q->where('title', 'like', '%' . $query . '%');
+                        })->orWhereHas('status', function ($q) use ($query) {
+                            $q->where('title', 'like', '%' . $query . '%');
+                        })->orWhereHas('transactionDetails', function ($q) use ($query) {
+                            $q->whereHas('product', function ($q2) use ($query) {
+                                $q2->where('title', 'like', '%' . $query . '%');
+                            });
+                        });
+                });
+    }
+
+
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function paymentStatus()
     {
@@ -45,7 +79,7 @@ class Transaction extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function status()
     {
@@ -53,7 +87,7 @@ class Transaction extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function user()
     {
@@ -61,7 +95,7 @@ class Transaction extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function transactionCredits()
     {
@@ -69,7 +103,7 @@ class Transaction extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function transactionDetails()
     {
@@ -77,7 +111,7 @@ class Transaction extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function transactionPaymentCashes()
     {
@@ -85,7 +119,7 @@ class Transaction extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function transactionPayments()
     {
@@ -93,28 +127,10 @@ class Transaction extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function transactionReturns()
     {
         return $this->hasMany('App\Models\TransactionReturn');
-    }
-    public static function search($query, $status)
-    {
-        return empty($query) ? static::query()->whereIn('status_id', $status)
-            : static::whereIn('status_id', $status)->where(function ($w) use ($query) {
-                $w->orWhere('no_invoice', 'like', '%' . $query . '%')
-                    ->orWhereHas('user', function ($q) use ($query) {
-                        $q->where('name', 'like', '%' . $query . '%');
-                    })->orWhereHas('paymentStatus', function ($q) use ($query) {
-                        $q->where('title', 'like', '%' . $query . '%');
-                    })->orWhereHas('status', function ($q) use ($query) {
-                        $q->where('title', 'like', '%' . $query . '%');
-                    })->orWhereHas('transactionDetails', function ($q) use ($query) {
-                        $q->whereHas('product', function ($q2) use ($query) {
-                            $q2->where('title', 'like', '%' . $query . '%');
-                        });
-                    });
-            });
     }
 }

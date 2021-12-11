@@ -9,6 +9,6 @@
     </x-slot>
 
     <div>
-        <livewire:form-product-manufacture :dataId="$product->id" />
+        <livewire:form-product-manufacture :dataId="$product->id" :umkm="$umkm" />
     </div>
 </x-app-layout>

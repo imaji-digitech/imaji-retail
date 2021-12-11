@@ -19,6 +19,7 @@ class FormReturn extends Component
     public $dataCredit;
     public $total;
     public $note;
+    public $umkm;
     public function mount(){
         $this->note='';
         $this->dataCredit=TransactionCredit::whereTransactionId($this->dataId)->get();
@@ -77,16 +78,16 @@ class FormReturn extends Component
             }
             if (count($this->dataCredit=TransactionCredit::whereTransactionId($this->dataId)->get())==0){
                 Transaction::find($this->dataId)->update(['status_id'=>3]);
-                $url="admin.transaction.history";
+                $url=route("admin.transaction.history",$this->umkm);
             }else{
-                $url="admin.transaction.active";
+                $url=route("admin.transaction.active",$this->umkm);
             }
             $this->emit('swal:alert', [
                 'icon' => 'success',
                 'title' => 'Berhasil menambahkan pembayaran',
             ]);
 
-            $this->emit('redirect', route($url));
+            $this->emit('redirect', $url);
         }
     }
     public function render()

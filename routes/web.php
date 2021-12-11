@@ -68,7 +68,51 @@ Route::get('simple-qr-code', function () {
     return view('pdf.product');
 });
 
-Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'verified'])->group(function () {
+Route::name('umkm.')->prefix('umkm')->middleware(['auth:sanctum', 'web', 'verified', 'checkRole:3'])->group(function () {
+    Route::resource('product', ProductController::class)->only(['index', 'create', 'show', 'edit']);
+    Route::resource('customer', CustomerController::class)->only(['index', 'create', 'show', 'edit']);
+    Route::get('product/export/{id}', function ($id) {
+        $product = Product::findOrFail($id);
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadView('pdf.product', compact('product'));
+        return $pdf->stream('REPORT PRODUK - ' . strtoupper($product->name) . '.pdf');
+    })->name('product.export');
+
+    Route::get('product/stock/{id}', [ProductController::class, 'stock'])->name('product.stock');
+    Route::get('product/history/{id}', [ProductController::class, 'history'])->name('product.history');
+
+    Route::get('/product/manufacture/{id}', [ProductController::class, 'manufacture'])->name('product.manufacture');
+    Route::post('/product', [ProductController::class, 'graph'])->name('product.graph');
+    Route::get('/transaction/export/{id}', function ($id) {
+        $transaction = Transaction::find($id);
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadView('pdf.invoice', compact('transaction'))->setPaper([0, 0, 470.00, 603.80], 'landscape');
+        return $pdf->stream('INVOICE - ' . $transaction->no_invoice . ' - ' . $transaction->user->name . '.pdf');
+    })->name('transaction.export');
+    Route::get('/transaction/create', [TransactionController::class, 'create'])->name('transaction.create');
+    Route::get('/transaction/history', [TransactionController::class, 'history'])->name('transaction.history');
+    Route::get('/transaction/payment/{id}', [TransactionController::class, 'payment'])->name('transaction.payment');
+    Route::get('/transaction/payment/export/{id}', function ($id) {
+        $transaction = TransactionPayment::find($id);
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadView('pdf.payment', compact('transaction'))->setPaper([0, 0, 470.00, 603.80], 'landscape');
+        return $pdf->stream('NOTA PEMBAYARAN - ' . $transaction->transaction->no_invoice . ' - ' . $transaction->transaction->user->name . '.pdf');
+    })->name('transaction.payment.export');
+
+    Route::get('/transaction/return/{id}', [TransactionController::class, 'return'])->name('transaction.return');
+    Route::get('/transaction/return/export/{id}', function ($id) {
+        $transaction = TransactionReturn::find($id);
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadView('pdf.return', compact('transaction'))->setPaper([0, 0, 470.00, 603.80], 'landscape');
+        return $pdf->stream('NOTA RETURN - ' . $transaction->transaction->no_invoice . ' - ' . $transaction->transaction->user->name . '.pdf');
+    })->name('transaction.return.export');
+
+    Route::get('/transaction/show/{id}', [TransactionController::class, 'show'])->name('transaction.show');
+
+    Route::resource('asset', AssetController::class)->only(['index', 'create', 'show', 'edit']);
+});
+
+Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'verified', 'checkRole:1,2'])->group(function () {
     Route::post('/summernote-upload', [SupportController::class, 'upload'])->name('summernote_upload');
     Route::view('/dashboard', "dashboard")->name('dashboard');
     Route::resource('content', ContentController::class)->only(['index', 'create', 'edit']);
@@ -83,17 +127,57 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
         $pdf->loadView('pdf.umkm', compact('umkm', 'turnover'));
         return $pdf->stream('REPORT USAHA - ' . strtoupper($umkm->name) . '.pdf');
     })->name('product-type.export');
-    Route::resource('product', ProductController::class)->only(['index', 'create', 'show', 'edit']);
-    Route::resource('customer', CustomerController::class)->only(['index', 'create', 'show', 'edit']);
-    Route::get('product/export/{id}', function ($id) {
+
+    Route::get('product/{umkm}', [ProductController::class, 'index'])->name('product.index');
+    Route::get('product/{umkm}/create', [ProductController::class, 'create'])->name('product.create');
+    Route::get('product/{umkm}/show/{id}', [ProductController::class, 'show'])->name('product.show');
+    Route::get('product/{umkm}/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
+
+    Route::get('customer', [CustomerController::class, 'index'])->name('customer.index');
+    Route::get('customer/create', [CustomerController::class, 'create'])->name('customer.create');
+    Route::get('customer/show/{id}', [CustomerController::class, 'show'])->name('customer.show');
+    Route::get('customer/edit/{id}', [CustomerController::class, 'edit'])->name('customer.edit');
+
+    Route::get('product/{umkm}/export/{id}', function ($umkm, $id) {
         $product = Product::findOrFail($id);
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadView('pdf.product', compact('product'));
         return $pdf->stream('REPORT PRODUK - ' . strtoupper($product->name) . '.pdf');
     })->name('product.export');
 
-    Route::get('product/stock/{id}', [ProductController::class, 'stock'])->name('product.stock');
-    Route::get('product/history/{id}', [ProductController::class, 'history'])->name('product.history');
+    Route::get('product/{umkm}/stock/{id}', [ProductController::class, 'stock'])->name('product.stock');
+    Route::get('product/{umkm}/history/{id}', [ProductController::class, 'history'])->name('product.history');
+
+    Route::get('product/{umkm}/manufacture/{id}', [ProductController::class, 'manufacture'])->name('product.manufacture');
+    Route::post('product', [ProductController::class, 'graph'])->name('product.graph');
+
+    Route::get('transaction/{umkm}/create', [TransactionController::class, 'create'])->name('transaction.create');
+    Route::get('transaction/{umkm}/history', [TransactionController::class, 'history'])->name('transaction.history');
+    Route::get('transaction/{umkm}/active', [TransactionController::class, 'active'])->name('transaction.active');
+    Route::get('transaction/export/{id}', function ($id) {
+        $transaction = Transaction::find($id);
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadView('pdf.invoice', compact('transaction'))->setPaper([0, 0, 470.00, 603.80], 'landscape');
+        return $pdf->stream('INVOICE - ' . $transaction->no_invoice . ' - ' . $transaction->user->name . '.pdf');
+    })->name('transaction.export');
+    Route::get('transaction/{umkm}/{id}', [TransactionController::class, 'payment'])->name('transaction.payment');
+    Route::get('transaction/payment/export/{id}', function ($id) {
+        $transaction = TransactionPayment::find($id);
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadView('pdf.payment', compact('transaction'))->setPaper([0, 0, 470.00, 603.80], 'landscape');
+        return $pdf->stream('NOTA PEMBAYARAN - ' . $transaction->transaction->no_invoice . ' - ' . $transaction->transaction->user->name . '.pdf');
+    })->name('transaction.payment.export');
+
+    Route::get('transaction/{umkm}/return/{id}', [TransactionController::class, 'return'])->name('transaction.return');
+    Route::get('transaction/{umkm}/return/export/{id}', function ($id) {
+        $transaction = TransactionReturn::find($id);
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadView('pdf.return', compact('transaction'))->setPaper([0, 0, 470.00, 603.80], 'landscape');
+        return $pdf->stream('NOTA RETURN - ' . $transaction->transaction->no_invoice . ' - ' . $transaction->transaction->user->name . '.pdf');
+    })->name('transaction.return.export');
+
+    Route::get('transaction/{umkm}/show/{id}', [TransactionController::class, 'show'])->name('transaction.show');
+
 
 //    Route::resource('cash-book', CashBookController::class)->only(['index', 'create', 'edit']);
     Route::get('/cash-book/{umkm}', [CashBookController::class, 'index'])->name('cash-book.index');
@@ -117,44 +201,23 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
         return $pdf->stream();
     })->name('cash-note.export');
 
-    Route::get('/product/manufacture/{id}', [ProductController::class, 'manufacture'])->name('product.manufacture');
-    Route::post('/product', [ProductController::class, 'graph'])->name('product.graph');
-    Route::get('/transaction/create', [TransactionController::class, 'create'])->name('transaction.create');
-    Route::get('/transaction/history', [TransactionController::class, 'history'])->name('transaction.history');
 
-    Route::get('/transaction/active', [TransactionController::class, 'active'])->name('transaction.active');
-    Route::get('/transaction/payment/{id}', [TransactionController::class, 'payment'])->name('transaction.payment');
-    Route::get('/transaction/payment/export/{id}', function ($id) {
-        $transaction = TransactionPayment::find($id);
-        $pdf = App::make('dompdf.wrapper');
-        $pdf->loadView('pdf.payment', compact('transaction'))->setPaper([0, 0, 470.00, 603.80], 'landscape');
-        return $pdf->stream('NOTA PEMBAYARAN - ' . $transaction->transaction->no_invoice . ' - ' . $transaction->transaction->user->name . '.pdf');
-    })->name('transaction.payment.export');
+//    Route::resource('finance', FinanceController::class)->only(['index','create','show','edit']);
+    Route::get('finance/{umkm}', [FinanceController::class, 'index'])->name('finance.index');
+    Route::get('finance/{umkm}/create', [FinanceController::class, 'create'])->name('finance.create');
+    Route::get('finance/{umkm}/show/{id}', [FinanceController::class, 'show'])->name('finance.show');
+    Route::get('finance/{umkm}/edit/{id}', [FinanceController::class, 'edit'])->name('finance.edit');
+    Route::get('finance/{umkm}/{id}/comparison', [FinanceController::class, 'comparison'])->name('finance.comparison');
+    Route::get('finance/{umkm}/{id}/note', [FinanceController::class, 'note'])->name('finance.note.index');
+    Route::get('finance/{id}/note/create', [FinanceController::class, 'noteCreate'])->name('finance.note.create');
+    Route::get('finance/{umkm}/note/{note}', [FinanceController::class, 'noteShow'])->name('finance.note.show');
+    Route::get('finance/{id}/spj', [FinanceController::class, 'noteSubmit'])->name('finance.note.submit');
 
-    Route::get('/transaction/return/{id}', [TransactionController::class, 'return'])->name('transaction.return');
-    Route::get('/transaction/return/export/{id}', function ($id) {
-        $transaction = TransactionReturn::find($id);
-        $pdf = App::make('dompdf.wrapper');
-        $pdf->loadView('pdf.return', compact('transaction'))->setPaper([0, 0, 470.00, 603.80], 'landscape');
-        return $pdf->stream('NOTA RETURN - ' . $transaction->transaction->no_invoice . ' - ' . $transaction->transaction->user->name . '.pdf');
-    })->name('transaction.return.export');
-
-    Route::get('/transaction/show/{id}', [TransactionController::class, 'show'])->name('transaction.show');
-    Route::get('/transaction/export/{id}', function ($id) {
-        $transaction = Transaction::find($id);
-        $pdf = App::make('dompdf.wrapper');
-        $pdf->loadView('pdf.invoice', compact('transaction'))->setPaper([0, 0, 470.00, 603.80], 'landscape');
-        return $pdf->stream('INVOICE - ' . $transaction->no_invoice . ' - ' . $transaction->user->name . '.pdf');
-    })->name('transaction.export');
-
-    Route::resource('finance', FinanceController::class)->only(['index','create','show','edit']);
-    Route::get('finance/{id}/comparison',[FinanceController::class,'comparison'])->name('finance.comparison');
-    Route::get('finance/{id}/note',[FinanceController::class,'note'])->name('finance.note.index');
-    Route::get('finance/{id}/note/create',[FinanceController::class,'noteCreate'])->name('finance.note.create');
-    Route::get('finance/note/{note}',[FinanceController::class,'noteShow'])->name('finance.note.show');
-    Route::get('finance/{id}/spj',[FinanceController::class,'noteSubmit'])->name('finance.note.submit');
-
-    Route::resource('asset', AssetController::class)->only(['index','create','show','edit']);
+//    Route::resource('asset', AssetController::class)->only(['index','create','show','edit']);
+    Route::get('asset/{umkm}', [AssetController::class, 'index'])->name('asset.index');
+    Route::get('asset/{umkm}/create', [AssetController::class, 'create'])->name('asset.create');
+    Route::get('asset/{umkm}/show/{id}', [AssetController::class, 'show'])->name('asset.show');
+    Route::get('asset/{umkm}/edit/{id}', [AssetController::class, 'edit'])->name('asset.edit');
 
     Route::get('/user', [UserController::class, "index"])->name('user');
     Route::view('/user/new', "pages.user.create")->name('user.new');

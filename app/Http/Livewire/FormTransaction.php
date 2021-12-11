@@ -18,6 +18,7 @@ class FormTransaction extends Component
 {
     public $action;
     public $dataId;
+    public $umkm;
 
     public $data;
     public $product;
@@ -47,7 +48,7 @@ class FormTransaction extends Component
             'payment_status_id' => '1',
             'created_at' => date("Y-m-d")
         ];
-        $this->listProduct = Product::get();
+        $this->listProduct = Product::whereProductTypeId($this->umkm)->get();
         $this->product = [];
         $this->optionProduct = array();
         foreach ($this->listProduct as $index => $a) {
@@ -77,10 +78,10 @@ class FormTransaction extends Component
     {
         if ($this->data['payment_status_id'] == 1 or $this->data['payment_status_id'] == 2) {
             $this->data['status_id'] = 3;
-            $url = "admin.transaction.history";
+            $url=route("admin.transaction.history",$this->umkm);
         } else {
             $this->data['status_id'] = 1;
-            $url = "admin.transaction.active";
+            $url=route("admin.transaction.active",$this->umkm);
         }
         $this->data['no_invoice'] = str_replace('-', '', $this->data['created_at']) . sprintf("%03d", (count(Transaction::whereDate('created_at', Carbon::today())->get()) + 1));
         $d = Transaction::create($this->data);
@@ -130,7 +131,7 @@ class FormTransaction extends Component
             'title' => 'Berhasil menambahkan distribusi',
         ]);
 
-        $this->emit('redirect', route($url));
+        $this->emit('redirect', $url);
     }
 
     public function render()

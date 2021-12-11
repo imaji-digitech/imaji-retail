@@ -43,7 +43,7 @@
                         @endforeach
                     </td>
                     <td>
-                        <a role="button" href="{{ route('admin.transaction.show',$transaction->id) }}" class="mr-3">
+                        <a role="button" href="{{ route('admin.transaction.show',[$dataId,$transaction->id]) }}" class="mr-3">
                             <i class="fa fa-16px fa-eye text-blue-500"></i>
                         </a>
                         @if($transaction->payment_status_id==3)

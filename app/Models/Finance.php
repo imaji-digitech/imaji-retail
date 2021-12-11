@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property integer $id
@@ -52,17 +54,19 @@ class Finance extends Model
 
     ];
 
-    public static function search($query)
+    public static function search($query, $dataId)
     {
-        return empty($query) ? static::query()
-            : static::where('title', 'like', '%' . $query . '%')
-                ->orWhereHas('user', function ($q) use ($query) {
-                    $q->where('name', 'like', '%' . $query . '%');
-                });
+        return empty($query) ? static::query()->whereProductTypeId($dataId)
+            : static::whereProductTypeId($dataId)->where(function ($q) use ($query) {
+                $q->where('title', 'like', '%' . $query . '%')
+                    ->orWhereHas('user', function ($q) use ($query) {
+                        $q->where('name', 'like', '%' . $query . '%');
+                    });
+            });
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function productType()
     {
@@ -70,7 +74,7 @@ class Finance extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function rabStatus()
     {
@@ -78,19 +82,20 @@ class Finance extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function spjStatus()
     {
         return $this->belongsTo('App\Models\FinanceStatus', 'status_spj_id');
     }
+
     public function user()
     {
         return $this->belongsTo('App\Models\User', 'user_id');
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function financeItems()
     {
@@ -98,7 +103,7 @@ class Finance extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
 //    public function financeNotes()
 //    {
@@ -106,7 +111,7 @@ class Finance extends Model
 //    }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function financeNotes()
     {

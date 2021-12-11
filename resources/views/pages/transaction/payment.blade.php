@@ -9,6 +9,6 @@
     </x-slot>
 
     <div>
-        <livewire:form-payment :dataId="$id"/>
+        <livewire:form-payment :dataId="$id" :umkm="$umkm"/>
     </div>
 </x-app-layout>

@@ -39,16 +39,16 @@
                     <td style="height: 10px !important;"></td>
                     <td style="height: 10px !important;"></td>
                     <td style="height: 10px !important;">
-                        <a role="button" href="{{ route('admin.finance.show',$finance->id) }}" class="mr-1 btn btn-success">
+                        <a role="button" href="{{ route('admin.finance.show',[$finance->product_type_id,$finance->id]) }}" class="mr-1 btn btn-success">
                             Lihat RAB
                         </a>
-                        <a role="button" href="{{route('admin.finance.note.index',$finance->id)}}" class="mr-1 btn btn-dark">
+                        <a role="button" href="{{route('admin.finance.note.index',[$finance->product_type_id,$finance->id])}}" class="mr-1 btn btn-dark">
                             Lihat SPJ
                         </a>
                         <a role="button" href="" class="mr-1 btn btn-primary">
                             Edit
                         </a>
-                        <a role="button" href="{{route('admin.finance.comparison',$finance->id)}}" class="mr-1 btn btn-warning">
+                        <a role="button" href="{{route('admin.finance.comparison',[$finance->product_type_id,$finance->id])}}" class="mr-1 btn btn-warning">
                             Bandingkan RAB & SPJ
                         </a>
                         <a role="button" x-on:click.prevent="deleteItem" href="#" class="btn btn-danger">

@@ -13,12 +13,13 @@ class FormFinance extends Component
     public $action;
     public $type;
     public $data;
+    public $umkm;
     public $dataId;
     public $optionProductType;
     public function mount(){
-        $this->optionProductType=eloquent_to_options(ProductType::get(),'id','title');
+//        $this->optionProductType=eloquent_to_options(ProductType::get(),'id','title');
         $this->data=[
-            'product_type_id'=>1,
+            'product_type_id'=>$this->umkm,
             'status_rab_id'=>5,
             'status_spj_id'=>5,
             'title'=>'',
@@ -61,7 +62,7 @@ class FormFinance extends Component
             'user_id'=>auth()->id(),
             'note'=>"membuat data rab ".$this->data['title'],
         ]);
-        $this->emit('redirect', route('admin.customer.index'));
+        $this->emit('redirect', route('admin.finance.index',$this->umkm));
     }
     public function update(){
         $this->validate();
@@ -75,7 +76,7 @@ class FormFinance extends Component
             'user_id'=>auth()->id(),
             'note'=>"merubah data rab ".$this->data['title'],
         ]);
-        $this->emit('redirect', route('admin.customer.index'));
+        $this->emit('redirect', route('admin.finance.index',$this->umkm));
     }
     public function render()
     {

@@ -10,26 +10,26 @@ use Illuminate\Support\Facades\Validator;
 
 class ProductController extends Controller
 {
-    public function index()
+    public function index($umkm)
     {
-        return view('pages.product.index',['product'=>Product::class]);
+        return view('pages.product.index',['product'=>Product::class,'umkm'=>$umkm]);
     }
-    public function create()
+    public function create($umkm)
     {
-        return view('pages.product.create');
+        return view('pages.product.create',compact('umkm'));
     }
 
-    public function edit($id)
+    public function edit($umkm,$id)
     {
-        return view('pages.product.edit',compact('id'));
+        return view('pages.product.edit',compact('umkm','id'));
     }
-    public function show($id)
+    public function show($umkm,$id)
     {
-        return view('pages.product.show',compact('id'));
+        return view('pages.product.show',compact('umkm','id'));
     }
-    public function manufacture($id){
+    public function manufacture($umkm,$id){
         $product=Product::findOrFail($id);
-        return view('pages.product.manufacture',compact('product'));
+        return view('pages.product.manufacture',compact('product','umkm'));
     }
     public function graph(Request $request){
         $validated = $request->validate([
@@ -40,11 +40,11 @@ class ProductController extends Controller
         return view('pages.product.graph',compact('data'));
     }
 
-    public function stock($id){
-        return view('pages.product.stock',compact('id'));
+    public function stock($umkm,$id){
+        return view('pages.product.stock',compact('umkm','id'));
     }
-    public function history($id){
+    public function history($umkm,$id){
         $p=Product::findOrFail($id);
-        return view('pages.product.history',['product'=>UserLog::class,'dataId'=>$id,'p'=>$p]);
+        return view('pages.product.history',['product'=>UserLog::class,'dataId'=>$id,'p'=>$p,'umkm'=>$umkm]);
     }
 }

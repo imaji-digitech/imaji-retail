@@ -9,6 +9,6 @@
     </x-slot>
 
     <div>
-        <livewire:table.main name="transaction-history" :model="$transaction" />
+        <livewire:table.main name="transaction-history" :model="$transaction" :dataId="$umkm"/>
     </div>
 </x-app-layout>

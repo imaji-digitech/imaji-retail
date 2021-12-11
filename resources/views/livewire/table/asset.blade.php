@@ -57,7 +57,7 @@
                     <td style="height: 10px !important;">{{ number_format($asset->nominal,0,',','.') }}</td>
                     <td style="height: 10px !important;">{{ $asset->assetState->title }}</td>
                     <td style="height: 10px !important;">
-                        <a role="button" href="{{ route('admin.asset.edit',$asset->id) }}" class="mr-3"><i class="fa fa-16px fa-pen"></i></a>
+                        <a role="button" href="{{ route('admin.asset.edit',[$asset->product_type_id,$asset->id]) }}" class="mr-3"><i class="fa fa-16px fa-pen"></i></a>
                         <a role="button" x-on:click.prevent="deleteItem" href="#"><i class="fa fa-16px fa-trash text-red-500"></i></a>
                     </td>
                 </tr>

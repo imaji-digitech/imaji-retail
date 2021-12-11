@@ -9,6 +9,6 @@
     </x-slot>
 
     <div>
-        <livewire:form-transaction action="create"/>
+        <livewire:form-transaction action="create" :umkm="$umkm"/>
     </div>
 </x-app-layout>

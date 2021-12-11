@@ -75,26 +75,25 @@
                         <td style="height: 10px !important;">{{ $product->stock }}</td>
                         <td style="height: 10px !important;">{{ $product->updated_at?$product->updated_at->format('d M Y'):'' }}</td>
                         <td style="height: 10px !important;" class="whitespace-no-wrap row-action--icon">
-                            <a role="button" href="{{ route('admin.product.manufacture',$product->id) }}" class="mr-3">
+                            <a role="button" href="{{ route('admin.product.manufacture',[$product->product_type_id,$product->id]) }}" class="mr-3">
                                 <i class="fa fa-16px fa-money text-blue-500"></i>
                             </a>
-                            <a role="button" href="{{ route('admin.product.edit',$product->id) }}" class="mr-3">
+                            <a role="button" href="{{ route('admin.product.edit',[$product->product_type_id,$product->id]) }}" class="mr-3">
                                 <i class="fa fa-16px fa-pen text-blue-500"></i>
                             </a>
-                            <a role="button" href="{{ route('admin.product.show',$product->id) }}" class="mr-3"
+                            <a role="button" href="{{ route('admin.product.show',[$product->product_type_id,$product->id]) }}" class="mr-3"
                                target="_blank">
                                 <i class="fa fa-16px fa-bar-chart text-blue-500"></i>
                             </a>
-
-                            <a role="button" href="{{ route('admin.product.export',$product->id) }}" class="mr-3"
+                            <a role="button" href="{{ route('admin.product.export',[$product->product_type_id,$product->id]) }}" class="mr-3"
                                target="_blank">
                                 <i class="fa fa-16px fa-download text-danger">PDF</i>
                             </a>
-                            <a role="button" href="{{ route('admin.product.stock',$product->id) }}" class="mr-3"
+                            <a role="button" href="{{ route('admin.product.stock',[$product->product_type_id,$product->id]) }}" class="mr-3"
                                target="_blank">
                                 <i class="fa fa-16px fa-plus text-blue-500">STOCK</i>
                             </a>
-                            <a role="button" href="{{ route('admin.product.history',$product->id) }}" class="mr-3"
+                            <a role="button" href="{{ route('admin.product.history',[$product->product_type_id,$product->id]) }}" class="mr-3"
                                target="_blank">
                                 <i class="fa fa-16px fa-copy text-blue-500">History</i>
                             </a>

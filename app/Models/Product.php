@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property integer $id
@@ -37,8 +39,20 @@ class Product extends Model
      */
     protected $fillable = ['product_type_id', 'title', 'code', 'price', 'hpp', 'stock', 'created_at', 'updated_at'];
 
+    public static function search($query, $dataId)
+    {
+        return empty($query) ? static::query()->whereProductTypeId($dataId)
+            : static::whereProductTypeId($dataId)
+                ->where(function ($q) use ($query) {
+                    $q->where('title', 'like', '%' . $query . '%')
+                        ->orWhere('code', 'like', '%' . $query . '%')
+                        ->orWhere('price', 'like', '%' . $query . '%')
+                        ->orWhere('hpp', 'like', '%' . $query . '%');
+                });
+    }
+
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     * @return BelongsTo
      */
     public function productType()
     {
@@ -46,7 +60,7 @@ class Product extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function productHistories()
     {
@@ -54,7 +68,7 @@ class Product extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function productManufactures()
     {
@@ -62,7 +76,7 @@ class Product extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function transactionCredits()
     {
@@ -70,7 +84,7 @@ class Product extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function transactionDetails()
     {
@@ -78,7 +92,7 @@ class Product extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function transactionPaymentDetails()
     {
@@ -86,7 +100,7 @@ class Product extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function transactionReturnDetails()
     {
@@ -94,21 +108,10 @@ class Product extends Model
     }
 
     /**
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     * @return HasMany
      */
     public function userLogs()
     {
         return $this->hasMany('App\Models\UserLog');
-    }
-    public static function search($query)
-    {
-        return empty($query) ? static::query()
-            : static::where('title', 'like', '%' . $query . '%')
-                ->orWhere('code', 'like', '%' . $query . '%')
-                ->orWhere('price', 'like', '%' . $query . '%')
-                ->orWhere('hpp', 'like', '%' . $query . '%')
-                ->orWhereHas('productType', function ($q) use ($query) {
-                    $q->where('title', 'like', '%' . $query . '%');
-                });
     }
 }

@@ -69,7 +69,7 @@ class Main extends Component
                 ];
                 break;
             case 'finance':
-                $finances = $this->model::search($this->search)
+                $finances = $this->model::search($this->search,$this->dataId)
                     ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
                     ->paginate($this->perPage);
 
@@ -78,16 +78,16 @@ class Main extends Component
                     "finances" => $finances,
                     "data" => array_to_object([
                         'href' => [
-                            'create_new' => route('admin.finance.create'),
+                            'create_new' => route('admin.finance.create',$this->dataId),
                             'create_new_text' => 'Buat keuangan baru',
                         ]
                     ])
                 ];
                 break;
             case 'finance-note':
-                $finances = $this->model::whereFinanceId($this->dataId)
+                $finances = $this->model::whereFinanceId($this->dataId,$this->dataId)
                     ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
-                    ->paginate(9999);
+                    ->paginate($this->perPage);
                 return [
                     "view" => 'livewire.table.finance-note',
                     "finances" => $finances,
@@ -102,7 +102,7 @@ class Main extends Component
                 ];
                 break;
             case 'asset':
-                $assets = $this->model::search($this->dataId)
+                $assets = $this->model::search($this->search,$this->dataId)
                     ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
                     ->paginate($this->perPage);
                 return [
@@ -110,7 +110,7 @@ class Main extends Component
                     "assets" => $assets,
                     "data" => array_to_object([
                         'href' => [
-                            'create_new' => route('admin.asset.create'),
+                            'create_new' => route('admin.asset.create',$this->dataId),
                             'create_new_text' => 'Tambah asset baru',
                         ]
                     ])
@@ -149,7 +149,7 @@ class Main extends Component
                 ];
                 break;
             case 'product':
-                $products = $this->model::search($this->search)
+                $products = $this->model::search($this->search,$this->dataId)
                     ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
                     ->paginate($this->perPage);
 
@@ -158,7 +158,7 @@ class Main extends Component
                     "products" => $products,
                     "data" => array_to_object([
                         'href' => [
-                            'create_new' => route('admin.product.create'),
+                            'create_new' => route('admin.product.create',$this->dataId),
                             'create_new_text' => 'Tambah produk baru',
                         ]
                     ])
@@ -196,7 +196,7 @@ class Main extends Component
                 ];
                 break;
             case 'transaction-history':
-                $transactions = $this->model::search($this->search,[3])
+                $transactions = $this->model::search($this->search,[3],$this->dataId)
                     ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
                     ->paginate($this->perPage);
 
@@ -211,7 +211,7 @@ class Main extends Component
                 ];
                 break;
             case 'transaction-active':
-                $transactions = $this->model::search($this->search,[1,2])
+                $transactions = $this->model::search($this->search,[1,2],$this->dataId)
                     ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
                     ->paginate($this->perPage);
 
@@ -221,24 +221,6 @@ class Main extends Component
                     "data" => array_to_object([
                         'href' => [
 
-                        ]
-                    ])
-                ];
-                break;
-            case 'content':
-                $contents = $this->model::search($this->search)
-                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
-                    ->paginate($this->perPage);
-
-                return [
-                    "view" => 'livewire.table.content',
-                    "contents" => $contents,
-                    "data" => array_to_object([
-                        'href' => [
-                            'create_new' => route('admin.content.create'),
-                            'create_new_text' => 'Create new content',
-                            'export' => '#',
-                            'export_text' => 'Export'
                         ]
                     ])
                 ];
