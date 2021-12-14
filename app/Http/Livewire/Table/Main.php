@@ -19,9 +19,9 @@ class Main extends Component
     public $search = '';
     public $role;
     public function mount(){
-        $role = 'admin';
+        $this->role = 'admin';
         if (auth()->user()->role == 3) {
-            $role = 'umkm';
+            $this->role = 'umkm';
         }
     }
 
