@@ -34,7 +34,7 @@
                     <td>{{ $user->address }}</td>
                     <td>{{ $user->created_at->format('d M Y H:i') }}</td>
                     <td class="whitespace-no-wrap row-action--icon">
-                        @if(auth()->role!=3)
+                        @if(auth()->user()->role!=3)
                             <a role="button" href="{{ route('admin.customer.edit',$user->id) }}" class="mr-3"><i
                                     class="fa fa-16px fa-pen"></i></a>
                         @endif
