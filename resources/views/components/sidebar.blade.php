@@ -174,11 +174,11 @@
                         <i class="fas fa-fire"></i><span>Asset</span>
                     </a>
                 </li>
-                <li class="menu-header">Keuangan</li>
-                <li class="">
-                    <a class="nav-link" href="{{route('umkm.finance.index')}}">
-                        <i class="fas fa-fire"></i><span>Finance</span></a>
-                </li>
+{{--                <li class="menu-header">Keuangan</li>--}}
+{{--                <li class="">--}}
+{{--                    <a class="nav-link" href="{{route('umkm.finance.index')}}">--}}
+{{--                        <i class="fas fa-fire"></i><span>Finance</span></a>--}}
+{{--                </li>--}}
                 <li class="menu-header">Transaksi</li>
                 <li class="">
                     <a class="nav-link" href="{{route('umkm.transaction.create')}}">
