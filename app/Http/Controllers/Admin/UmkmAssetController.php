@@ -9,12 +9,15 @@ use Illuminate\Http\Request;
 class UmkmAssetController extends Controller
 {
     public function index(){
-        return view('pages.asset.index',['asset'=>Asset::class]);
+        $umkm = auth()->user()->product_type_id;
+        return view('pages.asset.index',['asset'=>Asset::class,'umkm'=>$umkm]);
     }
     public function create(){
-        return view('pages.asset.create');
+        $umkm = auth()->user()->product_type_id;
+        return view('pages.asset.create',compact('umkm'));
     }
     public function edit($id){
-        return view('pages.asset.edit',compact('id'));
+        $umkm = auth()->user()->product_type_id;
+        return view('pages.asset.edit',compact('id','umkm'));
     }
 }

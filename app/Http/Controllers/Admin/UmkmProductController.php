@@ -12,24 +12,29 @@ class UmkmProductController extends Controller
 {
     public function index()
     {
-        return view('pages.product.index',['product'=>Product::class]);
+        $umkm = auth()->user()->product_type_id;
+        return view('pages.product.index',['product'=>Product::class,'umkm'=>$umkm]);
     }
     public function create()
     {
-        return view('pages.product.create');
+        $umkm = auth()->user()->product_type_id;
+        return view('pages.product.create',compact('umkm'));
     }
 
     public function edit($id)
     {
-        return view('pages.product.edit',compact('id'));
+        $umkm = auth()->user()->product_type_id;
+        return view('pages.product.edit',compact('id','umkm'));
     }
     public function show($id)
     {
-        return view('pages.product.show',compact('id'));
+        $umkm = auth()->user()->product_type_id;
+        return view('pages.product.show',compact('id','umkm'));
     }
     public function manufacture($id){
         $product=Product::findOrFail($id);
-        return view('pages.product.manufacture',compact('product'));
+        $umkm = auth()->user()->product_type_id;
+        return view('pages.product.manufacture',compact('product','umkm'));
     }
     public function graph(Request $request){
         $validated = $request->validate([
@@ -41,10 +46,12 @@ class UmkmProductController extends Controller
     }
 
     public function stock($id){
-        return view('pages.product.stock',compact('id'));
+        $umkm = auth()->user()->product_type_id;
+        return view('pages.product.stock',compact('id','umkm'));
     }
     public function history($id){
         $p=Product::findOrFail($id);
-        return view('pages.product.history',['product'=>UserLog::class,'dataId'=>$id,'p'=>$p]);
+        $umkm = auth()->user()->product_type_id;
+        return view('pages.product.history',['product'=>UserLog::class,'dataId'=>$id,'p'=>$p,'umkm'=>$umkm]);
     }
 }
