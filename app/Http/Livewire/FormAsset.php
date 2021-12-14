@@ -43,7 +43,7 @@ class FormAsset extends Component
         if ($this->dataId != null) {
             $data = Asset::find($this->dataId);
             $this->data = [
-                'product_type_id' => 1,
+                'product_type_id' => $data->product_type_id,
                 'asset_state_id' => $data->asset_state_id,
                 'asset_code_id' => $data->asset_code_id,
                 'asset_ownership_id' => $data->asset_ownership_id,

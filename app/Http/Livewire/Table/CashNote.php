@@ -74,8 +74,9 @@ class CashNote extends Main
                 }
             }
             fputcsv($file, ['','TOTAL',$ct],$delimiter);
-            fputcsv($file, ['NB','Stock Optane'],$delimiter);
+
             fputcsv($file, [''],$delimiter);
+            fputcsv($file, ['NB','Stock Optane'],$delimiter);
             fputcsv($file, ['Nama Produk','Stock','Total'],$delimiter);
             $total=0;
             foreach ($c1->productHistories as $p){
@@ -83,6 +84,9 @@ class CashNote extends Main
                 $total+=$p->stock*$p->price;
             }
             fputcsv($file, ['Total','',$total],$delimiter);
+
+            fputcsv($file, [''],$delimiter);
+
 
             fputcsv($file, [''],$delimiter);
 

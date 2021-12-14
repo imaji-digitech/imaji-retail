@@ -10,7 +10,7 @@
     </x-slot>
 
     <div>
-        <livewire:form-asset action="update" :dataId="$id"/>
+        <livewire:form-asset action="update" :dataId="$id" :umkm="$umkm"/>
     </div>
 
 </x-app-layout>
