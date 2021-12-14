@@ -9,6 +9,9 @@ use App\Http\Controllers\Admin\FinanceController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductTypeController;
 use App\Http\Controllers\Admin\TransactionController;
+use App\Http\Controllers\Admin\UmkmAssetController;
+use App\Http\Controllers\Admin\UmkmProductController;
+use App\Http\Controllers\Admin\UmkmTransactionController;
 use App\Http\Controllers\SupportController;
 use App\Http\Controllers\UserController;
 use App\Models\CashBook;
@@ -69,7 +72,7 @@ Route::get('simple-qr-code', function () {
 });
 
 Route::name('umkm.')->prefix('umkm')->middleware(['auth:sanctum', 'web', 'verified', 'checkRole:3'])->group(function () {
-    Route::resource('product', ProductController::class)->only(['index', 'create', 'show', 'edit']);
+    Route::resource('product', UmkmProductController::class)->only(['index', 'create', 'show', 'edit']);
     Route::resource('customer', CustomerController::class)->only(['index', 'create', 'show', 'edit']);
     Route::get('product/export/{id}', function ($id) {
         $product = Product::findOrFail($id);
@@ -78,20 +81,20 @@ Route::name('umkm.')->prefix('umkm')->middleware(['auth:sanctum', 'web', 'verifi
         return $pdf->stream('REPORT PRODUK - ' . strtoupper($product->name) . '.pdf');
     })->name('product.export');
 
-    Route::get('product/stock/{id}', [ProductController::class, 'stock'])->name('product.stock');
-    Route::get('product/history/{id}', [ProductController::class, 'history'])->name('product.history');
+    Route::get('product/stock/{id}', [UmkmProductController::class, 'stock'])->name('product.stock');
+    Route::get('product/history/{id}', [UmkmProductController::class, 'history'])->name('product.history');
 
-    Route::get('/product/manufacture/{id}', [ProductController::class, 'manufacture'])->name('product.manufacture');
-    Route::post('/product', [ProductController::class, 'graph'])->name('product.graph');
+    Route::get('/product/manufacture/{id}', [UmkmProductController::class, 'manufacture'])->name('product.manufacture');
+    Route::post('/product', [UmkmProductController::class, 'graph'])->name('product.graph');
     Route::get('/transaction/export/{id}', function ($id) {
         $transaction = Transaction::find($id);
         $pdf = App::make('dompdf.wrapper');
         $pdf->loadView('pdf.invoice', compact('transaction'))->setPaper([0, 0, 470.00, 603.80], 'landscape');
         return $pdf->stream('INVOICE - ' . $transaction->no_invoice . ' - ' . $transaction->user->name . '.pdf');
     })->name('transaction.export');
-    Route::get('/transaction/create', [TransactionController::class, 'create'])->name('transaction.create');
-    Route::get('/transaction/history', [TransactionController::class, 'history'])->name('transaction.history');
-    Route::get('/transaction/payment/{id}', [TransactionController::class, 'payment'])->name('transaction.payment');
+    Route::get('/transaction/create', [UmkmTransactionController::class, 'create'])->name('transaction.create');
+    Route::get('/transaction/history', [UmkmTransactionController::class, 'history'])->name('transaction.history');
+    Route::get('/transaction/payment/{id}', [UmkmTransactionController::class, 'payment'])->name('transaction.payment');
     Route::get('/transaction/payment/export/{id}', function ($id) {
         $transaction = TransactionPayment::find($id);
         $pdf = App::make('dompdf.wrapper');
@@ -99,7 +102,7 @@ Route::name('umkm.')->prefix('umkm')->middleware(['auth:sanctum', 'web', 'verifi
         return $pdf->stream('NOTA PEMBAYARAN - ' . $transaction->transaction->no_invoice . ' - ' . $transaction->transaction->user->name . '.pdf');
     })->name('transaction.payment.export');
 
-    Route::get('/transaction/return/{id}', [TransactionController::class, 'return'])->name('transaction.return');
+    Route::get('/transaction/return/{id}', [UmkmTransactionController::class, 'return'])->name('transaction.return');
     Route::get('/transaction/return/export/{id}', function ($id) {
         $transaction = TransactionReturn::find($id);
         $pdf = App::make('dompdf.wrapper');
@@ -107,9 +110,9 @@ Route::name('umkm.')->prefix('umkm')->middleware(['auth:sanctum', 'web', 'verifi
         return $pdf->stream('NOTA RETURN - ' . $transaction->transaction->no_invoice . ' - ' . $transaction->transaction->user->name . '.pdf');
     })->name('transaction.return.export');
 
-    Route::get('/transaction/show/{id}', [TransactionController::class, 'show'])->name('transaction.show');
+    Route::get('/transaction/show/{id}', [UmkmTransactionController::class, 'show'])->name('transaction.show');
 
-    Route::resource('asset', AssetController::class)->only(['index', 'create', 'show', 'edit']);
+    Route::resource('asset', UmkmAssetController::class)->only(['index', 'create', 'show', 'edit']);
 });
 
 Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'verified', 'checkRole:1,2'])->group(function () {
@@ -212,7 +215,7 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
     Route::get('finance/{umkm}/{id}/comparison', [FinanceController::class, 'comparison'])->name('finance.comparison');
     Route::get('finance/{umkm}/{id}/note', [FinanceController::class, 'note'])->name('finance.note.index');
     Route::get('finance/{id}/note/create', [FinanceController::class, 'noteCreate'])->name('finance.note.create');
-    Route::get('finance/{umkm}/note/{note}', [FinanceController::class, 'noteShow'])->name('finance.note.show');
+    Route::get('finance/note/{note}', [FinanceController::class, 'noteShow'])->name('finance.note.show');
     Route::get('finance/{id}/spj', [FinanceController::class, 'noteSubmit'])->name('finance.note.submit');
 
 //    Route::resource('asset', AssetController::class)->only(['index','create','show','edit']);

@@ -46,7 +46,7 @@ class FormPaymentCash extends Component
         $data=[
             'product_type_id'=>$this->umkm,
             'code_cash_book_id'=>2,
-            'note'=>'Pembayaran cash dari transaksi '.$this->transaction->no_invoice,
+            'note'=>'Pembayaran piutang dari transaksi '.$this->transaction->no_invoice,
             'income'=>$this->data['total'],
             'outcome'=>0,
         ];

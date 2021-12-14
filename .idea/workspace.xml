@@ -2,17 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="update so many :)">
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/transaction/payment-cash.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/FinanceNoteAction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/finance-note-action.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/TransactionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/TransactionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormCashBook.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormCashBook.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormPayment.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormPayment.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/FinanceController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/FinanceController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormFinanceItem.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormFinanceItem.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormFinanceNote.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormFinanceNote.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormPaymentCash.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormPaymentCash.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Transaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Transaction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/form-payment-cash.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/form-payment-cash.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/form-payment.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/form-payment.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/cash-note.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/cash-note.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/transaction-active.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/transaction-active.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormTransaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormTransaction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/user/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/user/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/form-finance-item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/form-finance-item.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/finance.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/finance.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/finance/note-create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/finance/note-create.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/finance/note-index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/finance/note-index.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -294,7 +296,7 @@
       <workItem from="1638879026947" duration="721000" />
       <workItem from="1639103217591" duration="9363000" />
       <workItem from="1639143230971" duration="2369000" />
-      <workItem from="1639184386130" duration="16005000" />
+      <workItem from="1639184386130" duration="24957000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <created>1630987348185</created>
@@ -583,7 +585,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639194371313</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="update so many :)">
+      <created>1639205235121</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1639205235121</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -16,7 +16,7 @@ class FormFinanceItem extends Component
     public $note;
     public function mount(){
         $this->finance=Finance::find($this->financeId);
-        $this->note=$this->finance->rab_note;
+//        $this->note=$this->finance->rab_note;
         $this->financeItem=[
             'finance_id' => $this->financeId,
             'finance_unit_id'=>1,
@@ -63,8 +63,46 @@ class FormFinanceItem extends Component
             'icon' => 'success',
             'title' => 'Berhasil mengajukan rab',
         ]);
-        $this->emit('redirect',route('admin.finance.index'));
+        $this->emit('redirect',route('admin.finance.index',$this->finance->product_type_id));
     }
+//FinanceStatus::create(['title'=>'Waiting']);
+//FinanceStatus::create(['title'=>'Accepted']);
+//FinanceStatus::create(['title'=>'Decline']);
+//FinanceStatus::create(['title'=>'Revision']);
+//FinanceStatus::create(['title'=>'Nothing']);
+    public function accepted(){
+        Finance::find($this->financeId)->update([
+            'status_rab_id'=>2,
+        ]);
+
+        $this->emit('swal:alert', [
+            'icon' => 'success',
+            'title' => 'Berhasil mensetujui rab',
+        ]);
+        $this->emit('redirect',route('admin.finance.index',$this->finance->product_type_id));
+    }
+    public function decline(){
+        Finance::find($this->financeId)->update([
+            'status_rab_id'=>3,
+        ]);
+        $this->emit('swal:alert', [
+            'icon' => 'success',
+            'title' => 'Berhasil mengajukan rab',
+        ]);
+        $this->emit('redirect',route('admin.finance.index',$this->finance->product_type_id));
+    }
+    public function revision(){
+        Finance::find($this->financeId)->update([
+            'status_rab_id'=>2,
+            'rab_revision_note'=>$this->note,
+        ]);
+        $this->emit('swal:alert', [
+            'icon' => 'success',
+            'title' => 'Berhasil mengajukan rab',
+        ]);
+        $this->emit('redirect',route('admin.finance.index',$this->finance->product_type_id));
+    }
+
 
     public function render()
     {

@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\CashBook;
 use App\Models\PaymentStatus;
 use App\Models\Product;
 use App\Models\Transaction;
@@ -88,6 +89,7 @@ class FormTransaction extends Component
         if ($this->data['payment_status_id'] == 1 or $this->data['payment_status_id'] == 2 ) {
             $payment=TransactionPayment::create(['transaction_id'=>$d->id]);
         }
+        $total=0;
         foreach ($this->product as $p) {
             if (isset($this->detailTransaction[$p]) and isset($this->detailTransactionDiscount[$p])) {
                 TransactionDetail::create([
@@ -124,6 +126,16 @@ class FormTransaction extends Component
                     ]);
                 }
             }
+        }
+        if ($this->data['payment_status_id'] != 3) {
+            $data=[
+                'product_type_id'=>$this->umkm,
+                'code_cash_book_id'=>2,
+                'note'=>'Pembayaran '.$d->paymentStatus->title.' dari transaksi '.$d->no_invoice,
+                'income'=>$total,
+                'outcome'=>0,
+            ];
+            CashBook::create($data);
         }
 
         $this->emit('swal:alert', [

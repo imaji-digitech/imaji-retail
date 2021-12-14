@@ -36,8 +36,18 @@
                     <td style="height: 10px !important;">{{ $finance->title }}</td>
                     <td style="height: 10px !important;">{{ $finance->rabStatus->title }}</td>
                     <td style="height: 10px !important;">{{ $finance->spjStatus->title }}</td>
-                    <td style="height: 10px !important;"></td>
-                    <td style="height: 10px !important;"></td>
+                    @php($rab=0)
+                    @php($spj=0)
+                    @foreach($finance->financeItems as $fi)
+                    {{ $rab+=$fi->amount*$fi->price }}
+                    @endforeach
+                    @foreach($finance->financeNotes as $fn)
+                        @foreach($fn->financeNoteItems as $fi)
+                        {{ $spj+=$fi->amount*$fi->price }}
+                        @endforeach
+                    @endforeach
+                    <td style="height: 10px !important;">{{ $rab }}</td>
+                    <td style="height: 10px !important;">{{ $spj }}</td>
                     <td style="height: 10px !important;">
                         <a role="button" href="{{ route('admin.finance.show',[$finance->product_type_id,$finance->id]) }}" class="mr-1 btn btn-success">
                             Lihat RAB
@@ -45,9 +55,10 @@
                         <a role="button" href="{{route('admin.finance.note.index',[$finance->product_type_id,$finance->id])}}" class="mr-1 btn btn-dark">
                             Lihat SPJ
                         </a>
-                        <a role="button" href="" class="mr-1 btn btn-primary">
-                            Edit
-                        </a>
+{{--                        <a role="button" href="" class="mr-1 btn btn-primary">--}}
+{{--                            Edit--}}
+{{--                        </a>--}}
+
                         <a role="button" href="{{route('admin.finance.comparison',[$finance->product_type_id,$finance->id])}}" class="mr-1 btn btn-warning">
                             Bandingkan RAB & SPJ
                         </a>

@@ -9,6 +9,7 @@
     </x-slot>
 
     <div>
-        <livewire:table.main name="finance-note" dataId="{{$id}}" :model="$financeNote" />
+        <livewire:table.main name="finance-note" dataId="{{$id}}" :model="$financeNote"/>
+        <livewire:finance-note-action dataId="{{$id}}"/>
     </div>
 </x-app-layout>

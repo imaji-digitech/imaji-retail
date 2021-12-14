@@ -22,13 +22,13 @@ class FormFinanceNote extends Component
     public function create(){
         $this->validate();
         $image = $this->thumbnail;
-        $filename = Str::slug(auth()->user()->name.'-'.time() . '.' . $image->getClientOriginalExtension());
+        $filename = Str::slug(auth()->user()->name.'-'.time() ). '.' . $image->getClientOriginalExtension();
         $image = Image::make($image)->resize(null, 1080, function ($constraint) {
             $constraint->aspectRatio();
         });
         $image->stream();
         Storage::disk('local')->put('public/finance/' . $filename, $image, 'public');
-        FinanceNote::create(['finance_id'=>$this->financeId,'note'=>'contents/' . $filename]);
+        FinanceNote::create(['finance_id'=>$this->financeId,'note'=>'finance/' . $filename]);
         $this->emit('swal:alert', [
             'icon' => 'success',
             'title' => 'Berhasil menambahkan data customer',

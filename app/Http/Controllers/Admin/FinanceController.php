@@ -48,9 +48,9 @@ class FinanceController extends Controller
         return view('pages.finance.note-create', compact('id'));
     }
 
-    public function noteShow($umkm, $id)
+    public function noteShow( $id)
     {
-        return view('pages.finance.note-show', compact('id', 'umkm'));
+        return view('pages.finance.note-show', compact('id'));
     }
 
     public function noteSubmit($id)
