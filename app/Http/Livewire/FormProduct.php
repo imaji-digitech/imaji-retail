@@ -59,7 +59,11 @@ class FormProduct extends Component
             'note'=>"pembuatan produk baru pada ".ProductType::find($this->data['product_type_id'])->title,
             'user_note'=>"nama produk ".$this->data['title']
         ]);
-        $this->emit('redirect', route('admin.product.index',$this->umkm));
+        $role='admin';
+        if (auth()->user()->role==3){
+            $role='umkm';
+        }
+        $this->emit('redirect', route("$role.product.index",$this->umkm));
     }
 
     public function update(){
@@ -77,7 +81,11 @@ class FormProduct extends Component
             'note'=>"perubahan produk pada ".ProductType::find($this->data['product_type_id'])->title,
             'user_note'=>"nama produk ".$this->data['title']
         ]);
-        $this->emit('redirect', route('admin.product.index',$this->umkm));
+        $role='admin';
+        if (auth()->user()->role==3){
+            $role='umkm';
+        }
+        $this->emit('redirect', route("$role.product.index",$this->umkm));
     }
 
     public function render()

@@ -20,6 +20,9 @@ class CheckRole
         if (in_array($request->user()->role, $roles)) {
             return $next($request);
         }
+        if ($request->user()->role==3){
+            return redirect(route('umkm.dashboard'));
+        }
         return redirect(route('admin.dashboard'));
     }
 }
