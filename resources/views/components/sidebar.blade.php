@@ -195,7 +195,7 @@
                             class="fas fa-fire"></i><span>Transaksi aktif</span></a>
                 </li>
                 <li class="">
-                    <a class="nav-link" href="{{route('admin.customer.index')}}"><i class="fas fa-fire"></i><span>Customer</span></a>
+                    <a class="nav-link" href="{{route('umkm.customer.index')}}"><i class="fas fa-fire"></i><span>Customer</span></a>
                 </li>
             </ul>
         @endif
