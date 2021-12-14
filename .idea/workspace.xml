@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="update so many :)" />
+    <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="update so many :)">
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/product.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -282,35 +284,7 @@
       <workItem from="1639103217591" duration="9363000" />
       <workItem from="1639143230971" duration="2369000" />
       <workItem from="1639184386130" duration="24957000" />
-      <workItem from="1639446026616" duration="2793000" />
-    </task>
-    <task id="LOCAL-00009" summary="first commit">
-      <created>1632197490434</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1632197490434</updated>
-    </task>
-    <task id="LOCAL-00010" summary="first commit">
-      <created>1632197672573</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1632197672573</updated>
-    </task>
-    <task id="LOCAL-00011" summary="first commit">
-      <created>1632197865558</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1632197865558</updated>
-    </task>
-    <task id="LOCAL-00012" summary="first commit">
-      <created>1632199479074</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1632199479074</updated>
+      <workItem from="1639446026616" duration="3105000" />
     </task>
     <task id="LOCAL-00013" summary="first commit">
       <created>1632285292051</created>
@@ -627,7 +601,35 @@
       <option name="project" value="LOCAL" />
       <updated>1639448753168</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="update so many :)">
+      <created>1639448901226</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1639448901226</updated>
+    </task>
+    <task id="LOCAL-00059" summary="update so many :)">
+      <created>1639448976224</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1639448976224</updated>
+    </task>
+    <task id="LOCAL-00060" summary="update so many :)">
+      <created>1639449009809</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1639449009809</updated>
+    </task>
+    <task id="LOCAL-00061" summary="update so many :)">
+      <created>1639449135327</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1639449135327</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
