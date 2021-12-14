@@ -85,6 +85,16 @@ Route::name('umkm.')->prefix('umkm')->middleware(['auth:sanctum', 'web', 'verifi
     Route::get('product/stock/{id}', [UmkmProductController::class, 'stock'])->name('product.stock');
     Route::get('product/history/{id}', [UmkmProductController::class, 'history'])->name('product.history');
 
+    Route::get('finance', [FinanceController::class, 'index'])->name('finance.index');
+    Route::get('finance/create', [FinanceController::class, 'create'])->name('finance.create');
+    Route::get('finance/show/{id}', [FinanceController::class, 'show'])->name('finance.show');
+    Route::get('finance/edit/{id}', [FinanceController::class, 'edit'])->name('finance.edit');
+    Route::get('finance/{id}/comparison', [FinanceController::class, 'comparison'])->name('finance.comparison');
+    Route::get('finance/{id}/note', [FinanceController::class, 'note'])->name('finance.note.index');
+    Route::get('finance/{id}/note/create', [FinanceController::class, 'noteCreate'])->name('finance.note.create');
+    Route::get('finance/note/{note}', [FinanceController::class, 'noteShow'])->name('finance.note.show');
+    Route::get('finance/{id}/spj', [FinanceController::class, 'noteSubmit'])->name('finance.note.submit');
+
     Route::get('/product/manufacture/{id}', [UmkmProductController::class, 'manufacture'])->name('product.manufacture');
     Route::post('/product', [UmkmProductController::class, 'graph'])->name('product.graph');
     Route::get('/transaction/export/{id}', function ($id) {
