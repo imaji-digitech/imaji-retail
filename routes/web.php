@@ -126,6 +126,12 @@ Route::name('umkm.')->prefix('umkm')->middleware(['auth:sanctum', 'web', 'verifi
 
     Route::resource('asset', UmkmAssetController::class)->only(['index', 'create', 'show', 'edit']);
 });
+Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'verified', 'checkRole:3'])->group(function () {
+    Route::get('customer', [CustomerController::class, 'index'])->name('customer.index');
+    Route::get('customer/create', [CustomerController::class, 'create'])->name('customer.create');
+    Route::get('customer/show/{id}', [CustomerController::class, 'show'])->name('customer.show');
+    Route::get('customer/edit/{id}', [CustomerController::class, 'edit'])->name('customer.edit');
+});
 
 Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'verified', 'checkRole:1,2'])->group(function () {
     Route::post('/summernote-upload', [SupportController::class, 'upload'])->name('summernote_upload');
