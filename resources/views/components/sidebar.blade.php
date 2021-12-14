@@ -157,12 +157,12 @@
                 <li class="">
                     <a class="nav-link" href=""><i class="fas fa-fire"></i><span>Dashboard</span></a>
                 </li>
-                <li class="menu-header">Managemen Produk</li>
-                <li class="">
-                    <a class="nav-link" href="{{route('umkm.product-type.index')}}">
-                        <i class="fas fa-fire"></i><span>UMKM</span>
-                    </a>
-                </li>
+{{--                <li class="menu-header">Managemen Produk</li>--}}
+{{--                <li class="">--}}
+{{--                    <a class="nav-link" href="{{route('umkm.product-type.index')}}">--}}
+{{--                        <i class="fas fa-fire"></i><span>UMKM</span>--}}
+{{--                    </a>--}}
+{{--                </li>--}}
                 <li class="">
                     <a class="nav-link" href="{{route('umkm.product.index')}}">
                         <i class="fas fa-fire"></i><span>Produk</span>
