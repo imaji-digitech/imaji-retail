@@ -67,11 +67,15 @@ class FormAsset extends Component
             $this->data['code']=str_pad((int)$codeNow->code+1, 7, '0', STR_PAD_LEFT);
         }
         Asset::create($this->data);
+        $role='admin';
+        if (auth()->user()->role==3){
+            $role='umkm';
+        }
         $this->emit('swal:alert', [
             'icon' => 'success',
             'title' => 'Berhasil menambahkan data asset',
         ]);
-        $this->emit('redirect', route('admin.asset.index',$this->umkm));
+        $this->emit('redirect', route("$role.asset.index",$this->umkm));
     }
     public function update()
     {
@@ -81,7 +85,11 @@ class FormAsset extends Component
             'icon' => 'success',
             'title' => 'Berhasil merubah data asset',
         ]);
-        $this->emit('redirect', route('admin.asset.index',$this->umkm));
+        $role='admin';
+        if (auth()->user()->role==3){
+            $role='umkm';
+        }
+        $this->emit('redirect', route("$role.asset.index",$this->umkm));
     }
 
     public function render()

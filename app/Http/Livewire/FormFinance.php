@@ -62,7 +62,11 @@ class FormFinance extends Component
             'user_id'=>auth()->id(),
             'note'=>"membuat data rab ".$this->data['title'],
         ]);
-        $this->emit('redirect', route('admin.finance.index',$this->umkm));
+        $role='admin';
+        if (auth()->user()->role==3){
+            $role='umkm';
+        }
+        $this->emit('redirect', route("$role.finance.index",$this->umkm));
     }
     public function update(){
         $this->validate();
@@ -76,7 +80,11 @@ class FormFinance extends Component
             'user_id'=>auth()->id(),
             'note'=>"merubah data rab ".$this->data['title'],
         ]);
-        $this->emit('redirect', route('admin.finance.index',$this->umkm));
+        $role='admin';
+        if (auth()->user()->role==3){
+            $role='umkm';
+        }
+        $this->emit('redirect', route("$role.finance.index",$this->umkm));
     }
     public function render()
     {
