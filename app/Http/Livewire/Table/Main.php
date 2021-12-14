@@ -189,7 +189,7 @@ class Main extends Component
                     "products" => $products,
                     "data" => array_to_object([
                         'href' => [
-                            'create_new' => route("$this->role.product.create", $this->dataId),
+                            'create_new' => route($this->role.".product.create", $this->dataId),
                             'create_new_text' => 'Tambah produk baru',
                         ]
                     ])
