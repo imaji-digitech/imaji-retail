@@ -17,13 +17,20 @@ class Main extends Component
     public $sortField = "id";
     public $sortAsc = false;
     public $search = '';
+    public $role;
+    public function mount(){
+        $role = 'admin';
+        if (auth()->user()->role == 3) {
+            $role = 'umkm';
+        }
+    }
 
-    protected $listeners = [ "deleteItem" => "delete_item" ];
+    protected $listeners = ["deleteItem" => "delete_item"];
 
     public function sortBy($field)
     {
         if ($this->sortField === $field) {
-            $this->sortAsc = ! $this->sortAsc;
+            $this->sortAsc = !$this->sortAsc;
         } else {
             $this->sortAsc = true;
         }
@@ -31,7 +38,33 @@ class Main extends Component
         $this->sortField = $field;
     }
 
-    public function get_pagination_data ()
+    public function delete_item($id)
+    {
+        $data = $this->model::find($id);
+
+        if (!$data) {
+            $this->emit("deleteResult", [
+                "status" => false,
+                "message" => "Gagal menghapus data " . $this->name
+            ]);
+            return;
+        }
+
+        $data->delete();
+        $this->emit("deleteResult", [
+            "status" => true,
+            "message" => "Data " . $this->name . " berhasil dihapus!"
+        ]);
+    }
+
+    public function render()
+    {
+        $data = $this->get_pagination_data();
+
+        return view($data['view'], $data);
+    }
+
+    public function get_pagination_data()
     {
         switch ($this->name) {
             case 'user':
@@ -69,23 +102,22 @@ class Main extends Component
                 ];
                 break;
             case 'finance':
-                $finances = $this->model::search($this->search,$this->dataId)
+                $finances = $this->model::search($this->search, $this->dataId)
                     ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
                     ->paginate($this->perPage);
-
                 return [
                     "view" => 'livewire.table.finance',
                     "finances" => $finances,
                     "data" => array_to_object([
                         'href' => [
-                            'create_new' => route('admin.finance.create',$this->dataId),
+                            'create_new' => route("$this->role.finance.create", $this->dataId),
                             'create_new_text' => 'Buat keuangan baru',
                         ]
                     ])
                 ];
                 break;
             case 'finance-note':
-                $finances = $this->model::whereFinanceId($this->dataId,$this->dataId)
+                $finances = $this->model::whereFinanceId($this->dataId, $this->dataId)
                     ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
                     ->paginate($this->perPage);
                 return [
@@ -93,16 +125,16 @@ class Main extends Component
                     "finances" => $finances,
                     "data" => array_to_object([
                         'href' => [
-                            'create_new' => route('admin.finance.note.create',$this->dataId),
+                            'create_new' => route("$this->role.finance.note.create", $this->dataId),
                             'create_new_text' => 'Tambah nota baru',
-                            'export' => route('admin.finance.note.submit',$this->dataId),
+                            'export' => route("$this->role.finance.note.submit", $this->dataId),
                             'export_text' => 'Ajukan SPJ'
                         ]
                     ])
                 ];
                 break;
             case 'asset':
-                $assets = $this->model::search($this->search,$this->dataId)
+                $assets = $this->model::search($this->search, $this->dataId)
                     ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
                     ->paginate($this->perPage);
                 return [
@@ -110,7 +142,7 @@ class Main extends Component
                     "assets" => $assets,
                     "data" => array_to_object([
                         'href' => [
-                            'create_new' => route('admin.asset.create',$this->dataId),
+                            'create_new' => route("$this->role.asset.create", $this->dataId),
                             'create_new_text' => 'Tambah asset baru',
                         ]
                     ])
@@ -126,14 +158,14 @@ class Main extends Component
                     "cashBooks" => $cashBooks,
                     "data" => array_to_object([
                         'href' => [
-                            'create_new' => route('admin.cash-book.create',$this->dataId),
+                            'create_new' => route('admin.cash-book.create', $this->dataId),
                             'create_new_text' => 'Tambah data kas baru',
                         ]
                     ])
                 ];
                 break;
             case 'cash-note':
-                $cashNotes = $this->model::search($this->search,$this->dataId)
+                $cashNotes = $this->model::search($this->search, $this->dataId)
                     ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
                     ->paginate($this->perPage);
 
@@ -142,33 +174,31 @@ class Main extends Component
                     "cashNotes" => $cashNotes,
                     "data" => array_to_object([
                         'href' => [
-                            'create_new' => route('admin.cash-note.create',$this->dataId),
+                            'create_new' => route('admin.cash-note.create', $this->dataId),
                             'create_new_text' => 'Buka dan tutup buku',
                         ]
                     ])
                 ];
                 break;
             case 'product':
-                $products = $this->model::search($this->search,$this->dataId)
+                $products = $this->model::search($this->search, $this->dataId)
                     ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
                     ->paginate($this->perPage);
-
                 return [
                     "view" => 'livewire.table.product',
                     "products" => $products,
                     "data" => array_to_object([
                         'href' => [
-                            'create_new' => route('admin.product.create',$this->dataId),
+                            'create_new' => route("$this->role.product.create", $this->dataId),
                             'create_new_text' => 'Tambah produk baru',
                         ]
                     ])
                 ];
                 break;
             case 'product-history':
-                $products = $this->model::productSearch($this->search,$this->dataId)
+                $products = $this->model::productSearch($this->search, $this->dataId)
                     ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
                     ->paginate($this->perPage);
-
                 return [
                     "view" => 'livewire.table.history-product',
                     "products" => $products,
@@ -196,10 +226,9 @@ class Main extends Component
                 ];
                 break;
             case 'transaction-history':
-                $transactions = $this->model::search($this->search,[3],$this->dataId)
+                $transactions = $this->model::search($this->search, [3], $this->dataId)
                     ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
                     ->paginate($this->perPage);
-
                 return [
                     "view" => 'livewire.table.transaction-history',
                     "transactions" => $transactions,
@@ -211,7 +240,7 @@ class Main extends Component
                 ];
                 break;
             case 'transaction-active':
-                $transactions = $this->model::search($this->search,[1,2],$this->dataId)
+                $transactions = $this->model::search($this->search, [1, 2], $this->dataId)
                     ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
                     ->paginate($this->perPage);
 
@@ -230,31 +259,5 @@ class Main extends Component
                 # code...
                 break;
         }
-    }
-
-    public function delete_item ($id)
-    {
-        $data = $this->model::find($id);
-
-        if (!$data) {
-            $this->emit("deleteResult", [
-                "status" => false,
-                "message" => "Gagal menghapus data " . $this->name
-            ]);
-            return;
-        }
-
-        $data->delete();
-        $this->emit("deleteResult", [
-            "status" => true,
-            "message" => "Data " . $this->name . " berhasil dihapus!"
-        ]);
-    }
-
-    public function render()
-    {
-        $data = $this->get_pagination_data();
-
-        return view($data['view'], $data);
     }
 }
