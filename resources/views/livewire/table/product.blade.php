@@ -43,7 +43,8 @@
                     <i class="fa fa-16px fa-shopping-cart text-blue-500"></i>
                 </th>
                 <th style="padding:0;margin:0; width: 50px !important;">
-                    <i class="fa fa-16px fa-shopping-cart text-blue-500"></i><i class="fa fa-16px fa-calendar text-blue-500"></i>
+                    <i class="fa fa-16px fa-shopping-cart text-blue-500 mr-1"></i>
+                    <i class="fa fa-16px fa-calendar text-blue-500"></i>
                 </th>
                 {{--                <th style="padding:0;margin:0;width: 230px !important;">--}}
                 {{--                    <a wire:click.prevent="sortBy('updated_at')" role="button" href="#">--}}
