@@ -86,7 +86,21 @@ class CashNote extends Main
             fputcsv($file, ['Total','',$total],$delimiter);
 
             fputcsv($file, [''],$delimiter);
+            fputcsv($file, ['NB','Profit'],$delimiter);
+            fputcsv($file, ['Nama Produk','Total','Nomina HPP','Profit 30%','50%(Imaji)','25%(Kelompok usaha)','15%(Pengembangan)','10%(Dana sosial)'],$delimiter);
 
+            foreach ($c1->productSaleHistories as $p){
+                fputcsv($file, [
+                    $p->product->title,
+                    $p->stock,
+                    $p->stock*$p->price,
+                    $p->stock*$p->price*0.3,
+                    $p->stock*$p->price*0.3*0.5,
+                    $p->stock*$p->price*0.3*0.25,
+                    $p->stock*$p->price*0.3*0.15,
+                    $p->stock*$p->price*0.3*0.10,
+                    ],$delimiter);
+            }
 
             fputcsv($file, [''],$delimiter);
 

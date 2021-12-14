@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 /**
  * @property integer $id
@@ -51,6 +52,13 @@ class CashNote extends Model
     public function productHistories()
     {
         return $this->hasMany('App\Models\ProductHistory');
+    }
+    /**
+     * @return HasMany
+     */
+    public function productSaleHistories()
+    {
+        return $this->hasMany('App\Models\ProductSaleHistory');
     }
 
     public static function search($query,$dataId)

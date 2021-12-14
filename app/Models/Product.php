@@ -70,6 +70,14 @@ class Product extends Model
     /**
      * @return HasMany
      */
+    public function productSaleHistories()
+    {
+        return $this->hasMany('App\Models\ProductSaleHistory');
+    }
+
+    /**
+     * @return HasMany
+     */
     public function productManufactures()
     {
         return $this->hasMany('App\Models\ProductManufacture');
