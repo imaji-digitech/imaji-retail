@@ -72,6 +72,7 @@ Route::get('simple-qr-code', function () {
 });
 
 Route::name('umkm.')->prefix('umkm')->middleware(['auth:sanctum', 'web', 'verified', 'checkRole:3'])->group(function () {
+    Route::view('/dashboard', "dashboard")->name('dashboard');
     Route::resource('product', UmkmProductController::class)->only(['index', 'create', 'show', 'edit']);
     Route::resource('customer', CustomerController::class)->only(['index', 'create', 'show', 'edit']);
     Route::get('product/export/{id}', function ($id) {
