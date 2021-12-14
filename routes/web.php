@@ -105,6 +105,7 @@ Route::name('umkm.')->prefix('umkm')->middleware(['auth:sanctum', 'web', 'verifi
     })->name('transaction.export');
     Route::get('/transaction/create', [UmkmTransactionController::class, 'create'])->name('transaction.create');
     Route::get('/transaction/history', [UmkmTransactionController::class, 'history'])->name('transaction.history');
+    Route::get('transaction/active', [UmkmTransactionController::class, 'active'])->name('transaction.active');
     Route::get('/transaction/payment/{id}', [UmkmTransactionController::class, 'payment'])->name('transaction.payment');
     Route::get('/transaction/payment/export/{id}', function ($id) {
         $transaction = TransactionPayment::find($id);
@@ -166,7 +167,7 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
     Route::post('product', [ProductController::class, 'graph'])->name('product.graph');
 
     Route::get('transaction/{umkm}/create', [TransactionController::class, 'create'])->name('transaction.create');
-    Route::get('transaction/{umkm}/create', [TransactionController::class, 'create'])->name('transaction.create');
+//    Route::get('transaction/{umkm}/create', [TransactionController::class, 'create'])->name('transaction.create');
     Route::get('transaction/{umkm}/history', [TransactionController::class, 'history'])->name('transaction.history');
     Route::get('transaction/{umkm}/active', [TransactionController::class, 'active'])->name('transaction.active');
     Route::get('transaction/export/{id}', function ($id) {
