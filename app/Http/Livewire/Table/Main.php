@@ -19,10 +19,7 @@ class Main extends Component
     public $search = '';
     public $role;
     public function mount(){
-        $this->role = 'admin';
-        if (auth()->user()->role == 3) {
-            $this->role = 'umkm';
-        }
+
     }
 
     protected $listeners = ["deleteItem" => "delete_item"];
@@ -66,6 +63,10 @@ class Main extends Component
 
     public function get_pagination_data()
     {
+        $this->role = 'admin';
+        if (auth()->user()->role == 3) {
+            $this->role = 'umkm';
+        }
         switch ($this->name) {
             case 'user':
                 $users = $this->model::search($this->search)
