@@ -50,25 +50,34 @@
                         <td style="height: 10px !important;">{{ $rab }}</td>
                         <td style="height: 10px !important;">{{ $spj }}</td>
                         <td style="height: 10px !important;">
-                            <a role="button" href="{{ route('admin.finance.show',[$finance->product_type_id,$finance->id]) }}" class="mr-1 btn btn-success">
+                            <a role="button"
+                               href="{{ route('admin.finance.show',[$finance->product_type_id,$finance->id]) }}"
+                               class="mr-1 btn btn-success">
                                 Lihat RAB
                             </a>
-                            <a role="button" href="{{route('admin.finance.note.index',[$finance->product_type_id,$finance->id])}}" class="mr-1 btn btn-dark">
-                                Lihat SPJ
-                            </a>
+                            @if($finance->status_rab_id==2)
+                                <a role="button"
+                                   href="{{route('admin.finance.note.index',[$finance->product_type_id,$finance->id])}}"
+                                   class="mr-1 btn btn-dark">
+                                    Lihat SPJ
+                                </a>
+                                <a role="button"
+                                   href="{{route('admin.finance.comparison',[$finance->product_type_id,$finance->id])}}"
+                                   class="mr-1 btn btn-warning">
+                                    Bandingkan RAB & SPJ
+                                </a>
+                            @endif
                             {{--                        <a role="button" href="" class="mr-1 btn btn-primary">--}}
                             {{--                            Edit--}}
                             {{--                        </a>--}}
 
-                            <a role="button" href="{{route('admin.finance.comparison',[$finance->product_type_id,$finance->id])}}" class="mr-1 btn btn-warning">
-                                Bandingkan RAB & SPJ
-                            </a>
+
                             <a role="button" x-on:click.prevent="deleteItem" href="#" class="btn btn-danger">
                                 Hapus
                             </a>
                         </td>
                     </tr>
-                    @endif
+                @endif
             @endforeach
         </x-slot>
     </x-data-table>

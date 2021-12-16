@@ -56,13 +56,23 @@ class Finance extends Model
 
     public static function search($query, $dataId)
     {
-        return empty($query) ? static::query()->whereProductTypeId($dataId)
-            : static::whereProductTypeId($dataId)->where(function ($q) use ($query) {
-                $q->where('title', 'like', '%' . $query . '%')
-                    ->orWhereHas('user', function ($q) use ($query) {
-                        $q->where('name', 'like', '%' . $query . '%');
-                    });
-            });
+        if (auth()->user()->role==1){
+            return empty($query) ? static::query()->whereProductTypeId($dataId)
+                : static::whereProductTypeId($dataId)->where(function ($q) use ($query) {
+                    $q->where('title', 'like', '%' . $query . '%')
+                        ->orWhereHas('user', function ($q) use ($query) {
+                            $q->where('name', 'like', '%' . $query . '%');
+                        });
+                });
+        }else{
+            return empty($query) ? static::query()->whereProductTypeId($dataId)->whereUserId(auth()->id())
+                : static::whereProductTypeId($dataId)->whereUserId(auth()->id())->where(function ($q) use ($query) {
+                    $q->where('title', 'like', '%' . $query . '%')
+                        ->orWhereHas('user', function ($q) use ($query) {
+                            $q->where('name', 'like', '%' . $query . '%');
+                        });
+                });
+        }
     }
 
     /**
