@@ -17,7 +17,7 @@ class FormFinanceNote extends Component
     public $thumbnail;
     public $financeId;
     public function getRules(){
-        return['thumbnail'=>'required|image|max:1024'];
+        return['thumbnail'=>'required|image|max:10240'];
     }
     public function create(){
         $this->validate();
