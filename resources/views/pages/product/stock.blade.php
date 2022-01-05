@@ -11,7 +11,7 @@
 
     <div>
 {{--        {{dd($id)}}--}}
-        <livewire:product-stock :dataId="$id"/>
+        <livewire:product-stock :dataId="$id" :umkm="$umkm"/>
     </div>
 
 </x-app-layout>

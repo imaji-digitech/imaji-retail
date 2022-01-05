@@ -11,6 +11,7 @@ class ProductStock extends Component
     public $product;
     public $data;
     public $dataId;
+    public $umkm;
 
     public function update(){
         UserLog::create([
@@ -26,8 +27,7 @@ class ProductStock extends Component
             'icon' => 'success',
             'title' => 'Berhasil memperbarui stock',
         ]);
-
-        $this->emit('redirect', route('admin.product.index'));
+        $this->emit('redirect', route('admin.product.index',$this->umkm));
     }
 
 
