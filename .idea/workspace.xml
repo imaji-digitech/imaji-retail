@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="update so many :)">
+    <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="font awesome issue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/ProductStock.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/ProductStock.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/product/stock.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/product/stock.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,28 +290,7 @@
       <workItem from="1640063071289" duration="16000" />
       <workItem from="1640588866839" duration="1495000" />
       <workItem from="1640754803072" duration="1224000" />
-      <workItem from="1641298670262" duration="1532000" />
-    </task>
-    <task id="LOCAL-00019" summary="added front web">
-      <created>1635603760768</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1635603760768</updated>
-    </task>
-    <task id="LOCAL-00020" summary="added front web">
-      <created>1635604074115</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1635604074115</updated>
-    </task>
-    <task id="LOCAL-00021" summary="added front web">
-      <created>1635648447119</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1635648447119</updated>
+      <workItem from="1641298670262" duration="2626000" />
     </task>
     <task id="LOCAL-00022" summary="added front web">
       <created>1635648821684</created>
@@ -637,7 +614,28 @@
       <option name="project" value="LOCAL" />
       <updated>1639642303697</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="update so many :)">
+      <created>1641367410355</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1641367410355</updated>
+    </task>
+    <task id="LOCAL-00069" summary="update so many :)">
+      <created>1641367582283</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1641367582284</updated>
+    </task>
+    <task id="LOCAL-00070" summary="font awesome issue">
+      <created>1641367669779</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1641367669779</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -664,6 +662,7 @@
     <MESSAGE value="fix zero detailTransaction" />
     <MESSAGE value="update asset and finance" />
     <MESSAGE value="update so many :)" />
-    <option name="LAST_COMMIT_MESSAGE" value="update so many :)" />
+    <MESSAGE value="font awesome issue" />
+    <option name="LAST_COMMIT_MESSAGE" value="font awesome issue" />
   </component>
 </project>
