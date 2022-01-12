@@ -4,8 +4,7 @@
 
         <div class="section-header-breadcrumb">
             <div class="breadcrumb-item active"><a href="{{ route('admin.dashboard') }}">{{__('dashboard')}}</a></div>
-            <div class="breadcrumb-item"><a href="{{ route('admin.product.index') }}">{{__('Produk')}}</a></div>
-            <div class="breadcrumb-item"><a href="#">{{__('Detail produk')}}</a></div>
+            <div class="breadcrumb-item"><a href="#">{{__('Detail Laporan')}}</a></div>
         </div>
     </x-slot>
 
