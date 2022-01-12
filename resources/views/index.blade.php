@@ -104,7 +104,7 @@
             <section style="background-color:yellow">
                 <div id="" class="d-flex h-100 bg-3" style="text-align: center;">
                     <div class=" row justify-content-center align-self-center col-md-12">
-                        <h2 style=" font-weight: bold;">MILIKI PRODUK KAMI <br> DAN DAPARKAN PELAYANAN TERBAIK
+                        <h2 style=" font-weight: bold;">MILIKI PRODUK KAMI <br> DAN DAPATKAN PELAYANAN TERBAIK
                             KAMI
                         </h2>
                         <h3>Temui Produk Kami <br> di </h3>
