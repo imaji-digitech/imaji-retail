@@ -255,6 +255,22 @@ class Main extends Component
                     ])
                 ];
                 break;
+            case 'receipt':
+                $receipts = $this->model::search($this->search,$this->dataId)
+                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
+                    ->paginate($this->perPage);
+
+                return [
+                    "view" => 'livewire.table.receipt',
+                    "receipts" => $receipts,
+                    "data" => array_to_object([
+                        'href' => [
+                            'create_new' => route('admin.receipt.create',$this->dataId),
+                            'create_new_text' => 'Buat Kwitansi',
+                        ]
+                    ])
+                ];
+                break;
 
             default:
                 # code...

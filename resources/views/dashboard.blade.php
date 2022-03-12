@@ -10,5 +10,6 @@
 
     <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
 {{--        <livewire:form-cash-book />--}}
+        <livewire:salary-accept/>
     </div>
 </x-app-layout>

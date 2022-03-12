@@ -2,7 +2,34 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="font awesome issue">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ReceiptController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/FormReceipt.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/SalaryAccept.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/UploadSign.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Receipt.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_12_012341_create_receipt.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/income.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/outcome.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/sign.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/form-receipt.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/salary-accept.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/table/receipt.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/upload-sign.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/receipt/create.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/receipt/edit.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/receipt/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pdf/income.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pdf/outcome.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Table/CashNote.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Table/CashNote.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Table/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Table/Main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Asset.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Asset.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/profile/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/show.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -179,21 +206,22 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/pages/transaction" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/pdf" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/resources/views/pages/transaction" />
-      <recent name="$PROJECT_DIR$/app/Http/Controllers/Admin" />
+      <recent name="$PROJECT_DIR$/resources/views/pdf" />
+      <recent name="$PROJECT_DIR$/resources/views/livewire" />
+      <recent name="$PROJECT_DIR$/app/Http/Livewire" />
+      <recent name="$PROJECT_DIR$/public/images" />
       <recent name="$PROJECT_DIR$/resources/views/livewire/table" />
-      <recent name="$PROJECT_DIR$/resources/views/pages" />
-      <recent name="$PROJECT_DIR$/resources/views/pages/finance" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/user/images" />
@@ -296,14 +324,33 @@
       <workItem from="1641543465398" duration="1216000" />
       <workItem from="1641625581007" duration="124000" />
       <workItem from="1641886201804" duration="1270000" />
-      <workItem from="1641952643769" duration="598000" />
-    </task>
-    <task id="LOCAL-00023" summary="added front web">
-      <created>1635649055484</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1635649055485</updated>
+      <workItem from="1641952643769" duration="2398000" />
+      <workItem from="1641957977804" duration="1387000" />
+      <workItem from="1642808337509" duration="1302000" />
+      <workItem from="1643266955815" duration="1842000" />
+      <workItem from="1643779304957" duration="703000" />
+      <workItem from="1643810222422" duration="1240000" />
+      <workItem from="1643852976550" duration="1284000" />
+      <workItem from="1643937047498" duration="1256000" />
+      <workItem from="1644021180370" duration="1803000" />
+      <workItem from="1644035102274" duration="1317000" />
+      <workItem from="1644150413581" duration="880000" />
+      <workItem from="1644162980070" duration="1099000" />
+      <workItem from="1644240389186" duration="614000" />
+      <workItem from="1644286164559" duration="855000" />
+      <workItem from="1644292929772" duration="1039000" />
+      <workItem from="1644389192730" duration="601000" />
+      <workItem from="1645401687247" duration="1294000" />
+      <workItem from="1645419322251" duration="598000" />
+      <workItem from="1645486282721" duration="1307000" />
+      <workItem from="1645505885579" duration="1658000" />
+      <workItem from="1645657649303" duration="627000" />
+      <workItem from="1645659016763" duration="598000" />
+      <workItem from="1645747309864" duration="1127000" />
+      <workItem from="1645852482753" duration="8000" />
+      <workItem from="1646798368346" duration="665000" />
+      <workItem from="1647047796135" duration="1305000" />
+      <workItem from="1647049455027" duration="11911000" />
     </task>
     <task id="LOCAL-00024" summary="added front web">
       <created>1635649380450</created>
@@ -641,7 +688,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641368699221</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="font awesome issue">
+      <created>1641953505231</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1641953505231</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

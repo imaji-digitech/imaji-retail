@@ -32,7 +32,8 @@ class User extends Authenticatable
         'quotes',
         'address',
         'no_phone',
-        'product_type_id'
+        'product_type_id',
+        'sign'
     ];
 
     /**

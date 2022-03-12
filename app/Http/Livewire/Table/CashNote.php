@@ -101,11 +101,8 @@ class CashNote extends Main
                     $p->stock*$p->price*0.3*0.10,
                     ],$delimiter);
             }
-
             fputcsv($file, [''],$delimiter);
-
             fputcsv($file, ['Dicetak pada '.date('Y-m-d')],$delimiter);
-
             fclose($file);
         };
         return response()->stream($callback, 200, $headers);

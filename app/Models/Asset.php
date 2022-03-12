@@ -72,6 +72,5 @@ class Asset extends Model
     {
         return empty($query) ? static::query()->whereProductTypeId($dataId)
             : static::whereProductTypeId($dataId)->where('title', 'like', '%' . $query . '%');
-
     }
 }

@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\FinanceController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductTypeController;
+use App\Http\Controllers\Admin\ReceiptController;
 use App\Http\Controllers\Admin\TransactionController;
 use App\Http\Controllers\Admin\UmkmAssetController;
 use App\Http\Controllers\Admin\UmkmProductController;
@@ -159,10 +160,17 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
     Route::get('product/{umkm}/show/{id}', [ProductController::class, 'show'])->name('product.show');
     Route::get('product/{umkm}/edit/{id}', [ProductController::class, 'edit'])->name('product.edit');
 
+    Route::get('receipt/{umkm}', [ReceiptController::class, 'index'])->name('receipt.index');
+    Route::get('receipt/{umkm}/create', [ReceiptController::class, 'create'])->name('receipt.create');
+    Route::get('receipt/show/{id}', [ReceiptController::class, 'show'])->name('receipt.show');
+    Route::get('receipt/{umkm}/edit/{id}', [ReceiptController::class, 'edit'])->name('receipt.edit');
+
     Route::get('customer', [CustomerController::class, 'index'])->name('customer.index');
     Route::get('customer/create', [CustomerController::class, 'create'])->name('customer.create');
     Route::get('customer/show/{id}', [CustomerController::class, 'show'])->name('customer.show');
     Route::get('customer/edit/{id}', [CustomerController::class, 'edit'])->name('customer.edit');
+
+
 
     Route::get('product/{umkm}/export/{id}', function ($umkm, $id) {
         $product = Product::findOrFail($id);
