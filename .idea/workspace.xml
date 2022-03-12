@@ -1,36 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="font awesome issue">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/ReceiptController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/FormReceipt.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/SalaryAccept.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/UploadSign.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Receipt.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2022_03_12_012341_create_receipt.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/income.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/outcome.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/images/sign.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/form-receipt.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/salary-accept.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/table/receipt.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/upload-sign.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/receipt/create.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/receipt/edit.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/receipt/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pdf/income.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pdf/outcome.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Table/CashNote.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Table/CashNote.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Table/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Table/Main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Asset.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Asset.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/profile/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/profile/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="font awesome issue" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -350,14 +321,7 @@
       <workItem from="1645852482753" duration="8000" />
       <workItem from="1646798368346" duration="665000" />
       <workItem from="1647047796135" duration="1305000" />
-      <workItem from="1647049455027" duration="11911000" />
-    </task>
-    <task id="LOCAL-00024" summary="added front web">
-      <created>1635649380450</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1635649380450</updated>
+      <workItem from="1647049455027" duration="12231000" />
     </task>
     <task id="LOCAL-00025" summary="added front web">
       <created>1635649573654</created>
@@ -695,7 +659,14 @@
       <option name="project" value="LOCAL" />
       <updated>1641953505231</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="font awesome issue">
+      <created>1647091154232</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1647091154233</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

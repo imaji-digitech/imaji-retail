@@ -30,6 +30,19 @@
                         @endforeach
                     </ul>
                 </li>
+                @if(auth()->id()==26)
+                    <li class="dropdown">
+                        <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
+                            <span>Kwitansi</span></a>
+                        <ul class="dropdown-menu">
+                            @foreach($productTypes as $productType)
+                                <li><a class="nav-link"
+                                       href="{{route('admin.receipt.index',$productType->id)}}">{{ $productType->title }}</a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </li>
+                @endif
                 <li class="dropdown">
                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                         <span>Buku kas</span></a>
