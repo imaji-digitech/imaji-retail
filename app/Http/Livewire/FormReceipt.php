@@ -79,7 +79,8 @@ class FormReceipt extends Component
     {
         $this->validate();
         $this->resetErrorBag();
-        $pt = Receipt::find($this->dataId)->update($this->data);
+        $pt = Receipt::find($this->dataId);
+        $pt->update($this->data);
 //        $pt=Receipt::getCode($pt->id);
         $this->emit('swal:alert', [
             'type' => 'success',

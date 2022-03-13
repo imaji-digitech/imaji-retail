@@ -51,7 +51,7 @@
                                     class="fa fa-16px fa-pen"></i></a>
                         @endif
                         <a role="button"
-                           href="{{ route('admin.receipt.show',[$receipt->product_type_id,$receipt->id]) }}"
+                           href="{{ route('admin.receipt.show',[$receipt->id]) }}"
                            class="mr-3"><i
                                 class="fa fa-16px fa-eye"></i></a>
                         @if($receipt->status==1)
