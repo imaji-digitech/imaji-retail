@@ -94,7 +94,7 @@
                     {!! $receipt->regarding !!}
                 </td>
                 <td style="border: .5px solid;padding-top:0;padding-bottom: 5px">
-                    {{ $receipt->nominal }}
+                    Rp. {{ number_format($receipt->nominal,0,'.','.') }}
                 </td>
                 <td style="border: .5px solid;padding-top:0;padding-bottom: 5px">
                     {!! $receipt->note !!}
