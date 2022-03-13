@@ -261,6 +261,7 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
     Route::view('/user/edit/{userId}', "pages.user.edit")->name('user.edit');
 });
 Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'verified',])->group(function () {
+    Route::get('receipt/show/{id}', [ReceiptController::class, 'show'])->name('receipt.show');
     Route::group(['middleware' => config('jetstream.middleware', ['web'])], function () {
         Route::group(['middleware' => ['auth', 'verified']], function () {
             // User & Profile...
