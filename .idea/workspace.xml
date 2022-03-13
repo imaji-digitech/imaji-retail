@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="font awesome issue" />
+    <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="font awesome issue">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -321,14 +323,7 @@
       <workItem from="1645852482753" duration="8000" />
       <workItem from="1646798368346" duration="665000" />
       <workItem from="1647047796135" duration="1305000" />
-      <workItem from="1647049455027" duration="14107000" />
-    </task>
-    <task id="LOCAL-00028" summary="added front web">
-      <created>1635653833731</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1635653833731</updated>
+      <workItem from="1647049455027" duration="14909000" />
     </task>
     <task id="LOCAL-00029" summary="added front web">
       <created>1635653982334</created>
@@ -666,7 +661,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647146614697</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="font awesome issue">
+      <created>1647147514328</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1647147514328</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

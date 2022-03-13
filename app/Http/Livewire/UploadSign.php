@@ -14,7 +14,7 @@ class UploadSign extends Component
     protected function getRules()
     {
         return[
-            'sign' => ['required', 'image', 'max:1024'],
+            'sign' => ['required', 'image', 'max:4000'],
         ];
     }
 
