@@ -79,17 +79,17 @@ class FormTransaction extends Component
     {
         if ($this->data['payment_status_id'] == 1 or $this->data['payment_status_id'] == 2) {
             $this->data['status_id'] = 3;
-            $url=route("admin.transaction.history",$this->umkm);
+            $url = route("admin.transaction.history", $this->umkm);
         } else {
             $this->data['status_id'] = 1;
-            $url=route("admin.transaction.active",$this->umkm);
+            $url = route("admin.transaction.active", $this->umkm);
         }
         $this->data['no_invoice'] = str_replace('-', '', $this->data['created_at']) . sprintf("%03d", (count(Transaction::whereDate('created_at', Carbon::today())->get()) + 1));
         $d = Transaction::create($this->data);
-        if ($this->data['payment_status_id'] == 1 or $this->data['payment_status_id'] == 2 ) {
-            $payment=TransactionPayment::create(['transaction_id'=>$d->id]);
+        if ($this->data['payment_status_id'] == 1 or $this->data['payment_status_id'] == 2) {
+            $payment = TransactionPayment::create(['transaction_id' => $d->id]);
         }
-        $total=0;
+        $total = 0;
         foreach ($this->product as $p) {
             if (isset($this->detailTransaction[$p]) and isset($this->detailTransactionDiscount[$p])) {
                 TransactionDetail::create([
@@ -99,14 +99,14 @@ class FormTransaction extends Component
                     'discount' => $this->detailTransactionDiscount[$p],
                     'total' => $this->listProduct->find($p)->price * intval($this->detailTransaction[$p]) * (100 - intval($this->detailTransactionDiscount[$p])) / 100,
                 ]);
-                $product=Product::find($p);
+                $product = Product::find($p);
                 $product->update([
-                    'stock'=>$product->stock-$this->detailTransaction[$p]
+                    'stock' => $product->stock - $this->detailTransaction[$p]
                 ]);
                 UserLog::create([
-                    'user_id'=>auth()->id(),
-                    'product_id'=>$p,
-                    'note'=>"transaksi dengan no ".$this->data['no_invoice']." sejumlah ".$this->detailTransaction[$p]
+                    'user_id' => auth()->id(),
+                    'product_id' => $p,
+                    'note' => "transaksi dengan no " . $this->data['no_invoice'] . " sejumlah " . $this->detailTransaction[$p]
                 ]);
                 if ($this->data['payment_status_id'] == 3) {
                     TransactionCredit::create([
@@ -116,7 +116,7 @@ class FormTransaction extends Component
                         'quantity' => $this->detailTransaction[$p],
                         'total' => $this->listProduct->find($p)->price * intval($this->detailTransaction[$p]) * (100 - intval($this->detailTransactionDiscount[$p])) / 100,
                     ]);
-                }else{
+                } else {
                     TransactionPaymentDetail::create([
                         'transaction_payment_id' => $payment->id,
                         'product_id' => $p,
@@ -124,16 +124,18 @@ class FormTransaction extends Component
                         'quantity' => $this->detailTransaction[$p],
                         'total' => $this->listProduct->find($p)->price * intval($this->detailTransaction[$p]) * (100 - intval($this->detailTransactionDiscount[$p])) / 100,
                     ]);
+                    $total += $this->listProduct->find($p)->price * intval($this->detailTransaction[$p]) * (100 - intval($this->detailTransactionDiscount[$p])) / 100;
                 }
+
             }
         }
         if ($this->data['payment_status_id'] != 3) {
-            $data=[
-                'product_type_id'=>$this->umkm,
-                'code_cash_book_id'=>2,
-                'note'=>'Pembayaran '.$d->paymentStatus->title.' dari transaksi '.$d->no_invoice,
-                'income'=>$total,
-                'outcome'=>0,
+            $data = [
+                'product_type_id' => $this->umkm,
+                'code_cash_book_id' => 2,
+                'note' => 'Pembayaran ' . $d->paymentStatus->title . ' dari transaksi ' . $d->no_invoice,
+                'income' => $total,
+                'outcome' => 0,
             ];
             CashBook::create($data);
         }

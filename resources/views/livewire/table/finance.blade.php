@@ -40,11 +40,11 @@
                         @php($rab=0)
                         @php($spj=0)
                         @foreach($finance->financeItems as $fi)
-                            {{ $rab+=$fi->amount*$fi->price }}
+                            @php($rab+=$fi->amount*$fi->price)
                         @endforeach
                         @foreach($finance->financeNotes as $fn)
                             @foreach($fn->financeNoteItems as $fi)
-                                {{ $spj+=$fi->amount*$fi->price }}
+                                @php($spj+=$fi->amount*$fi->price)
                             @endforeach
                         @endforeach
                         <td style="height: 10px !important;">{{ $rab }}</td>
