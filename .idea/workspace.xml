@@ -3,7 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="font awesome issue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormTransaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormTransaction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormFinanceNote.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormFinanceNote.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/finance.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/finance.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -327,14 +327,7 @@
       <workItem from="1647047796135" duration="1305000" />
       <workItem from="1647049455027" duration="16322000" />
       <workItem from="1647395158826" duration="617000" />
-      <workItem from="1647482365502" duration="351000" />
-    </task>
-    <task id="LOCAL-00032" summary="fix zero detailTransaction">
-      <created>1637570921842</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1637570921842</updated>
+      <workItem from="1647482365502" duration="1596000" />
     </task>
     <task id="LOCAL-00033" summary="fix zero detailTransaction">
       <created>1638069072395</created>
@@ -672,7 +665,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647148431395</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="font awesome issue">
+      <created>1647482739791</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1647482739791</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

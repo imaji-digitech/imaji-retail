@@ -28,12 +28,13 @@ class FormFinanceNote extends Component
         });
         $image->stream();
         Storage::disk('local')->put('public/finance/' . $filename, $image, 'public');
-        FinanceNote::create(['finance_id'=>$this->financeId,'note'=>'finance/' . $filename]);
+        $fn=FinanceNote::create(['finance_id'=>$this->financeId,'note'=>'finance/' . $filename]);
         $this->emit('swal:alert', [
             'icon' => 'success',
-            'title' => 'Berhasil menambahkan data customer',
+            'title' => 'Berhasil menambahkan nota',
         ]);
-        $this->emit('redirect',route('admin.finance.note.show',$this->financeId));
+//        finance.note.index
+        $this->emit('redirect',route('admin.finance.note.show',$fn->id));
     }
     public function render()
     {

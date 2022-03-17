@@ -67,11 +67,6 @@
                                     Bandingkan RAB & SPJ
                                 </a>
                             @endif
-                            {{--                        <a role="button" href="" class="mr-1 btn btn-primary">--}}
-                            {{--                            Edit--}}
-                            {{--                        </a>--}}
-
-
                             <a role="button" x-on:click.prevent="deleteItem" href="#" class="btn btn-danger">
                                 Hapus
                             </a>
