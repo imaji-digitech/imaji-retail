@@ -53,7 +53,7 @@
         </x-slot>
 
         <x-slot name="body">
-            <form action="{{route('admin.product.graph')}}" method="post">
+            <form action="{{route('admin.product.graph',$dataId)}}" method="post">
                 @csrf
                 @foreach ($products as $product)
                     <tr x-data="window.__controller.dataTableController({{ $product->id }})" style="">

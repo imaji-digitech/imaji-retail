@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="font awesome issue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/FormFinanceNote.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/FormFinanceNote.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/finance.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/finance.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Table/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Table/Product.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/product.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +33,9 @@
       <filtered-out-file-type name="TAG" />
       <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
     </file-type-list>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -327,14 +331,13 @@
       <workItem from="1647047796135" duration="1305000" />
       <workItem from="1647049455027" duration="16322000" />
       <workItem from="1647395158826" duration="617000" />
-      <workItem from="1647482365502" duration="1596000" />
-    </task>
-    <task id="LOCAL-00033" summary="fix zero detailTransaction">
-      <created>1638069072395</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1638069072395</updated>
+      <workItem from="1647482365502" duration="2738000" />
+      <workItem from="1647605547979" duration="597000" />
+      <workItem from="1647675449667" duration="636000" />
+      <workItem from="1647922019834" duration="831000" />
+      <workItem from="1648021614450" duration="1794000" />
+      <workItem from="1648105275190" duration="64000" />
+      <workItem from="1648529813134" duration="625000" />
     </task>
     <task id="LOCAL-00034" summary="fix zero detailTransaction">
       <created>1638199012965</created>
@@ -672,7 +675,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647482739791</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="font awesome issue">
+      <created>1647484454692</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1647484454692</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -688,7 +698,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

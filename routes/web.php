@@ -184,7 +184,7 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
     Route::get('product/{umkm}/history/{id}', [ProductController::class, 'history'])->name('product.history');
 
     Route::get('product/{umkm}/manufacture/{id}', [ProductController::class, 'manufacture'])->name('product.manufacture');
-    Route::post('product', [ProductController::class, 'graph'])->name('product.graph');
+    Route::post('product/{umkm}', [ProductController::class, 'graph'])->name('product.graph');
 
     Route::get('transaction/{umkm}/create', [TransactionController::class, 'create'])->name('transaction.create');
 //    Route::get('transaction/{umkm}/create', [TransactionController::class, 'create'])->name('transaction.create');

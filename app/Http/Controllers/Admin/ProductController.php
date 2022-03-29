@@ -31,13 +31,13 @@ class ProductController extends Controller
         $product=Product::findOrFail($id);
         return view('pages.product.manufacture',compact('product','umkm'));
     }
-    public function graph(Request $request){
+    public function graph($umkm,Request $request){
         $validated = $request->validate([
             'productId'=>'required'
         ]);
 
         $data=$request->productId;
-        return view('pages.product.graph',compact('data'));
+        return view('pages.product.graph',compact('data','umkm'));
     }
 
     public function stock($umkm,$id){
