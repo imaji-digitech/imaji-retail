@@ -3,9 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="font awesome issue">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Table/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Table/Product.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/livewire/table/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/table/product.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pdf/product.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/product.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -337,14 +336,7 @@
       <workItem from="1647922019834" duration="831000" />
       <workItem from="1648021614450" duration="1794000" />
       <workItem from="1648105275190" duration="64000" />
-      <workItem from="1648529813134" duration="625000" />
-    </task>
-    <task id="LOCAL-00034" summary="fix zero detailTransaction">
-      <created>1638199012965</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1638199012965</updated>
+      <workItem from="1648529813134" duration="3223000" />
     </task>
     <task id="LOCAL-00035" summary="fix zero detailTransaction">
       <created>1638199079161</created>
@@ -682,7 +674,14 @@
       <option name="project" value="LOCAL" />
       <updated>1647484454692</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="font awesome issue">
+      <created>1648530498802</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1648530498803</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

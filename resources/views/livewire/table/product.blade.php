@@ -6,7 +6,7 @@
                 <th style="padding:5px;margin:5px; width: 20px">#</th>
                 <th style="padding:0;margin:0; !important;">
                     <a wire:click.prevent="sortBy('title')" role="button" href="#">
-                        Nama  @include('components.sort-icon', ['field' => 'title'])
+                        Nama @include('components.sort-icon', ['field' => 'title'])
                     </a>
                 </th>
                 <th style="padding:0;margin:0;width: 100px!important;">
@@ -35,7 +35,7 @@
                 </th>
                 <th style="padding:0;margin:0;width: 50px !important;">
                     <a wire:click.prevent="sortBy('stock')" role="button" href="#">
-                        <i class="fa fa-16px fa-files-o text-blue-500"></i>
+                        <i class="fa fa-16px fa-box-open text-blue-500"></i>
                         @include('components.sort-icon', ['field' => 'stock'])
                     </a>
                 </th>
@@ -62,49 +62,55 @@
                         </td>
                         <td style="padding:0;margin:0;height: 10px !important;">{{ $product->title }}</td>
                         <td style="padding:0;margin:0;height: 10px !important;">{{ $product->code }}</td>
-                        <td style="padding:0;margin:0;height: 10px !important;">Rp {{ number_format($product->price,0,",",".") }}</td>
-                        <td style="padding:0;margin:0;height: 10px !important;">Rp {{ number_format($product->hpp,0,",",".") }}</td>
+                        <td style="padding:0;margin:0;height: 10px !important;">
+                            Rp {{ number_format($product->price,0,",",".") }}</td>
+                        <td style="padding:0;margin:0;height: 10px !important;">
+                            Rp {{ number_format($product->hpp,0,",",".") }}</td>
                         <td style="padding:0;margin:0;height: 10px !important;">
                             Rp {{ number_format($product->price-$product->hpp,0,",",".") }}</td>
-                        <td style="padding:0;margin:0;height: 10px !important;">{{ $product->stock }}</td>
+                        <td style="padding:0;margin:0;height: 10px !important;text-align: center">{{ $product->stock }}</td>
                         @php($tp=0)
                         @foreach($product->transactionDetails as $td)
                             @if($td->created_at->month== \Carbon\Carbon::now()->month)
-                            @php($tp+=$td->quantity)
+                                @php($tp+=$td->quantity)
                             @endif
                         @endforeach
-                        <td style="padding:0;margin:0;height: 10px !important;">{{ $product->transactionDetails->sum('quantity') }}</td>
-
-                        <td style="padding:0;margin:0;height: 10px !important;">{{ $tp }}</td>
+                        <td style="padding:0;margin:0;height: 10px !important; text-align: center">
+                            {{ $product->transactionDetails->sum('quantity') }}
+                        </td>
+                        <td style="padding:0;margin:0;height: 10px !important;text-align: center">
+                            {{ $tp }}
+                        </td>
                         {{--                        <td style="padding:0;margin:0;height: 10px !important;">{{ $product->updated_at?$product->updated_at->format('d M Y'):'' }}</td>--}}
-                        <td style="padding:0;margin:0;height: 10px !important;" class="whitespace-no-wrap row-action--icon">
+                        <td style="padding:0;margin:0;height: 10px !important;"
+                            class="whitespace-no-wrap row-action--icon">
                             <a role="button"
                                href="{{ route('admin.product.manufacture',[$product->product_type_id,$product->id]) }}"
-                               class="mr-3">
-                                <i class="fa fa-16px fa-money text-blue-500"></i>
+                               class="mr-2">
+                                <i class="fa fa-16px fa-money-bill text-body">HPP</i>
                             </a>
                             <a role="button"
                                href="{{ route('admin.product.edit',[$product->product_type_id,$product->id]) }}"
-                               class="mr-3">
-                                <i class="fa fa-16px fa-pen text-blue-500"></i>
+                               class="mr-2">
+                                <i class="fa fa-16px fa-pen text-warning">EDIT</i>
                             </a>
 
                             <a role="button"
                                href="{{ route('admin.product.show',[$product->product_type_id,$product->id]) }}"
-                               class="mr-3"
+                               class="mr-2"
                                target="_blank">
                                 <i class="fa fa-16px fa-bar-chart text-blue-500"></i>
                             </a>
                             <br>
                             <a role="button"
                                href="{{ route('admin.product.export',[$product->product_type_id,$product->id]) }}"
-                               class="mr-3"
+                               class="mr-2"
                                target="_blank">
                                 <i class="fa fa-16px fa-download text-danger">PDF</i>
                             </a>
                             <a role="button"
                                href="{{ route('admin.product.stock',[$product->product_type_id,$product->id]) }}"
-                               class="mr-3"
+                               class="mr-2"
                                target="_blank">
                                 <i class="fa fa-16px fa-plus text-blue-500">STOCK</i>
                             </a>
@@ -113,7 +119,7 @@
                                href="{{ route('admin.product.history',[$product->product_type_id,$product->id]) }}"
                                class="mr-3"
                                target="_blank">
-                                <i class="fa fa-16px fa-copy text-blue-500">History</i>
+                                <i class="fa fa-16px fa-copy text-success">History</i>
                             </a>
                         </td>
                     </tr>

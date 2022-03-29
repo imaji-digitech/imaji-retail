@@ -50,7 +50,7 @@
         <tr>
             <td>Stok Produk</td>
             <td>:</td>
-            <td style="width: 400px">0</td>
+            <td style="width: 400px">{{ $product->stock }}</td>
         </tr>
         <tr>
             <td>Total Omzet produk</td>
