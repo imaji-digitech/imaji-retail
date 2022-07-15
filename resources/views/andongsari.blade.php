@@ -40,56 +40,66 @@
     <div>
         <div class="scroll-container">
             <section>
-                <header id="image-3" class="d-flex h-100">
+                <header id="image-4" class="d-flex h-100">
                     <div class=" row justify-content-center align-self-center col-md-12" style="z-index: 3;">
                         <h1 style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;">
-                            Bag-On Craft
+                            Batik Selo Maeso
                         </h1>
                         <p style="text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;" class="col-md-8">
                             Melalui keterampilan dan kerajinan tangan kelompok
-                            perempuan sehingga mampu menwujudkan produk
-                            yang mampu bernilai jual. Tas rajut, sepatu rajut, maupun pengharum kopi yang dihasilkan Bag On Craft tak hanya berkualitas, di sana turut mengandung semangat untuk berdaya dan memberdayakan perempuan di sekitar Desa Bagon, Kec. Puger, Kabupaten Jember. Produk rajut Bag On Craft merefleksikan kebutuhan sehari-hari (daily product) maupun sebagai alternatif fashion pemakainya.
+                            perempuan watukebo desa andognsari melahirkan Batik Selo Maeso yang memiliki arti dalam bahasa sansekerta Watu Kebo.
+                            Warna yang cerah, motif dan corak khas dengan mengusung motif ‘tembakau’ sebagai kondimen utama menjadi identitas batik Selo Maeso yang dikembangkan kelompok perempuan di Dusun Watukebo, Desa Andongsari, Kec. Ambulu, Kabupaten Jember. Tak hanya batik tulis, Selo Maeso juga mengeluarkan produk batik pewarna alami dan batik cap berkualitas dan asli.
                         </p>
                     </div>
                     <div class=layer></div>
                 </header>
             </section>
             <section>
-                <div id="" class="d-flex h-100 bg-b-2" style="text-align: center;">
+                <div id="" class="d-flex h-100 bg-a-2" style="text-align: center;">
                     <div class=" row justify-content-center align-self-center col-md-12">
                         <h2>Produk Kita</h2>
                         <div class="row col-md-12 col-sm-12" style="justify-content: center;">
                             <div class="col-md-4 col-m-4 shape">
-                                <img src="{{asset('user/images/bagon_5.jpg')}}" alt="" srcset="">
+                                <img src="{{asset('user/images/andongsari_5.jpg')}}" alt="" srcset="">
                                 <br>
-                                <p>Tas Pesta Kilauan Matahari</p>
+                                <p>Batik Ecoprint</p>
                             </div>
                             <div class="col-md-4 col-m-4 shape">
-                                <img src="{{asset('user/images/bagon_7.jpg')}}" alt="" srcset="">
+                                <img src="{{asset('user/images/andongsari_9.jpg')}}" alt="" srcset="">
                                 <br>
-                                <p>Pengharum Aroma Kopi Raung</p>
+                                <p>Batik Motif Selo Maeso</p>
                             </div>
                             <div class="col-md-4 col-m-4 shape">
-                                <img src="{{asset('user/images/bagon_6.jpg')}}" alt="" srcset="">
+                                <img src="{{asset('user/images/andongsari_6.jpg')}}" alt="" srcset="">
                                 <br>
-                                <p>Tas Pesta Glamour Zamrud</p>
+                                <p>Batik Pewarna Alam</p>
+                            </div>
+                        </div>
+                        <div class="row col-md-12 col-sm-12" style="justify-content: center;">
+                            <div class="col-md-4 col-m-4 shape">
+                                <img src="{{asset('user/images/andongsari_7.jpg')}}" alt="" srcset="">
+                                <br>
+                                <p>Batik Tulis</p>
                             </div>
                             <div class="col-md-4 col-m-4 shape">
-                                <img src="{{asset('user/images/bagon_8.jpg')}}" alt="" srcset="">
+                                <img src="{{asset('user/images/andongsari_8.jpg')}}" alt="" srcset="">
                                 <br>
-                                <p>Sepatu Gemerlap Senja</p>
+                                <p>Batik Cap</p>
+                            </div>
+
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
             <section>
-                <div id="" class="d-flex h-100 bg-b-3">
+                <div id="" class="d-flex h-100 bg-a-3">
                     <div class=" row justify-content-center align-self-center col-md-12">
                         <h2 style="text-align: center;">Tentang Kami</h2>
                         <div class="col-md-6">
                             <p style="text-align: justify;text-indent: 50px;">
-                                Berawal dari hobi, kini Saidah, perajut asal Desa Bagon, Kec. Puger, Kabupaten Jember, berhasil menularkan keterampilan merajutnya kepada perempuan di sekitar desanya melalui kelompok Bag On Craft. Produk rajutnya pun kian variatif: daily bag rajut, sepatu rajut, hingga pengharum kopi unik yang dapat digunakan untuk ruangan hingga mobil. Selain desain unik dan berkualitas, di setiap rajutannya tercermin pula semangat berdaya dan memberdayakan orang lain. Mengusung semangat yang sama, Imaji Sociopreneur berkolaborasi dengan Bag On Craft berkomitmen untuk lebih mengenalkan produk-produk Bag On Craft kepada masyarakat.
+                                Bersama kelompok batik Selo Maeso, saat ini kami tengah mengembangkan motif batik 'Selo Maeso' atau 'Watukebo' dalam bahasa Sanskerta; motif yang didasarkan cerita sejarah Dusun Watukebo, Desa Andongsari, Kecamatan Ambulu, Jember. Tetap mengusung motif khas Jember, yakni tembakau sebagai kondimen dasar, motif Selo Maeso didominasi unsur batu dan kepala kerbau yang mencerminkan ‘kekuatan’ dan ‘keikhlasan’ manusia. Selain batik tulis, terdapat pula batik cap dan batik pewarna alami. Setiap produk batik yang dihasilkan turut mengandung semangat untuk melestarikan warisan budaya dan memberdayakan perempuan di sekitar desa.
                             </p>
                         </div>
                     </div>
@@ -106,9 +116,9 @@
             }
 
             var counter = 1; //instantiate a counter
-            var maxImage = 4; //the total number of images that are available
+            var maxImage = 3; //the total number of images that are available
             setInterval(function () {
-                document.querySelector('header').style.backgroundImage = "url('user/images/bagon_" + (counter + 1) +
+                document.querySelector('header').style.backgroundImage = "url('user/images/andongsari_" + (counter + 1) +
                     ".jpg')";
                 if (counter + 1 == maxImage) {
                     counter = 0; //reset to start

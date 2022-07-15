@@ -63,6 +63,10 @@ Route::get('/bagon-craft', function () {
     return view('bagon');
 })->name('user.bagon ');
 
+Route::get('/selo-maeso', function () {
+    return view('andongsari');
+})->name('user.selo-maeso');
+
 
 Route::get('/dashboard', function () {
     return redirect(route('admin.dashboard'));

@@ -60,6 +60,30 @@
                                 <br>
                                 <p>Pupuk Suburganic</p>
                             </div>
+
+                            <div class="col-md-3 col-m-4 shape">
+                                <a href="{{ route('user.selo-maeso') }}">
+                                    <img src="{{asset('user/images/selo maeso.png')}}" alt="" srcset="">
+                                </a>
+                                <br>
+                                <p>Batik Selo Maeso</p>
+                            </div>
+
+{{--                            <div class="col-md-3 col-m-4 shape">--}}
+{{--                                <a href="">--}}
+{{--                                    <img src="{{asset('user/images/bumdes.png')}}" alt="" srcset="">--}}
+{{--                                </a>--}}
+{{--                                <br>--}}
+{{--                                <p>Retail Trijaya</p>--}}
+{{--                            </div>--}}
+                            <div class="col-md-3 col-m-4 shape">
+                                <a href="{{ route('user.bagon ') }}">
+                                    <img src="{{asset('user/images/bagon.png')}}" alt="" srcset="">
+                                </a>
+                                <br>
+                                <p>Bag On Craft Rajut</p>
+                            </div>
+
                             <div class="col-md-3 col-m-4 shape">
                                 <a href="">
                                     <img src="{{asset('user/images/jatiwangi.png')}}" alt="" srcset="">
@@ -67,33 +91,13 @@
                                 <br>
                                 <p>Furnitur Jatiwangi</p>
                             </div>
-                            <div class="col-md-3 col-m-4 shape">
-                                <a href="">
-                                    <img src="{{asset('user/images/selo maeso.')}}png" alt="" srcset="">
-                                </a>
-                                <br>
-                                <p>Batik Selo Maeso</p>
-                            </div>
+
                             <div class="col-md-3 col-m-4 shape">
                                 <a href="">
                                     <img src="{{asset('user/images/swajaya.png')}}" alt="" srcset="">
                                 </a>
                                 <br>
                                 <p>Genteng Swajaya Karya</p>
-                            </div>
-                            <div class="col-md-3 col-m-4 shape">
-                                <a href="">
-                                    <img src="{{asset('user/images/bumdes.png')}}" alt="" srcset="">
-                                </a>
-                                <br>
-                                <p>Retail Trijaya</p>
-                            </div>
-                            <div class="col-md-3 col-m-4 shape">
-                                <a href="">
-                                    <img src="{{asset('user/images/bagon.png')}}" alt="" srcset="">
-                                </a>
-                                <br>
-                                <p>Bag On Craft Rajut</p>
                             </div>
 
                         </div>
