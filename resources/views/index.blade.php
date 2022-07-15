@@ -77,7 +77,7 @@
 {{--                                <p>Retail Trijaya</p>--}}
 {{--                            </div>--}}
                             <div class="col-md-3 col-m-4 shape">
-                                <a href="{{ route('user.bagon ') }}">
+                                <a href="{{ route('user.bagon') }}">
                                     <img src="{{asset('user/images/bagon.png')}}" alt="" srcset="">
                                 </a>
                                 <br>
@@ -85,7 +85,7 @@
                             </div>
 
                             <div class="col-md-3 col-m-4 shape">
-                                <a href="">
+                                <a href="#">
                                     <img src="{{asset('user/images/jatiwangi.png')}}" alt="" srcset="">
                                 </a>
                                 <br>
@@ -93,7 +93,7 @@
                             </div>
 
                             <div class="col-md-3 col-m-4 shape">
-                                <a href="">
+                                <a href="{{ route('user.sabrang') }}">
                                     <img src="{{asset('user/images/swajaya.png')}}" alt="" srcset="">
                                 </a>
                                 <br>
