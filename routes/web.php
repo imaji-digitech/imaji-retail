@@ -61,11 +61,18 @@ Route::get('/suburganic', function () {
 
 Route::get('/bagon-craft', function () {
     return view('bagon');
-})->name('user.bagon ');
+})->name('user.bagon');
 
 Route::get('/selo-maeso', function () {
     return view('andongsari');
 })->name('user.selo-maeso');
+Route::get('/jati-wangi', function () {
+    return view('kesilir');
+})->name('user.kesilir');
+
+Route::get('/swajaya-karya', function () {
+    return view('sabrang');
+})->name('user.sabrang');
 
 
 Route::get('/dashboard', function () {
