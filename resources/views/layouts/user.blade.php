@@ -28,13 +28,13 @@
 <body>
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-    <a href="{{route('user.kopi')}}">Kopi</a>
-    <a href="#">BagOn Craft</a>
-    <a href="#">Suburganic</a>
-    <a href="#">Selo Maeso</a>
-    <a href="#">Swajaya Kerya</a>
-    <a href="#">Meubel Jatiwangi</a>
-    <a href="#">Trijaya Mart</a>
+    <a href="{{ route('user.kopi') }}">Kopi</a>
+    <a href="{{ route('user.bagon') }}">BagOn Craft</a>
+    <a href="{{ route('user.suburganic ') }}">Suburganic</a>
+    <a href="{{ route('user.selo-maeso') }}">Selo Maeso</a>
+    <a href="{{ route('user.sabrang') }}">Swajaya Kerya</a>
+    <a href="{{ route('user.kesilir') }}">Meubel Jatiwangi</a>
+{{--    <a href="{{ route('user.') }}">Trijaya Mart</a>--}}
     <div class="container mobile-only">
         <input id="search" type="search" placeholder="Pencarian..."/>
         <br>
