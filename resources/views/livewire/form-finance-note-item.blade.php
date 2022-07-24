@@ -4,6 +4,7 @@
             <div class="card">
                 <div class="card-body p-0 row">
                     <img src="{{asset('storage/'.$financeNote->note)}}" alt="" class="col-4">
+
                     <div class="table-responsive table-invoice col-8">
                         <table class="table table-striped">
                             <tr>
@@ -27,9 +28,15 @@
                                 </tr>
                             @endforeach
                         </table>
+
                     </div>
+
                 </div>
+                <br>
+                <a href="{{ route('admin.finance.note.index',[$financeNote->finance->product_type_id,$financeNote->finance_id]) }}" class="btn btn-primary">Selesai</a>
             </div>
+
+
             <div id="form-create" class=" card p-4">
                 <form wire:submit.prevent="create">
                     <x-input type="text" title="Nama Item" model="financeItem.title"/>
