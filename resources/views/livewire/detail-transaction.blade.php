@@ -90,7 +90,7 @@
                         <div class="card-header" style="display: block; max-height: none;line-height: 0">
                             <h4 style="display: block">
                                 Pembayaran Barang ke - {{$index+1}}
-                                <a href="{{ route('admin.transaction.payment.export',$tp->id) }}" class="float-right" target="_blank">
+                                <a href="{{ route('admin.transaction.payment.export',[$umkm,$tp->id]) }}" class="float-right" target="_blank">
                                     <i class="fa fa-16px fa-download text-primary "></i>
                                 </a>
                                 @if($tp->created_at->format('Y m d')==\Carbon\Carbon::now()->format('Y m d'))

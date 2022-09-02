@@ -10,6 +10,7 @@ use Livewire\Component;
 
 class DetailTransaction extends Component
 {
+    public $umkm;
     public $dataId;
     public $transaction;
     public function mount(){
