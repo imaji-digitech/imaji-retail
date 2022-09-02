@@ -145,7 +145,7 @@
                     <div class="card">
                         <div class="card-header" style="display: block; max-height: none;line-height: 0">
                             <h4 style="display: block">Pengembalian Barang ke - {{$index+1}}
-                                <a href="{{ route('admin.transaction.return.export',$tr->id) }}" class="float-right" target="_blank">
+                                <a href="{{ route('admin.transaction.return.export',[$umkm,$tr->id]) }}" class="float-right" target="_blank">
                                     <i class="fa fa-16px fa-download text-primary "></i>
                                 </a>
                                 <a class="float-right mr-2" wire:click="cancelReturn({{ $tp->id }})">
