@@ -102,6 +102,37 @@ class Main extends Component
                     ])
                 ];
                 break;
+            case 'journal-code':
+                $journalCode = $this->model::search($this->search,$this->dataId)
+                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
+                    ->paginate($this->perPage);
+                return [
+                    "view" => 'livewire.journal.table-journal-code',
+                    "codes" => $journalCode,
+                    "data" => array_to_object([
+                        'href' => [
+                            'create_new' => route('admin.journal.create-code',$this->dataId),
+                            'create_new_text' => 'Buat journal code',
+                        ]
+                    ])
+                ];
+                break;
+            case 'journal-transaction':
+                $journalTransaction = $this->model::search($this->search,$this->dataId)
+                    ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
+                    ->paginate($this->perPage);
+                return [
+                    "view" => 'livewire.journal.table-journal-transaction',
+                    "journalTransactions" => $journalTransaction,
+                    "data" => array_to_object([
+                        'href' => [
+                            'create_new' => route('admin.journal.create-transaction',$this->dataId),
+                            'create_new_text' => 'Buat journal',
+                        ]
+                    ])
+                ];
+                break;
+
             case 'finance':
                 $finances = $this->model::search($this->search, $this->dataId)
                     ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')

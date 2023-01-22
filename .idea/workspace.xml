@@ -2,10 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="fixed sidebar">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/JournalController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Journal/FormJournal.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Journal/FormJournalCode.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Journal/FormJournalTransaction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Journal.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/JournalCode.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/JournalCodeAccount.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/JournalSubCodeAccount.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/JournalTransaction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2023_01_21_130044_create_journal_code_account.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2023_01_21_130054_create_journal_sub_code_accounts.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2023_01_21_130122_create_journal_codes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2023_01_21_130130_create_journal_transactions.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2023_01_21_130137_create_journals.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/journal/form-journal-code.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/journal/form-journal-transaction.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/journal/table-journal-code.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/livewire/journal/table-journal-transaction.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/journal/create-code.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/journal/create-transaction.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/journal/index.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/journal/update-code.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/journal/update-transaction.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/laravel-8-stisla-jetstream.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel-8-stisla-jetstream.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/kesilir.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/kesilir.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/form-finance-note-item.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/form-finance-note-item.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/salary-accept.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/salary-accept.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Table/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Table/Main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/note" beforeDir="false" afterPath="$PROJECT_DIR$/note" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/data-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/data-table.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,27 +207,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
-    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
-    <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/mokhamadasif/PhpstormProjects/imaji-retail-new/resources/views/livewire/journal",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/resources/views/livewire/journal" />
+      <recent name="$PROJECT_DIR$/resources/views/pages/journal" />
       <recent name="$PROJECT_DIR$/resources/views" />
       <recent name="$PROJECT_DIR$/public/user/images" />
       <recent name="$PROJECT_DIR$/resources/views/pdf" />
-      <recent name="$PROJECT_DIR$/resources/views/livewire" />
-      <recent name="$PROJECT_DIR$/app/Http/Livewire" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/public/user/images" />
@@ -348,6 +371,7 @@
       <workItem from="1657842661025" duration="6884000" />
       <workItem from="1657852931452" duration="7785000" />
       <workItem from="1658630543209" duration="300000" />
+      <workItem from="1674272213356" duration="23097000" />
     </task>
     <task id="LOCAL-00040" summary="update so many :)">
       <created>1639189385052</created>

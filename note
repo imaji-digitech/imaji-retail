@@ -17,3 +17,36 @@ php artisan krlove:generate:model TransactionDetail
 php artisan krlove:generate:model TransactionCredit
 php artisan krlove:generate:model TransactionPayment
 php artisan krlove:generate:model TransactionPaymentDetail
+
+
+journal_code_account
+id
+code
+title
+
+journal_sub_code_account
+journal_code_account_id
+code
+title
+
+journal_code
+umkm_id
+journal_sub_code_account_id
+code
+title
+
+journal_transaction
+umkm_id
+title -> (generate from jumlah jurnal di input pada umkm itu)
+date
+
+journal
+journal_code_id
+journal_input_id
+credit
+debit
+note
+
+
+
+

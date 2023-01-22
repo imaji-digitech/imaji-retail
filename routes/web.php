@@ -6,6 +6,7 @@ use App\Http\Controllers\Admin\CashNoteController;
 use App\Http\Controllers\Admin\ContentController;
 use App\Http\Controllers\Admin\CustomerController;
 use App\Http\Controllers\Admin\FinanceController;
+use App\Http\Controllers\Admin\JournalController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\ProductTypeController;
 use App\Http\Controllers\Admin\ReceiptController;
@@ -167,6 +168,14 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
         $pdf->loadView('pdf.umkm', compact('umkm', 'turnover'));
         return $pdf->stream('REPORT USAHA - ' . strtoupper($umkm->name) . '.pdf');
     })->name('product-type.export');
+
+    Route::get('journal/{umkm}',[JournalController::class,'index'])->name('journal.index');
+    Route::get('journal/{umkm}/create-code',[JournalController::class,'createCode'])->name('journal.create-code');
+    Route::get('journal/{umkm}/update-code/{id}',[JournalController::class,'updateCode'])->name('journal.update-code');
+    Route::get('journal/{umkm}/create-transaction',[JournalController::class,'createTransaction'])->name('journal.create-transaction');
+    Route::get('journal/{umkm}/update-transaction/{id}',[JournalController::class,'updateTransaction'])->name('journal.update-transaction');
+
+
 
     Route::get('product/{umkm}', [ProductController::class, 'index'])->name('product.index');
     Route::get('product/{umkm}/create', [ProductController::class, 'create'])->name('product.create');
