@@ -11,9 +11,9 @@
 {{--    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">--}}
     <div>
 
-        <livewire:journal.form-journal-transaction />
+{{--        <livewire:journal.form-journal-transaction />--}}
+                <livewire:salary-accept/>
     </div>
-{{--        <livewire:salary-accept/>--}}
 
 {{--    </div>--}}
 </x-app-layout>

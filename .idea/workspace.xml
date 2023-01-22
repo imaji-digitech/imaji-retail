@@ -1,39 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="fixed sidebar">
-      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/JournalController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Journal/FormJournal.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Journal/FormJournalCode.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Journal/FormJournalTransaction.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/Journal.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/JournalCode.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/JournalCodeAccount.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/JournalSubCodeAccount.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/JournalTransaction.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2023_01_21_130044_create_journal_code_account.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2023_01_21_130054_create_journal_sub_code_accounts.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2023_01_21_130122_create_journal_codes.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2023_01_21_130130_create_journal_transactions.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/database/migrations/2023_01_21_130137_create_journals.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/journal/form-journal-code.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/journal/form-journal-transaction.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/journal/table-journal-code.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/journal/table-journal-transaction.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/journal/create-code.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/journal/create-transaction.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/journal/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/journal/update-code.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/journal/update-transaction.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/laravel-8-stisla-jetstream.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/laravel-8-stisla-jetstream.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Table/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Table/Main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/note" beforeDir="false" afterPath="$PROJECT_DIR$/note" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/data-table.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/data-table.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="fixed add journal" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -371,14 +339,7 @@
       <workItem from="1657842661025" duration="6884000" />
       <workItem from="1657852931452" duration="7785000" />
       <workItem from="1658630543209" duration="300000" />
-      <workItem from="1674272213356" duration="23097000" />
-    </task>
-    <task id="LOCAL-00040" summary="update so many :)">
-      <created>1639189385052</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1639189385052</updated>
+      <workItem from="1674272213356" duration="23606000" />
     </task>
     <task id="LOCAL-00041" summary="update so many :)">
       <created>1639194371313</created>
@@ -716,7 +677,14 @@
       <option name="project" value="LOCAL" />
       <updated>1657943319777</updated>
     </task>
-    <option name="localTasksCounter" value="89" />
+    <task id="LOCAL-00089" summary="fixed add journal">
+      <created>1674368279454</created>
+      <option name="number" value="00089" />
+      <option name="presentableId" value="LOCAL-00089" />
+      <option name="project" value="LOCAL" />
+      <updated>1674368279457</updated>
+    </task>
+    <option name="localTasksCounter" value="90" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -746,6 +714,7 @@
     <MESSAGE value="add bagon and andongsari" />
     <MESSAGE value="add sabrang" />
     <MESSAGE value="fixed sidebar" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed sidebar" />
+    <MESSAGE value="fixed add journal" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed add journal" />
   </component>
 </project>
