@@ -11,9 +11,9 @@
             </tr>
             <tr>
                 <th>Account code</th>
+                <th>Note</th>
                 <th>Debit</th>
                 <th>Kredit</th>
-                <th>Note</th>
             </tr>
         </x-slot>
         <x-slot name="body">
@@ -25,9 +25,9 @@
                 @foreach($journal->journals as $t)
                     <tr>
                         <td style="height: 10px !important;">{{ $t->journalCode->code. ' - ' .$t->journalCode->title }}</td>
+                        <td style="height: 10px !important;">{{ $t->note }}</td>
                         <td style="height: 10px !important;">{{ $t->debit }}</td>
                         <td style="height: 10px !important;">{{ $t->credit }}</td>
-                        <td style="height: 10px !important;">{{ $t->note }}</td>
                     </tr>
                 @endforeach
             @endforeach
