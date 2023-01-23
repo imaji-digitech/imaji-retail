@@ -12,7 +12,7 @@
     <div>
 
 {{--        <livewire:journal.form-journal-transaction />--}}
-                <livewire:salary-accept/>
+                <livewire:journal.report-cash-flow umkm="1"/>
     </div>
 
 {{--    </div>--}}
