@@ -27,13 +27,14 @@
                             </select>
                         </div>
                         <div class="form-group col-md-3">
-                            <label for="">Kredit</label>
-                            <input type="text" class="form-control" wire:model="data.{{$i}}.credit">
-                        </div>
-                        <div class="form-group col-md-3">
                             <label for="">Debit</label>
                             <input type="text" class="form-control" wire:model="data.{{$i}}.debit">
                         </div>
+                        <div class="form-group col-md-3">
+                            <label for="">Kredit</label>
+                            <input type="text" class="form-control" wire:model="data.{{$i}}.credit">
+                        </div>
+
                         <div class="form-group col-md-3">
                             <label for="">Catatan</label>
                             <input type="text" class="form-control" wire:model="data.{{$i}}.note">
