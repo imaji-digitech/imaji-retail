@@ -53,6 +53,14 @@ class FormJournalTransaction extends Component {
             }
         }
 
+        $this->emit('swal:alert', [
+            'type' => 'success',
+            'title' => 'Data berhasil diubah',
+            'timeout' => 3000,
+            'icon' => 'success'
+        ]);
+        $this->emit('redirect', route('admin.journal.index',$this->umkm));
+
     }
 
     public function render()
