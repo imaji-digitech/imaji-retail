@@ -12,7 +12,7 @@
     <div>
 
 {{--        <livewire:journal.form-journal-transaction />--}}
-                <livewire:journal.report-cash-flow umkm="1"/>
+{{--                <livewire:journal.report-cash-flow umkm="1"/>--}}
     </div>
 
 {{--    </div>--}}
