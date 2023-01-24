@@ -1,9 +1,9 @@
 <div id="form-create" class="card">
     <form wire:submit.prevent="{{ $action }}" class="card-body">
         <x-select :options="$optionSubCode"
-                  :selected="$data['journal_sub_code_account_id']"
+                  :selected="$data['journal_code_account_id']"
                   title="Sub kode jurnal"
-                  model="data.journal_sub_code_account_id"/>
+                  model="data.journal_code_account_id"/>
         <x-input type="text" title="Kode akuntan" model="data.code"/>
         <x-input type="text" title="Judul kode akuntan" model="data.title"/>
         <x-textarea title="Deskripsi" model="data.description"/>

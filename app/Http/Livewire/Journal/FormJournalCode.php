@@ -3,7 +3,7 @@
 namespace App\Http\Livewire\Journal;
 
 use App\Models\JournalCode;
-use App\Models\JournalSubCodeAccount;
+use App\Models\JournalCodeAccount;
 use Livewire\Component;
 
 class FormJournalCode extends Component {
@@ -18,13 +18,13 @@ class FormJournalCode extends Component {
         $this->data = [
 
             'product_type_id'=>$this->umkm,
-            'journal_sub_code_account_id' => 1,
+            'journal_code_account_id' => 1,
             'title'                   => '',
             'code'                    => '',
             'description'             => '',
         ];
         $this->optionSubCode = [];
-        foreach (JournalSubCodeAccount::get() as $subCode) {
+        foreach (JournalCodeAccount::get() as $subCode) {
             $this->optionSubCode[] = [
                 'value' => $subCode->id,
                 'title' => $subCode->code . ' - ' . $subCode->title,
@@ -32,6 +32,7 @@ class FormJournalCode extends Component {
         }
     }
     public function create(){
+        $this->resetErrorBag();
         JournalCode::create($this->data);
         $this->emit('swal:alert', [
             'icon' => 'success',

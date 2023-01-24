@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="fixed add journal">
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/journal/cash-flow.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/ProductType.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/ProductType.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/dashboard.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -354,35 +350,7 @@
       <workItem from="1674272213356" duration="26439000" />
       <workItem from="1674456102463" duration="474000" />
       <workItem from="1674456584918" duration="37000" />
-      <workItem from="1674456629570" duration="5872000" />
-    </task>
-    <task id="LOCAL-00042" summary="update so many :)">
-      <created>1639205235121</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1639205235121</updated>
-    </task>
-    <task id="LOCAL-00043" summary="update so many :)">
-      <created>1639446170786</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1639446170786</updated>
-    </task>
-    <task id="LOCAL-00044" summary="update so many :)">
-      <created>1639446736424</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1639446736424</updated>
-    </task>
-    <task id="LOCAL-00045" summary="update so many :)">
-      <created>1639446792215</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1639446792215</updated>
+      <workItem from="1674456629570" duration="7308000" />
     </task>
     <task id="LOCAL-00046" summary="update so many :)">
       <created>1639446869846</created>
@@ -699,7 +667,35 @@
       <option name="project" value="LOCAL" />
       <updated>1674368552679</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="fixed add journal">
+      <created>1674464438749</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1674464438750</updated>
+    </task>
+    <task id="LOCAL-00092" summary="fixed add journal">
+      <created>1674464450682</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1674464450682</updated>
+    </task>
+    <task id="LOCAL-00093" summary="fixed add journal">
+      <created>1674464733228</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1674464733228</updated>
+    </task>
+    <task id="LOCAL-00094" summary="fixed add journal">
+      <created>1674464845503</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1674464845503</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

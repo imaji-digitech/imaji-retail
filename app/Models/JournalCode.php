@@ -35,7 +35,7 @@ class JournalCode extends Model {
     /**
      * @var array
      */
-    protected $fillable = ['journal_sub_code_account_id', 'product_type_id', 'title', 'code', 'description', 'created_at', 'updated_at'];
+    protected $fillable = ['journal_code_account_id', 'product_type_id', 'title', 'code', 'description', 'created_at', 'updated_at'];
 
     public static function search($query, $dataId)
     {
@@ -51,9 +51,9 @@ class JournalCode extends Model {
     /**
      * @return BelongsTo
      */
-    public function journalSubCodeAccount()
+    public function journalCodeAccount()
     {
-        return $this->belongsTo('App\Models\JournalSubCodeAccount');
+        return $this->belongsTo('App\Models\JournalCodeAccount');
     }
 
     /**
