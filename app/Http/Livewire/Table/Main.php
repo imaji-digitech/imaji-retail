@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Table;
 
+use App\Models\JournalTransaction;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -18,11 +19,15 @@ class Main extends Component
     public $sortAsc = false;
     public $search = '';
     public $role;
+    public $dataDelete;
     public function mount(){
 
     }
 
-    protected $listeners = ["deleteItem" => "delete_item"];
+    protected $listeners = ["deleteItem" => "delete_item",
+                            'deleteConfirmExecute'=>'deleteConfirmExecute',
+                            'deleteConfirm'=>'deleteConfirm'
+    ];
 
     public function sortBy($field)
     {
@@ -33,6 +38,28 @@ class Main extends Component
         }
 
         $this->sortField = $field;
+    }
+
+    public function deleteConfirm($id){
+        $this->emit('swal:confirm', [
+            'icon' => 'warning',
+            'title' => 'apakah anda yakin ingin menghapus data ini',
+            'confirmText' => 'Hapus',
+            'method' => "deleteConfirmExecute",
+            'params'=>$id
+        ]);
+    }
+
+    public function deleteConfirmExecute($id){
+        $data = $this->model::find($id);
+        if (!$data) {
+            return;
+        }
+        $data->delete();
+        $this->emit("deleteResult", [
+            "status" => true,
+            "message" => "Data " . $this->name . " berhasil dihapus!"
+        ]);
     }
 
     public function delete_item($id)

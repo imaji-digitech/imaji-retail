@@ -2,7 +2,7 @@
     <div id="form-create" class="card">
         <div class="card-body">
 
-            <form wire:submit.prevent="create">
+            <form wire:submit.prevent="{{ $action }}">
                 <div class=" row">
                     <div class="form-group col-md-3">
                         <label for="">Jumlah input jurnal</label>

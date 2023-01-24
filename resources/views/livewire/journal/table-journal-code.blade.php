@@ -15,7 +15,7 @@
                 <tr x-data="window.__controller.dataTableController({{ $code->id }})">
                     <td style="height: 10px !important;">{{ $code->code }} - {{ $code->title }}</td>
                     <td style="height: 10px !important;">
-                        <a role="button" href="{{ route('admin.asset.edit',[$code->product_type_id,$code->id]) }}" class="mr-3"><i class="fa fa-16px fa-pen">Ubah</i></a>
+                        <a role="button" href="{{ route('admin.journal.update-code',[$code->product_type_id,$code->id]) }}" class="mr-3"><i class="fa fa-16px fa-pen">Ubah</i></a>
 {{--                        <a role="button" x-on:click.prevent="deleteItem" href="#"><i class="fa fa-16px fa-trash text-red-500"></i></a>--}}
                     </td>
                 </tr>

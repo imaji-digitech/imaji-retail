@@ -6,6 +6,17 @@
   <component name="ChangeListManager">
     <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="fixed add journal">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/JournalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/JournalController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Journal/FormJournalTransaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Journal/FormJournalTransaction.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Journal/ReportLedger.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Journal/ReportLedger.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Table/Main.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Table/Main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/components/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/sidebar.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/journal/report-ledger.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/journal/report-ledger.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/journal/table-journal-code.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/journal/table-journal-code.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/livewire/journal/table-journal-transaction.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/journal/table-journal-transaction.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/journal/cash-flow.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/journal/report-ledger.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/journal/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/journal/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -350,21 +361,7 @@
       <workItem from="1674272213356" duration="26439000" />
       <workItem from="1674456102463" duration="474000" />
       <workItem from="1674456584918" duration="37000" />
-      <workItem from="1674456629570" duration="7308000" />
-    </task>
-    <task id="LOCAL-00046" summary="update so many :)">
-      <created>1639446869846</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1639446869846</updated>
-    </task>
-    <task id="LOCAL-00047" summary="update so many :)">
-      <created>1639446945315</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1639446945315</updated>
+      <workItem from="1674456629570" duration="16629000" />
     </task>
     <task id="LOCAL-00048" summary="update so many :)">
       <created>1639446978942</created>
@@ -695,7 +692,21 @@
       <option name="project" value="LOCAL" />
       <updated>1674464845503</updated>
     </task>
-    <option name="localTasksCounter" value="95" />
+    <task id="LOCAL-00095" summary="fixed add journal">
+      <created>1674525716644</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1674525716644</updated>
+    </task>
+    <task id="LOCAL-00096" summary="fixed add journal">
+      <created>1674533617942</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1674533617942</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

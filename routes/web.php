@@ -174,6 +174,7 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
     Route::get('journal/{umkm}/update-code/{id}',[JournalController::class,'updateCode'])->name('journal.update-code');
     Route::get('journal/{umkm}/create-transaction',[JournalController::class,'createTransaction'])->name('journal.create-transaction');
     Route::get('journal/{umkm}/update-transaction/{id}',[JournalController::class,'updateTransaction'])->name('journal.update-transaction');
+    Route::get('journal/{umkm}/report-ledger',[JournalController::class,'reportLedger'])->name('journal.report-ledger');
 
 
 
