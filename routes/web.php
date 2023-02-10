@@ -18,6 +18,9 @@ use App\Http\Controllers\SupportController;
 use App\Http\Controllers\UserController;
 use App\Models\CashBook;
 use App\Models\CashNote;
+use App\Models\JournalCode;
+use App\Models\JournalTransaction;
+use App\Models\JournalTransactionType;
 use App\Models\Product;
 use App\Models\ProductType;
 use App\Models\Transaction;
@@ -174,7 +177,41 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
     Route::get('journal/{umkm}/update-code/{id}',[JournalController::class,'updateCode'])->name('journal.update-code');
     Route::get('journal/{umkm}/create-transaction',[JournalController::class,'createTransaction'])->name('journal.create-transaction');
     Route::get('journal/{umkm}/update-transaction/{id}',[JournalController::class,'updateTransaction'])->name('journal.update-transaction');
+
     Route::get('journal/{umkm}/report-ledger',[JournalController::class,'reportLedger'])->name('journal.report-ledger');
+    Route::get('journal/{umkm}/report-ledger/download/{start}/{end}', function ($umkm,$start,$end) {
+        $journals = JournalCode::whereProductTypeId($umkm)->get();
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadView('livewire.journal.pdf.report-ledger',compact('journals','umkm','start','end'));
+        return $pdf->stream('REPORT PRODUK.pdf');
+    })->name('journal.report-ledger.download'); // buku besar
+
+    Route::get('journal/{umkm}/report-journal/{type}',[JournalController::class,'reportJournal'])->name('journal.report-journal');
+    Route::get('journal/{umkm}/report-journal/{type}/download/{start}/{end}', function ($umkm,$type,$start,$end) {
+        $type= JournalTransactionType::whereCode($type)->first();
+        $journalTransaction=JournalTransaction::whereProductTypeId($umkm)
+            ->where('journal_transaction_type_id',$type->id)
+            ->whereBetween('transaction_date',[date($start),date($end)])
+            ->get();
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadView('livewire.journal.pdf.report-journal',compact('journalTransaction','umkm','start','end','type'));
+        return $pdf->stream('REPORT PRODUK.pdf');
+    })->name('journal.report-journal.download');
+
+    Route::get('journal/{umkm}/report-trial-balance',[JournalController::class,'reportTrialBalance'])->name('journal.report-trial-balance');
+    Route::get('journal/{umkm}/report-trial-balance/download/{start}/{end}', function ($umkm,$start,$end) {
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadView('livewire.journal.pdf.report-trial-balance',compact('umkm','start','end'));
+        return $pdf->stream('REPORT PRODUK.pdf');
+    })->name('journal.report-trial-balance.download');
+
+    Route::get('journal/{umkm}/report-worksheet',[JournalController::class,'reportWorksheet'])->name('journal.report-worksheet');
+    Route::get('journal/{umkm}/report-worksheet/download/{start}/{end}', function ($umkm,$start,$end) {
+        $pdf = App::make('dompdf.wrapper');
+        $pdf->loadView('livewire.journal.pdf.report-worksheet',compact('umkm','start','end'));
+        return $pdf->stream('REPORT PRODUK.pdf');
+    })->name('journal.report-worksheet.download');
+
 
 
 
@@ -192,6 +229,7 @@ Route::name('admin.')->prefix('admin')->middleware(['auth:sanctum', 'web', 'veri
     Route::get('customer/create', [CustomerController::class, 'create'])->name('customer.create');
     Route::get('customer/show/{id}', [CustomerController::class, 'show'])->name('customer.show');
     Route::get('customer/edit/{id}', [CustomerController::class, 'edit'])->name('customer.edit');
+
 
 
     Route::get('product/{umkm}/export/{id}', function ($umkm, $id) {

@@ -31,7 +31,7 @@
                         @endforeach
                     </ul>
                 </li>
-                @if(auth()->id()==26)
+{{--                @if(auth()->id()==26)--}}
                     <li class="menu-header">Managemen Journal</li>
                     <li class="dropdown">
                         <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
@@ -56,7 +56,7 @@
                             @endforeach
                         </ul>
                     </li>
-                @endif
+{{--                @endif--}}
                 <li class="dropdown">
                     <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-columns"></i>
                         <span>Buku kas</span></a>

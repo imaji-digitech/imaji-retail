@@ -12,6 +12,15 @@
                         <label for="">Tanggal transaksi</label>
                         <input type="date" class="form-control" wire:model="date">
                     </div>
+                    <div class="form-group col-md-3">
+                        <label for="">Jenis transaksi</label>
+                        <select name="" id="" class="form-control" wire:model="type">
+                            <option value=""></option>
+                            @foreach($optionType as $code)
+                                <option value="{{ $code['value'] }}">{{ $code['title'] }}</option>
+                            @endforeach
+                        </select>
+                    </div>
                 </div>
                 @for($i=0;$i<$input;$i++)
                     <hr>

@@ -15,17 +15,19 @@
             </div>
             <div class="col-md-3">
                 <label for="" style="color: transparent"> .</label>
-                <input type="submit" class="form-control btn btn-primary" wire:click="check">
+                <input type="submit" class="form-control btn btn-primary" wire:click="check" value="Submit">
+            </div>
+            <div class="col-md-3">
+                <label for="" style="color: transparent"> .</label>
+                <input type="submit" class="form-control btn btn-success" value="Download" wire:click="download">
             </div>
         </div>
-
-
 
 
         <table style="width: 100%">
             <tr>
                 <td colspan="2">Nama akun/tanggal</td>
-                <td>Transaksi</td>
+                <td style="width: 140px">Transaksi</td>
                 <td>Deskripsi</td>
                 <td>Debit</td>
                 <td>Kredit</td>
@@ -44,26 +46,48 @@
                 @endphp
                 @if(count($j)!=0)
                     @php
-                    $nullAll=false;
-                    @endphp
+                        $nullAll=false;
+    //                    @endphp
                     <tr style="background: #d0d0d0">
                         <td colspan="7">({{ $journalCode->code }}) {{ $journalCode->title }}</td>
-
                     </tr>
                     @foreach($j as $k)
-
                         <tr>
                             <td style="width: 20px"></td>
-                            <td>{{ $k->journalTransaction->transaction_date }}</td>
+                            <td style="width: 120px">{{ $k->journalTransaction->transaction_date }}</td>
                             <td>{{ $k->journalTransaction->title }}</td>
                             <td>{{ $k->note }}</td>
-                            <td>{{ $k->debit }}</td>
-                            <td>{{ $k->credit }}</td>
-                            <td>
+                            <td style="width: 150px;">
+                                <div style="width: 150px; padding-top: 10px; padding-left: 5px">
+                                    <div style="text-align: left; display: inline-block; width: 30px">Rp.</div>
+                                    <div style="text-align: right; display: inline-block; width: 100px">
+                                        {{ number_format($k->debit,0,'.','.') }}
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="width: 150px;">
+                                <div style="width: 150px; padding-top: 10px; padding-left: 5px">
+                                    <div style="text-align: left; display: inline-block; width: 30px">Rp.</div>
+                                    <div style="text-align: right; display: inline-block; width: 100px">
+                                        {{ number_format($k->credit,0,'.','.') }}
+                                    </div>
+                                </div>
+                            </td>
+                            <td style="width: 150px;">
                                 @if($k->debit-$k->credit>0)
-                                    {{ $k->debit-$k->credit }}
+                                    <div style="width: 150px; padding-top: 10px; padding-left: 5px">
+                                        <div style="text-align: left; display: inline-block; width: 30px">Rp.</div>
+                                        <div style="text-align: right; display: inline-block; width: 100px">
+                                            {{ number_format($k->debit-$k->credit,0,'.','.') }}
+                                        </div>
+                                    </div>
                                 @else
-                                    ({{ $k->credit-$k->debit }})
+                                    <div style="width: 150px; padding-top: 10px; padding-left: 5px">
+                                        <div style="text-align: left; display: inline-block; width: 30px">Rp.</div>
+                                        <div style="text-align: right; display: inline-block; width: 100px">
+                                            ({{ number_format($k->credit-$k->debit,0,'.','.') }})
+                                        </div>
+                                    </div>
                                 @endif
 
                             </td>
@@ -73,19 +97,44 @@
                             @endphp
                         </tr>
                     @endforeach
-                    <tr style="border-bottom: 1px black solid">
+                    <tr style="border-bottom: 1px black solid; font-weight: bold">
                         <td colspan="4  ">({{ $journalCode->code }}) {{ $journalCode->title }} | Saldo akhir</td>
-                        <td>{{ $totalDebit }}</td>
-                        <td>{{ $totalCredit }}</td>
+                        <td>
+                            <div style="width: 150px; padding-top: 10px; padding-left: 5px">
+                                <div style="text-align: left; display: inline-block; width: 30px">Rp.</div>
+                                <div style="text-align: right; display: inline-block; width: 100px">
+                                    ({{ number_format($totalDebit,0,'.','.') }})
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="width: 150px; padding-top: 10px; padding-left: 5px">
+                                <div style="text-align: left; display: inline-block; width: 30px">Rp.</div>
+                                <div style="text-align: right; display: inline-block; width: 100px">
+                                    ({{ number_format($totalCredit,0,'.','.') }})
+                                </div>
+                            </div>
+                        </td>
                         <td>
                             @if($totalDebit-$totalCredit>0)
-                                {{ $totalDebit-$totalCredit }}
+
+                                <div style="width: 150px; padding-top: 10px; padding-left: 5px">
+                                    <div style="text-align: left; display: inline-block; width: 30px">Rp.</div>
+                                    <div style="text-align: right; display: inline-block; width: 100px">
+                                        {{ number_format($totalDebit-$totalCredit,0,'.','.') }}
+                                    </div>
+                                </div>
                             @else
-                                ({{ $totalCredit-$totalDebit }})
+                                <div style="width: 150px; padding-top: 10px; padding-left: 5px">
+                                    <div style="text-align: left; display: inline-block; width: 30px">Rp.</div>
+                                    <div style="text-align: right; display: inline-block; width: 100px">
+                                        ({{ number_format($totalCredit-$totalDebit,0,'.','.') }})
+                                    </div>
+                                </div>
                             @endif
                         </td>
                     </tr>
-                    @else
+                @else
                 @endif
                 <tr style="height: 5px">
                     <td></td>

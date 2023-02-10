@@ -7,11 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @property integer $id
  * @property integer $product_type_id
+ * @property integer $journal_transaction_type_id
  * @property string $transaction_date
  * @property string $title
  * @property string $description
  * @property string $created_at
  * @property string $updated_at
+ * @property JournalTransactionType $journalTransactionType
  * @property ProductType $productType
  * @property Journal[] $journals
  */
@@ -25,16 +27,17 @@ class JournalTransaction extends Model
     protected $keyType = 'integer';
 
     /**
-     * Indicates if the IDs are auto-incrementing.
-     *
-     * @var bool
-     */
-    public $incrementing = false;
-
-    /**
      * @var array
      */
-    protected $fillable = ['product_type_id', 'transaction_date', 'title', 'description', 'created_at', 'updated_at'];
+    protected $fillable = ['product_type_id', 'journal_transaction_type_id', 'transaction_date', 'title', 'description', 'created_at', 'updated_at'];
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsTo
+     */
+    public function journalTransactionType()
+    {
+        return $this->belongsTo('App\Models\JournalTransactionType');
+    }
 
     public static function search($query, $dataId)
     {

@@ -53,4 +53,22 @@ class Journal extends Model
     {
         return $this->belongsTo('App\Models\JournalTransaction');
     }
+
+    public static function getDebitCredit($umkm,$start,$end,$code,$note){
+        return Journal::whereHas('journalTransaction',function($q) use ($start, $end, $umkm) {
+            $q->where('product_type_id',$umkm)
+                ->whereBetween('transaction_date',[$start,$end])
+            ;
+        })->where('journal_code_id',$code)->sum($note);
+    }
+
+    public static function getWorksheetDebitCredit($umkm,$type,$code,$start,$end,$note){
+
+        return Journal::whereHas('journalTransaction',function($q) use ($type, $start, $end, $umkm) {
+            $q->where('product_type_id',$umkm)
+                ->where('journal_transaction_type_id',$type)
+                ->whereBetween('transaction_date',[$start,$end])
+            ;
+        })->where('journal_code_id',$code)->sum($note);
+    }
 }

@@ -121,6 +121,13 @@ if (!function_exists('empty_fallback')) {
     }
 }
 
+if (!function_exists('thousand_format')) {
+    function thousand_format($integer)
+    {
+        return number_format($integer, '0', ',', '.');
+    }
+}
+
 if (!function_exists('create_button')) {
 
     function create_button($action, $model)

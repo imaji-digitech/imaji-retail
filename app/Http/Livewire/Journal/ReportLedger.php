@@ -15,28 +15,30 @@ class ReportLedger extends Component {
     public $journals;
     public $range;
 
-    public function check(){
-        if ($this->filter!=null){
-            $this->rangeDate=$this->filter;
+    public function check()
+    {
+        if ($this->filter != null) {
+            $this->rangeDate = $this->filter;
         }
-        $this->range=explode(' - ',$this->rangeDate);
-
+        $this->range = explode(' - ', $this->rangeDate);
     }
 
     public function mount()
     {
         $this->journals = JournalCode::whereProductTypeId($this->umkm)->get();
-        $this->range= explode(' - ',Carbon::now()->format('Y-m-d').' - '.Carbon::now()->format('Y-m-d'));
-        $this->rangeDate=Carbon::now()->format('Y-m-d').' - '.Carbon::now()->format('Y-m-d');
-        $this->optionFilter=[
-            ['value'=>'','title'=>''],
-            ['value'=>Carbon::now()->format('Y-m-d').' - '.Carbon::now()->format('Y-m-d'),'title'=>'Hari ini'],
-            ['value'=>Carbon::now()->firstOfMonth()->format('Y-m-d').' - '.Carbon::now()->lastOfMonth()->format('Y-m-d'),'title'=>'Bulan ini'],
-            ['value'=>Carbon::now()->firstOfQuarter()->format('Y-m-d').' - '.Carbon::now()->lastOfQuarter()->format('Y-m-d'),'title'=>'Quartal ini'],
-            ['value'=>Carbon::now()->firstOfYear()->format('Y-m-d').' - '.Carbon::now()->lastOfYear()->format('Y-m-d'),'title'=>'Tahun ini'],
+        $this->range = explode(' - ', Carbon::now()->format('Y-m-d') . ' - ' . Carbon::now()->format('Y-m-d'));
+        $this->rangeDate = Carbon::now()->format('Y-m-d') . ' - ' . Carbon::now()->format('Y-m-d');
+        $this->optionFilter = [
+            ['value' => '', 'title' => ''], ['value' => Carbon::now()->format('Y-m-d') . ' - ' . Carbon::now()->format('Y-m-d'), 'title' => 'Hari ini'], ['value' => Carbon::now()->firstOfMonth()->format('Y-m-d') . ' - ' . Carbon::now()->lastOfMonth()->format('Y-m-d'), 'title' => 'Bulan ini'], ['value' => Carbon::now()->firstOfQuarter()->format('Y-m-d') . ' - ' . Carbon::now()->lastOfQuarter()->format('Y-m-d'), 'title' => 'Quartal ini'], ['value' => Carbon::now()->firstOfYear()->format('Y-m-d') . ' - ' . Carbon::now()->lastOfYear()->format('Y-m-d'), 'title' => 'Tahun ini'],
         ];
+    }
 
-
+    public function download()
+    {
+        $this->emit('swal:alert', [
+            'icon' => 'success', 'title' => 'Melakukan download',
+        ]);
+        $this->emit('redirect-new-tab', route('admin.journal.report-ledger.download', [$this->umkm, $this->range[0], $this->range[1]]));
     }
 
     public function render()

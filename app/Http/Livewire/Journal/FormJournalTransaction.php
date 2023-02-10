@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Journal;
 use App\Models\Journal;
 use App\Models\JournalCode;
 use App\Models\JournalTransaction;
+use App\Models\JournalTransactionType;
 use Carbon\Carbon;
 use Livewire\Component;
 
@@ -16,10 +17,17 @@ class FormJournalTransaction extends Component {
     public $action;
     public $dataId;
     public $optionJournalCode;
+    public $optionType;
+    public $type;
+
 
     public function mount()
     {
         $this->date = Carbon::now();
+        $this->optionType=[];
+        foreach (JournalTransactionType::get() as $transactionType){
+            $this->optionType[]=['value' => $transactionType->id, 'title' => "$transactionType->title ($transactionType->code)"];
+        }
         $this->optionJournalCode = [];
         foreach (JournalCode::get() as $subCode) {
             $this->optionJournalCode[] = [
@@ -40,8 +48,6 @@ class FormJournalTransaction extends Component {
             }
             $this->input=$jt->journals->count();
         }
-//        dd($this->data);
-//        dd($this->optionJournalCode);
     }
 
     public function update()
@@ -49,9 +55,9 @@ class FormJournalTransaction extends Component {
 //        $count = JournalTransaction::whereProductTypeId($this->umkm)->count();
         $transaction = JournalTransaction::find($this->dataId)->update([
             'transaction_date' => $this->date,
+            'journal_transaction_type_id'=>$this->type,
         ]);
         Journal::where('journal_transaction_id', $this->dataId)->delete();
-
         for ($i = 0; $i < $this->input; $i++) {
             if (isset($this->data[$i]['code'])) {
                 if ($this->data[$i]['code'] != null) {
@@ -84,6 +90,7 @@ class FormJournalTransaction extends Component {
             'transaction_date' => $this->date,
             'title'            => 'Transaksi - ' . ($count + 1),
             'description'      => '',
+            'journal_transaction_type_id'=>$this->type,
         ]);
 
         for ($i = 0; $i < $this->input; $i++) {

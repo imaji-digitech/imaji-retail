@@ -182,6 +182,14 @@
                         window.location.href = data;
                     }, 2000);
                 })
+                this.livewire.on('redirect-new-tab',data=>{
+                    setTimeout(function () {
+                        window.open(
+                            data,
+                            '_blank' // <- This is what makes it open in a new window.
+                        );
+                    }, 2000);
+                })
             })
         </script>
 
