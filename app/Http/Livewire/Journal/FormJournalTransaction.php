@@ -29,7 +29,7 @@ class FormJournalTransaction extends Component {
             $this->optionType[]=['value' => $transactionType->id, 'title' => "$transactionType->title ($transactionType->code)"];
         }
         $this->optionJournalCode = [];
-        foreach (JournalCode::whereProductTypeId($this->umkm)->get() as $subCode) {
+        foreach (JournalCode::whereProductTypeId($this->umkm)->orderBy('code')->get() as $subCode) {
             $this->optionJournalCode[] = [
                 'value' => $subCode->id,
                 'title' => $subCode->code . ' - ' . $subCode->title,
