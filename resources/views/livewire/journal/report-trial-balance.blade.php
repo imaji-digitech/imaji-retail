@@ -37,7 +37,7 @@
                 $totalDebit=0;
                 $totalCredit=0;
             @endphp
-            @foreach(JournalCode::whereProductTypeId($umkm)->get() as $code)
+            @foreach(JournalCode::whereProductTypeId($umkm)->orderBy('code')->get() as $code)
                 <tr>
                     <td>{{ $code->code }}</td>
                     <td style="text-align: left;padding-left: 10px">{{ $code->title }}</td>
