@@ -10,7 +10,7 @@
 
 {{--    <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">--}}
     <div>
-
+<livewire:salary-accept/>
 {{--        <livewire:journal.form-journal-transaction />--}}
 {{--                <livewire:journal.report-cash-flow umkm="1"/>--}}
     </div>

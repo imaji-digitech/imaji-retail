@@ -5,32 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6bd14425-d709-4013-b0cd-70d5e3ac331f" name="Default Changelist" comment="fixed add journal">
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Journal/ReportJournal.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Journal/ReportTrialBalance.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Http/Livewire/Journal/ReportWorksheet.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Models/JournalTransactionType.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/journal/pdf/report-journal.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/journal/pdf/report-ledger.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/journal/pdf/report-trial-balance.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/journal/report-journal.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/journal/report-trial-balance.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/livewire/journal/report-worksheet.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/journal/report-journal.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/journal/report-trial-balance.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/journal/report-worksheet.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Helpers/MainHelper.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Helpers/MainHelper.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Admin/JournalController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Admin/JournalController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Journal/FormJournalTransaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Journal/FormJournalTransaction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Livewire/Journal/ReportLedger.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Livewire/Journal/ReportLedger.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Journal.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Journal.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/JournalTransaction.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/JournalTransaction.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/components/sidebar.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/components/sidebar.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/journal/form-journal-transaction.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/journal/form-journal-transaction.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/livewire/journal/report-ledger.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/livewire/journal/report-ledger.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/journal/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/journal/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,19 +180,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/mokhamadasif/PhpstormProjects/imaji-retail-new/resources/views/pages/journal",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/mokhamadasif/PhpstormProjects/imaji-retail-new/resources/views/pages/journal&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/resources/views/pages/journal" />
@@ -378,35 +353,9 @@
       <workItem from="1674456629570" duration="19041000" />
       <workItem from="1675664301284" duration="7269000" />
       <workItem from="1675685714801" duration="18000" />
-      <workItem from="1675735145638" duration="44707000" />
-    </task>
-    <task id="LOCAL-00049" summary="update so many :)">
-      <created>1639447007734</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1639447007734</updated>
-    </task>
-    <task id="LOCAL-00050" summary="update so many :)">
-      <created>1639447103753</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1639447103754</updated>
-    </task>
-    <task id="LOCAL-00051" summary="update so many :)">
-      <created>1639447523725</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1639447523725</updated>
-    </task>
-    <task id="LOCAL-00052" summary="update so many :)">
-      <created>1639447574728</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1639447574728</updated>
+      <workItem from="1675735145638" duration="45292000" />
+      <workItem from="1676861637441" duration="3424000" />
+      <workItem from="1677025646021" duration="307000" />
     </task>
     <task id="LOCAL-00053" summary="update so many :)">
       <created>1639448055785</created>
@@ -723,7 +672,35 @@
       <option name="project" value="LOCAL" />
       <updated>1674535604658</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="fixed add journal">
+      <created>1676017619540</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1676017619540</updated>
+    </task>
+    <task id="LOCAL-00099" summary="fixed add journal">
+      <created>1676861734541</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1676861734542</updated>
+    </task>
+    <task id="LOCAL-00100" summary="fixed add journal">
+      <created>1676861894830</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1676861894831</updated>
+    </task>
+    <task id="LOCAL-00101" summary="fixed add journal">
+      <created>1676863565283</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1676863565283</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -755,5 +732,15 @@
     <MESSAGE value="fixed sidebar" />
     <MESSAGE value="fixed add journal" />
     <option name="LAST_COMMIT_MESSAGE" value="fixed add journal" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="php">
+          <url>file://$PROJECT_DIR$/resources/views/livewire/journal/report-trial-balance.blade.php</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
